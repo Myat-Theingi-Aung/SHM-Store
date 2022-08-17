@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,5 +18,9 @@ class HomeController extends Controller
     {
         $products = Product::with('category')->latest()->take(6)->orderBy('created_at', 'DESC')->get();
         return view('index', compact('products'));
+    }
+    public function about()
+    {
+        return view('about');
     }
 }

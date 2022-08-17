@@ -1,0 +1,107 @@
+/*about pc*/
+.mv-blk{
+  width:700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid #006699;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.mv-blk  .cmn-ttl{
+  font-size: 48px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #006699;
+}
+.mv-blk  .about-txt{
+  width: 500px;
+  font-size: 24px;
+  opacity: 0.7;
+  padding: 0 20px;
+  margin: 0 auto;
+
+}
+.mv-blk  .about-txt .about-box .day{
+  float: left;
+}
+.mv-blk  .about-txt .about-box .time{
+  padding-bottom: 2px;
+  float: right;
+}
+.mv-blk  .about-txt .about-box{
+  width: 460px;
+  border-bottom:1px solid rgba(0, 102, 153,0.5);
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+}
+.mv-blk  .about-txt .list-ttl {
+  padding-top: 30px;
+  text-align: center;
+}
+
+/*about Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .mv-blk{
+    width:54.688vw;
+    margin-top: 1.563vw;
+    border: 1px solid #006699;
+    padding: 20px 0;
+    margin-bottom: 1.563vw;
+  }
+  .mv-blk  .cmn-ttl{
+    font-size: 3.75vw;
+    margin-bottom: 3.906vw;
+  }
+  .mv-blk  .about-txt{
+    width: 39.063vw;
+    font-size: 1.875vw;
+    opacity: 0.7;
+    padding: 0 1.563vw;
+  }
+  
+  .mv-blk  .about-txt .about-box .time{
+    padding-bottom: 0.156vw;
+  }
+  .mv-blk  .about-txt .about-box{
+    width: 35.938vw;
+    border-bottom:1px solid rgba(0, 102, 153,0.5);
+    padding-bottom: 0.313vw;
+    margin-bottom: 1.563vw;
+  }
+  .mv-blk  .about-txt .list-ttl {
+    padding-top: 2.344vw;
+  }
+}
+
+/*about sp*/
+@media screen and (max-width: 767.9px) {
+  .mv-blk{
+    width:91.265vw;
+    margin-top: 2.608vw;
+    border: 0.13vw solid #006699;
+    padding: 2.608vw 0;
+    margin-bottom: 2.608vw;
+  }
+  .mv-blk .cmn-ttl{
+    font-size: 6.258vw;
+    margin-bottom: 6.519vw;
+  }
+  .mv-blk .about-txt{
+    width: 65.189vw;
+    font-size: 3.129vw;
+    opacity: 0.7;
+    padding: 0 2.608vw;
+  }
+  .mv-blk .about-txt .time{
+    padding-bottom: 0.261vw;
+  }
+  .mv-blk  .about-txt .about-box{
+    width: 59.974vw;
+    border-bottom:0.13vw solid rgba(0, 102, 153,0.5);
+    padding-bottom: 0.522vw;
+    margin-bottom: 2.608vw;
+  }
+  .mv-blk  .about-txt .list-ttl {
+    padding-top: 3.911vw;
+  }
+}

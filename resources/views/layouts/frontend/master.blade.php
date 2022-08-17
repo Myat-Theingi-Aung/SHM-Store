@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@yield('title')</title>
+  <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+</head>
+
+<body>
+  <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
+  <script src="{{asset('frontend/js/common.js')}}"></script>
+  <header class="sec-header">
+    <div class="l-inner clearfix">
+      <div class="logo">
+        <h1 class="logo-ttl"><a href="#">SHM <br> STORE</a></h1>
+      </div>
+      <!--logo-->
+      <nav class="gnav">
+        <ul>
+          <li><a href="" class="active">Home</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Feedback</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+
+      </nav>
+      <!--gnav-->
+      <button class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <!--l-inner-->
+
+  </header>
+  <!--header-->
+  @yield('content')
+
+  <section class="sec-footer">
+    <div class="l-inner">
+      <h3 class="logo-ttl"><a href="#">SHM <br> STORE</a></h3>
+      <div class="footer-box clearfix">
+
+        <div class="left">
+
+          <div class="map-blk">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.889807968003!2d96.15450567144687!3d16.778828656486738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ec821e07a833%3A0xdde741e3cd511209!2sJunction%20City!5e0!3m2!1sen!2smm!4v1660581689171!5m2!1sen!2smm" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+          </div>
+        </div>
+        <!--left-->
+        <div class="right clearfix">
+          <ul>
+            <li>
+              <h3 class="list-ttl ">Email : <a href="mailto:shm@gmail.com">shm22@gmail.com</a></h3>
+            </li>
+            <li>
+              <h3 class="list-ttl">Phone : <a href="tel:+09-123-456-789">09- 123 456 789</a> </h3>
+            </li>
+            <li>
+              <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7">Junction City, Yangon</a> </h3>
+            </li>
+          </ul>
+          <form action="" class="sub-form">
+            <input type="email" placeholder="Enter your email">
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      copyright@shm2022
+    </footer>
+    <!--footer-->
+  </section>
+  <!--sec-footer-->
+</body>
+
+</html>

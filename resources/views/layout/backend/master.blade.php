@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('common/css/reset.css') }}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('common/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/master.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/dashboard.css') }}">
-    <script src="{{ asset('common/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('backend/js/master.js') }}"></script>
 </head>
 <body>
     <section class="main clearfix">
@@ -62,7 +61,7 @@
                         </li> 
                         <li class="menu-spacer"></li>
                         <li class="menu-item">
-                            <a href="" class="menu-item-link">Logout</a>
+                            <a href="{{ route('logout') }}" class="menu-item-link">Logout</a>
                         </li>        
                     </ul>
                 </div>
@@ -85,5 +84,9 @@
             </div>
         </div>
     </section>
+<script src="{{ asset('common/js/jquery.min.js') }}"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+<script src="{{ asset('backend/js/master.js') }}"></script>
+{!! Toastr::message() !!}
 </body>
 </html>

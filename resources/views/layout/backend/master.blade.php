@@ -26,10 +26,9 @@
                 </div>
                 <div class="nav-menu">
                     <ul>
-                        {{--class="{{ Request::is('role*') ? 'active' : '' }}"--}}
                         <li class="menu-spacer"></li>
                         <li class="menu-item">
-                            <a href="" class="menu-item-link active">Dashboard</a>
+                            <a href="{{ route('admin.dashboard') }}" class="menu-item-link {{ Request::is('admin') ? 'active' : '' }}">Dashboard</a>
                         </li>
                         <li class="menu-spacer"></li>
                         <li class="menu-item">
@@ -37,7 +36,7 @@
                         </li>
                         <li class="menu-spacer"></li>
                         <li class="menu-item">
-                            <a href="" class="menu-item-link">Product</a>
+                            <a href="{{ url('admin/product') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">Product</a>
                         </li>
                         <li class="menu-spacer"></li>
                         <li class="menu-item">
@@ -74,8 +73,13 @@
                         <span></span>
                     </p>
                     <div class="blank"></div>
-                    <div class="admin-info">
-                        Myat Theingi Aung
+                    <div class="admin-info clearfix">
+                        @if(auth()->user()->photo)
+                            <img src="{{  asset('uploads/user/'.auth()->user()->photo) }}" alt="">
+                        @else
+                            <img src="https://ui-avatars.com/api/?background=e91e63&color=fff&name={{ auth()->user()->name }}"/>
+                        @endif
+                        <p>{{ auth()->user()->name }}</p>
                     </div>
                 </div>
                 <div class="content-area">

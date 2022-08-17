@@ -14,6 +14,9 @@ Route::get('/',     [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/product',function(){
+        return view('admin.product.show');
+    });
 });
 
 

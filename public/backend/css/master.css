@@ -18,6 +18,7 @@
 .sidebar{
     background-color: #fff;
     float: left;
+    margin-left: 0px;
     width: 20%; 
 }
 
@@ -72,8 +73,23 @@
     font-size: 20px;
     float: right;
     color: #fff;
-    padding: 10px;
-    width: 194px;
+    padding: 5px;
+    width: 265px;
+}
+
+.admin-info img{
+    float: right;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.admin-info p{
+    float: left;
+    padding-top: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 75%;
 }
 
 .content-area{
@@ -100,7 +116,7 @@
 
     .sidebar{
         float: left;
-        height: 100vh;
+        margin-left: 0px;
         width: 20%; 
     }
     
@@ -140,8 +156,23 @@
     
     .admin-info{
         font-size: 1.563vw;
-        padding: 0.781vw;
-        width: 15.156vw;
+        float: right;
+        color: #fff;
+        padding: 0.391vw;
+        width: 20.703vw;
+    }
+    
+    .admin-info img{
+        float: right;
+        width: 3.125vw;
+        border-radius: 50%;
+        border: 0.156vw solid #fff;
+    }
+    
+    .admin-info p{
+        float: left;
+        padding-top: 0.781vw;
+        width: 75%;
     }
     
     .content-area{
@@ -215,6 +246,7 @@
 
     .show-sidebar-btn{
         height: 3.911vw !important;
+        margin-top : 0.782vw;
     }
 
     .show-sidebar-btn span{
@@ -287,7 +319,7 @@
         position: fixed;
         top: 2.608vw;
         margin-bottom: 2.608vw;
-        width: 129.726vw;
+        width: 97.726vw;
         margin-right: 1.304vw;
         padding: 1.043vw 2.608vw;
     }
@@ -301,8 +333,24 @@
     .admin-info{
         font-size: 2.608vw;
         float: right;
-        padding: 1.304vw;
-        width: 28.293vw;
+        color: #fff;
+        padding: 0.652vw;
+        width: 34.55vw;
+    }
+    
+    .admin-info img{
+        float: right;
+        width: 5.215vw;
+        border-radius: 50%;
+        border: 0.261vw solid #fff;
+    }
+    
+    .admin-info p{
+        float: left;
+        padding-top: 1.304vw;
+        text-align: right;
+        text-transform: uppercase;
+        width: 75%;
     }
     
     .content-area{

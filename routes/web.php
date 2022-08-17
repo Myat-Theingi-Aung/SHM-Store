@@ -17,6 +17,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product',function(){
         return view('admin.product.index');
     });
+    
 });
 
 

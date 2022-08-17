@@ -77,7 +77,7 @@
                         @if(auth()->user()->photo)
                             <img src="{{  asset('uploads/user/'.auth()->user()->photo) }}" alt="">
                         @else
-                            <img src="https://ui-avatars.com/api/?background=e91e63&color=fff&name={{ auth()->user()->name }}"/>
+                            <img src="https://ui-avatars.com/api/?background=fff&color=006699&name={{ auth()->user()->name }}"/>
                         @endif
                         <p>{{ auth()->user()->name }}</p>
                     </div>

@@ -1,6 +1,7 @@
 <?php
 
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
@@ -18,5 +19,6 @@ Route::get('/about',     [HomeController::class, 'about'])->name('about');
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
+
 
 

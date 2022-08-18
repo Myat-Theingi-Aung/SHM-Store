@@ -54,7 +54,7 @@ body{
   font-weight:400;
 }
 a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   color: black;
   outline: none;
@@ -444,7 +444,6 @@ a {
   .gnav.active {
     width: 100%;
     right: 0;
-    top: 15%;
   }
 
   .gnav ul li a:hover {

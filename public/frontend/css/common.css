@@ -15,9 +15,23 @@
 @font-face {
   font-family: 'RobotoCondensed-Bold';
   src: url(../Font/RobotoCondensed-Bold.ttf);
-  font-weight: 400;
+  font-weight: 600;
 }
-
+@font-face {
+  font-family:'RobotoCondensed-LightItalic' ;
+  src: url(../Font/RobotoCondensed-LightItalic.ttf);
+  font-weight:400;
+}
+@font-face {
+  font-family:'RobotoCondensed-Light' ;
+  src: url(../Font/RobotoCondensed-Light.ttf);
+  font-weight:400;
+}
+@font-face {
+  font-family:'RobotoCondensed-Regular' ;
+  src: url(../Font/RobotoCondensed-Regular.ttf);
+  font-weight:400;
+}
 ul {
   list-style: none;
 }
@@ -25,10 +39,27 @@ ul {
 img {
   width: 100%;
 }
-
+.is-invalid{
+  border: 1px solid red !important;
+}
+.text-danger{
+  color:  red !important;
+  font-size: 14px;
+  padding-left: 30px;
+  width: 100%;
+}
+body{
+  font-family:'RobotoCondensed-Regular' ,sans-serif;
+  font-size: 16px;
+  font-weight:400;
+}
 a {
-  color: black;
+  display: block;
   text-decoration: none;
+  color: black;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .clearfix::after {
@@ -43,9 +74,10 @@ a {
   margin: 0 auto;
 }
 .cmn-ttl{
-  font-family: 'RobotoCondensed', sans-serif;
-  font-weight: 400;
+  font-family: 'RobotoCondensed-Bold', sans-serif;
+  font-weight: 600;
 }
+
 .sec-header {
   padding: 10px 0;
   background-color: #006699;
@@ -199,10 +231,15 @@ a {
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+
   .l-inner {
     max-width: 100vw;
   }
-
+  .text-danger{
+    color:  red !important;
+    font-size: 1.094vw;
+    padding-left: 2.344vw;
+  }
   .sec-header {
     padding: 0.781vw 0;
   }
@@ -305,7 +342,12 @@ a {
     width: 98%;
     margin: 0 auto;
   }
-
+.text-danger{
+  color:  red !important;
+  font-size: 1.825vw;
+  padding-left: 3.911vw;
+  
+}
   .sec-header {
     padding: 1.304vw 0;
   }
@@ -361,7 +403,7 @@ a {
   }
 
   .menu-icon span:nth-of-type(2) {
-    top: 1.544vw;
+    top: 1.644vw;
   }
 
   .menu-icon span:nth-of-type(3) {
@@ -369,7 +411,7 @@ a {
   }
 
   .menu-icon.active span:nth-of-type(1) {
-    transform: translateY(2.344vw) rotate(-45deg);
+    transform: translateY(0.844vw) rotate(-45deg);
   }
 
   .menu-icon.active span:nth-of-type(2) {
@@ -383,14 +425,14 @@ a {
   .gnav {
     margin-right: 0;
     position: fixed;
+    z-index: 9999;
     top: 0;
     right: -100vw;
     width: 0;
     background-color: #006699;
     text-align: center;
     transition: all .4s;
-    padding: 3.438vw 0 0 0;
-    padding: 15vw 6.25vw 5.469vw;
+    padding: 4vw 6.25vw 5.469vw;
   }
 
   .gnav ul li {
@@ -402,6 +444,7 @@ a {
   .gnav.active {
     width: 100%;
     right: 0;
+    top: 15%;
   }
 
   .gnav ul li a:hover {

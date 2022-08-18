@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSRF Token -->
-    <title>REGISTER</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-        body{ font-family: 'Raleway', sans-serif; }
-        .mb-0{ margin-bottom: 0; }
-        button{ padding: 5px 20px; background-color: transparent; border: 1px solid #1c1e1f; transition: .25s; }
-        button:hover{ color: #fff; background-color: #1c1e1f; border:1px solid #fff; }
-        table td{ padding: 0 8px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHM Store | Register</title>
+  <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/registration.css')}}">
 </head>
 <body>
-    <form action="{{ route('register') }}" method="POST">
-    @csrf
-        <table>
-            <tr>
-                <td></td>
-                <td><h3>REGISTER</h3></td>
-            </tr>
+  <div class="l-inner">  
     
-            <tr>
-                <td><label>Username</label></td>
-                <td><input type="text" name="name"></td>
-            </tr>
+    <div class="reg">
+      <form name="regform" method="post" action="{{route('register')}}">
+        @csrf
+        <h2 class="reg-h2">Sign Up</h2>  
+        <div class="input-gp">
+          <div class="input-box">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="name" name="name" placeholder="Enter Name">
+            <span class="text-danger">{{ $errors->first('name') }}</span><br>
+          </div>
+          
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="email" name="email" placeholder="Enter Email">
+            <span class="text-danger">{{ $errors->first('email') }}</span><br>
+          </div>
 
-            <tr>
-                <td><label>Email</label></td>
-                <td><input type="email" name="email"></td>
-            </tr>
+          <div class="input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="password" name="password" placeholder="Enter Password">
+            <span class="text-danger">{{ $errors->first('password') }}</span><br>
+          </div>
 
-            <tr>
-                <td><label>Password</label></td>
-                <td><input type="text" name="password"></td>
-            </tr>
-    
-            <tr>
-                <td><label>Password Confirmation</label></td>
-                <td><input type="password" name="password_confirmation"></td>
-            </tr>
-    
-            <tr>
-                <td></td>
-                <td><button type="submit">REGISTER</button></td>
-            </tr>
+          <div class="input-box">
+            <label for="comfirm-pwd">Comfirm Password</label>
+            <input type="password" id="comfirm-pwd" class="comfirm-pwd" name="password_confirmation" placeholder="Enter Comfirm Password">
+            <span class="text-danger">{{ $errors->first('password') }}</span><br>
+          </div>
+                    
+        </div>
+        <div class="btn-gp">
+          <button class="btn-submit" name="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-            <tr>
-                <td></td>
-                <td>
-                    <small>
-                        <a href="{{ route('login') }}">LOGIN HERE</a>
-                    </small>
-                </td>
-            </tr>
-        </table>
-    </form>
 </body>
 </html>
-
-
-

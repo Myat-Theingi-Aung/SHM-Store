@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/slick.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
 </head>
 
 <body>
-  <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
-  <script src="{{asset('frontend/js/common.js')}}"></script>
+  
   <header class="sec-header">
     <div class="l-inner clearfix">
       <div class="logo">
@@ -22,12 +23,21 @@
       <!--logo-->
       <nav class="gnav">
         <ul>
-          <li><a href="" class="active">Home</a></li>
+          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a href="">Product</a></li>
-          <li><a href="">About</a></li>
+          <li>
+            <a href="{{route('about')}}" class="{{  Request::is('/about') ? 'active' : '' }}">About
+            </a>
+          </li>
           <li><a href="">Feedback</a></li>
+          @auth
+          <li><a href="{{url('/logout')}}">Logout</a></li>
+          @else
+          <li><a href="{{route('register')}}">Register</a></li>
           <li><a href="">Login</a></li>
+          @endauth
         </ul>
+
 
       </nav>
       <!--gnav-->
@@ -80,6 +90,15 @@
     <!--footer-->
   </section>
   <!--sec-footer-->
+
+
+
+  <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
+  <script src="{{asset('frontend/js/libary/slick.min.js')}}"></script>
+  <script src="{{asset('frontend/js/libary/jquery.heightLine.js')}}"></script>
+  <script src="{{asset('frontend/js/slider.js')}}"></script>
+  <script src="{{asset('frontend/js/heightline.js')}}"></script>
+  <script src="{{asset('frontend/js/common.js')}}"></script>
 </body>
 
 </html>

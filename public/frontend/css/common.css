@@ -54,7 +54,7 @@ body{
   font-weight:400;
 }
 a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
   color: black;
   outline: none;
@@ -424,7 +424,7 @@ a {
 
   .gnav {
     margin-right: 0;
-    position:fixed;
+    position: fixed;
     z-index: 9999;
     top: 0;
     right: -100vw;
@@ -432,6 +432,7 @@ a {
     background-color: #006699;
     text-align: center;
     transition: all .4s;
+    padding: 4vw 6.25vw 5.469vw;
   }
 
   .gnav ul li {

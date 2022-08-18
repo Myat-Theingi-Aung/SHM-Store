@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
-  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+  <link rel="stylesheet" href="{{asset('frontend/css/slick.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
- 
+  <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
-
 <body>
-
-
+  
   <header class="sec-header">
     <div class="l-inner clearfix">
       <div class="logo">
@@ -25,12 +25,19 @@
       <nav class="gnav">
         <ul>
           <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
-          <li><a href="" class="">Product</a></li>
-          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
-          <li><a href="" class="">Feedback</a></li>
-          <li><a href="" >Login</a></li>
+          <li><a href="">Product</a></li>
+          <li>
+            <a href="{{route('about')}}" class="{{  Request::is('/about') ? 'active' : '' }}">About
+            </a>
+          </li>
+          <li><a href="">Feedback</a></li>
+          @auth
+          <li><a href="{{url('/logout')}}">Logout</a></li>
+          @else
+          <li><a href="{{route('register')}}">Register</a></li>
+          <li><a href="">Login</a></li>
+          @endauth
         </ul>
-
       </nav>
       <!--gnav-->
       <button class="menu-icon">
@@ -82,7 +89,12 @@
     <!--footer-->
   </section>
   <!--sec-footer-->
-  <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
+
+  <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
+  <script src="{{asset('frontend/js/libary/slick.min.js')}}"></script>
+  <script src="{{asset('frontend/js/libary/jquery.heightLine.js')}}"></script>
+  <script src="{{asset('frontend/js/slider.js')}}"></script>
+  <script src="{{asset('frontend/js/heightline.js')}}"></script>
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>

@@ -61,13 +61,13 @@
         <div class="right clearfix">
           <ul>
             <li>
-              <h3 class="list-ttl ">Email : <a href="mailto:shm@gmail.com">shm22@gmail.com</a></h3>
+              <h3 class="list-ttl ">Email : <a href="mailto:shm@gmail.com" class="right-txt">shm22@gmail.com</a></h3>
             </li>
             <li>
-              <h3 class="list-ttl">Phone : <a href="tel:+09-123-456-789">09- 123 456 789</a> </h3>
+              <h3 class="list-ttl">Phone : <a href="tel:+09-123-456-789" class="right-txt">09- 123 456 789</a> </h3>
             </li>
             <li>
-              <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7">Junction City, Yangon</a> </h3>
+              <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7" class="right-txt">Junction City, Yangon</a> </h3>
             </li>
           </ul>
           <form action="" class="sub-form">

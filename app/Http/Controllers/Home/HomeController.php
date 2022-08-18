@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::with('category')->latest()->take(6)->orderBy('created_at', 'DESC')->get();
-        return view('index', compact('products'));
+        return view('home', compact('products'));
     }
     public function about()
     {

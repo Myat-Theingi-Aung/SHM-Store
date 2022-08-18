@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+ 
 </head>
 
 <body>
-  <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
-  <script src="{{asset('frontend/js/common.js')}}"></script>
+
+
   <header class="sec-header">
     <div class="l-inner clearfix">
       <div class="logo">
@@ -22,11 +24,11 @@
       <!--logo-->
       <nav class="gnav">
         <ul>
-          <li><a href="" class="active">Home</a></li>
-          <li><a href="">Product</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Feedback</a></li>
-          <li><a href="">Login</a></li>
+          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
+          <li><a href="" class="">Product</a></li>
+          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
+          <li><a href="" class="">Feedback</a></li>
+          <li><a href="" >Login</a></li>
         </ul>
 
       </nav>
@@ -80,6 +82,10 @@
     <!--footer-->
   </section>
   <!--sec-footer-->
+  <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
+  <script src="{{asset('frontend/js/common.js')}}"></script>
 </body>
 
 </html>

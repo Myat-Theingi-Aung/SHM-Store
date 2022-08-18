@@ -38,6 +38,9 @@
   padding-top: 30px;
   text-align: center;
 }
+.mv-blk  .about-txt a{
+  display: inline-block;
+}
 
 /*about Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
@@ -97,7 +100,7 @@
   }
   .mv-blk  .about-txt .about-box{
     width: 59.974vw;
-    border-bottom:0.13vw solid rgba(0, 102, 153,0.5);
+    border-bottom:0.13vw solid rgba(0, 102, 153, 0.5);
     padding-bottom: 0.522vw;
     margin-bottom: 2.608vw;
   }
@@ -105,3 +108,4 @@
     padding-top: 3.911vw;
   }
 }
+

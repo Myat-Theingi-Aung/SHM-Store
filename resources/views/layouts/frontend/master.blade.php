@@ -35,7 +35,7 @@
           <li><a href="{{url('/logout')}}">Logout</a></li>
           @else
           <li><a href="{{route('register')}}">Register</a></li>
-          <li><a href="">Login</a></li>
+          <li><a href="{{route('login')}}">Login</a></li>
           @endauth
         </ul>
       </nav>

@@ -62,16 +62,6 @@ SHM Store| Home
             <button class="viewmore">View More</button>
           </div>
         </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_laptop3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
       </ul>
     </div>
   </section> <!-- /.laptop-row -->

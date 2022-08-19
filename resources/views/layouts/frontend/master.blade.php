@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
-
 <body>
   
   <header class="sec-header">
@@ -38,8 +38,6 @@
           <li><a href="">Login</a></li>
           @endauth
         </ul>
-
-
       </nav>
       <!--gnav-->
       <button class="menu-icon">
@@ -92,13 +90,13 @@
   </section>
   <!--sec-footer-->
 
-
-
   <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
   <script src="{{asset('frontend/js/libary/slick.min.js')}}"></script>
   <script src="{{asset('frontend/js/libary/jquery.heightLine.js')}}"></script>
   <script src="{{asset('frontend/js/slider.js')}}"></script>
   <script src="{{asset('frontend/js/heightline.js')}}"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
 </body>
 

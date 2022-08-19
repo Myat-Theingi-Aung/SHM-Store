@@ -197,7 +197,7 @@ a {
 
 .sec-footer .footer-box .right .sub-form input[type='email'] {
   width: 236px;
-  height: 41px;
+  padding: 5px 0px;
   padding-left: 18px;
   border: 1px solid #006699;
   color: #006699;
@@ -209,7 +209,7 @@ a {
   position: relative;
   left: -5px;
   width: 123px;
-  height: 41px;
+  padding: 5px 0px;
   border: 1px solid #006699;
   color: #006699;
   font-weight: 700;
@@ -313,7 +313,7 @@ a {
 
   .sec-footer .footer-box .right .sub-form input[type='email'] {
     width: 18.438vw;
-    height: 3.203vw;
+    padding: 0.391vw 0vw;
     padding-left: 1.406vw;
     border: 0.078vw solid #006699;
     border-radius: 0.781vw 0 0 0.781vw;
@@ -322,7 +322,7 @@ a {
   .sec-footer .footer-box .right .sub-form input[type='submit'] {
     left: -0.391vw;
     width: 9.609vw;
-    height: 3.203vw;
+    padding: 0.391vw 0vw;
     border: 0.078vw solid #006699;
     border-radius: 0 0.781vw 0.781vw 0;
   }
@@ -509,16 +509,18 @@ a {
 
   .sec-footer .footer-box .right .sub-form input[type='email'] {
     width: 26.076vw;
-    height: 5.346vw;
+    padding: 0.652vw 0vw;
+    font-size: 1.825vw;
     padding-left: 2.347vw;
     border: 0.13vw solid #006699;
     border-radius: 1.304vw 0 0 1.304vw;
   }
 
   .sec-footer .footer-box .right .sub-form input[type='submit'] {
-    left: -0.652vw;
-    width: 100px;
-    height: 5.346vw;
+    left: -1.591vw;
+    width: 13.038vw;
+    font-size: 1.825vw;
+    padding: 0.652vw 0vw;
     border: 0.13vw solid #006699;
     border-radius: 0 1.304vw 1.304vw 0;
   }

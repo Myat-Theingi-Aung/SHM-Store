@@ -1,5 +1,7 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
@@ -11,9 +13,11 @@ Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',     [HomeController::class, 'index'])->name('home');
+Route::get('/about',     [HomeController::class, 'about'])->name('about');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
 
     //product
     Route::get('/product',[ProductController::class,'index'])->name('product.index');
@@ -23,5 +27,10 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
 });
+
+
+
+
+
 
 

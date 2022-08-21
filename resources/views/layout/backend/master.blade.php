@@ -44,7 +44,7 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">User</a>
+                        <a href="{{ route('admin.user.index') }}" class="menu-item-link {{ Request::is('admin/user*') ? 'active' : '' }}">User</a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
@@ -91,5 +91,8 @@
 <script src="{{ asset('backend/js/master.js') }}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
+<!-- Sweet Alert v2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@stack('js')
 </body>
 </html>

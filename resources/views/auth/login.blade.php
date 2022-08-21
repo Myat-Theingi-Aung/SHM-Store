@@ -67,9 +67,9 @@
                 <div class="login-btn">
                     <button type="submit" class="submit">Sign In</button>
                 </div>
-                <a href="#" class="forgot">Forgot Password ?</a>
-                 <p class="or">OR</p>
-                 <a href="#" class="create">Create an New Account</a>
+                <a href="{{ route('password.request') }}" class="forgot">Forgot Password ?</a>
+                <p class="or">OR</p>
+                <a href="#" class="create">Create an New Account</a>
                  
                 </div>
                
@@ -77,10 +77,10 @@
         </section>
 
 
-    <script src="{{asset('frontend/js/libary/jquery-3.6.0.min.js')}}"></script>
+        <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-             {!! Toastr::message() !!}
-            <script src="{{asset('frontend/js/common.js')}}"></script>
+        {!! Toastr::message() !!}
+        {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
     </body>
     </html>
 

@@ -52,5 +52,4 @@
         </table>
     </div>
 </div>
-
 @endsection

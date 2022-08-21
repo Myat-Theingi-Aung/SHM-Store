@@ -69,7 +69,7 @@
                 </div>
                 <a href="#" class="forgot">Forgot Password ?</a>
                  <p class="or">OR</p>
-                 <a href="#" class="create">Create an New Account</a>
+                 <a href="{{route('register')}}" class="create">Create an New Account</a>
                  
                 </div>
                

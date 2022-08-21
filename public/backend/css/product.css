@@ -1,9 +1,22 @@
+.category{
+    float: left;
+    width: 100% !important;
+}
+.category input{
+    width: 100% !important;
+}
+.cat-btn{
+    float: right;
+    width: 20%;
+    font-size: 16px !important;
+}
 .card{
     margin-top: 110px;
     margin-bottom: 40px;
     margin-right: 5px;
     background-color: #fff;
 }
+
 .card-body{
     padding: 30px;
 }
@@ -99,6 +112,7 @@ table{
     border-collapse: collapse;
     margin-top: 30px !important;
     text-align: center;
+    width: 100%;
 }
 
 th,tr,td{

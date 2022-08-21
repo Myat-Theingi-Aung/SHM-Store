@@ -1,12 +1,11 @@
 <?php
 
-
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 Auth::routes();
@@ -25,6 +24,14 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+
+    //category
+    Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');
+    Route::get('/category/create',  [CategoryController::class, 'showCreateCategoryView'])->name('category.create');
+    Route::post('/category/create',  [CategoryController::class, 'submitCreateCategoryView'])->name('category.store');
+    Route::get('/category/edit/{id}', [CategoryController::class, 'showEditCategoryView'])->name('category.edit');
+    Route::post('/category/edit/{id}',  [CategoryController::class, 'submitEditCategoryView'])->name('category.update');
+    Route::get('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 });
 
 

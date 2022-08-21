@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
-use App\Http\Requests\ProductRequest;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Contracts\Services\Product\ProductServiceInterface;
@@ -35,11 +36,12 @@ class ProductController extends Controller
      * 
      * @return View index product
      */
-    public function index()
+    public function index(Request $request)
     {
+        //dd($request->input('page'));
         $products = $this->productInterface->index();
-
-        return view('admin.product.index',compact('products'));
+        $i = ($request->input('page', 1) - 1) * 5;
+        return view('admin.product.index', compact('products','i'));
     }
     
      /**
@@ -63,7 +65,8 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->store($request);
 
-        return redirect()->route('admin.product.index')->with('status',"Product create successfully!");
+        Toastr::success('Product Create Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -75,7 +78,20 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->destroy($id);
 
-        return redirect()->route('admin.product.index')->with('status','product delete successfully!');
+        Toastr::success('Product Delete Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        return redirect()->route('admin.product.index');
+    }
+
+    /**
+     * To show product detail information
+     * 
+     * @return View detail page
+     */
+    public function show($id)
+    {
+        $product = $this->productInterface->show($id);
+
+        return view('admin.product.show',compact('product'));
     }
 
     /**
@@ -85,9 +101,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->productInterface->edit($id);
+        $data = $this->productInterface->edit($id);
+        $categories = Category::all();
 
-        return view('admin.product.edit',compact('product'));
+        return view('admin.product.edit',compact(['data','categories']));
     }
 
     /**
@@ -99,7 +116,8 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->update($request,$id);
         
-        return redirect()->route('product.index')->with('status','product update successfully!');
+        Toastr::success('Product Update Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        return redirect()->route('admin.product.index');
     }
 }
 

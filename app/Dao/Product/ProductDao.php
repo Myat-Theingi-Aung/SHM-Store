@@ -18,7 +18,7 @@ class ProductDao implements ProductDaoInterface
      */ 
     public function index()
     {
-        $data = Product::with('category')->get();
+        $data = Product::with('category')->orderBy('created_at','desc')->paginate(5);
 
         return $data;
     }
@@ -29,7 +29,6 @@ class ProductDao implements ProductDaoInterface
      */
     public function create()
     {
-        //$data = Product::with('category')->get();
         $category = Category::all();
         
         return $category;
@@ -42,7 +41,6 @@ class ProductDao implements ProductDaoInterface
      */
     public function store($request)
     {
-        //dd($request->all());
         $product = new Product();
 
         $product->category_id = $request['category_id'];
@@ -71,6 +69,18 @@ class ProductDao implements ProductDaoInterface
     }
 
     /**
+     * To show product detail information
+     * @param string $id product id
+     * @return Object $product Product Object
+     */
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+
+        return $product;
+    }
+
+    /**
      * To store old value in edit page
      * @param string $id product id
      * @return Object $product Product Object
@@ -92,14 +102,16 @@ class ProductDao implements ProductDaoInterface
     {
         $product =Product::find($id);
 
-        $product->category_id = $request->category_id;
-        $product->name = $request->name;
+        $product->category_id = $request['category_id'];
+        $product->name = $request['name'];
         $product->brand = $request->brand;
-        $product->original_price = $request->original_price;
-        $product->offer_price = $request->offer_price;
-        $product->photo = $request->photo;
-        $product->description = $request->description;
-        $product->update();
+        $product->original_price = $request['original_price'];
+        $product->offer_price = $request['offer_price'];
+        if($request['photo']){
+            $product->photo = $request['photo'];
+        }     
+        $product->description = $request['description'];
+        $product->save();
         $this->storeImage($product);
 
         return $product;   
@@ -114,7 +126,7 @@ class ProductDao implements ProductDaoInterface
         if(request()->hasFile('photo')){
             $file = request()->file('photo');
             $file_name = uniqid(time()) . '_' . $file->getClientOriginalName();
-            $save_path = public_path('uploads/prodcut');
+            $save_path = public_path('uploads/product');
             $file->move($save_path, $save_path."/$file_name");
 
             $product->update([

@@ -238,7 +238,7 @@ th{
 }
 
 .details-svg{
-    width: 16px;
+    width: 21px;
 }
 
 .edit-svg{
@@ -500,7 +500,7 @@ th{
     }
     
     .details-svg{
-        width: 1.25vw;
+        width: 1.641vw;
     }
     
     .edit-svg{
@@ -758,15 +758,15 @@ th{
     }
 
     .del-svg{
-        width: 2.347vw;
+        width: 1.956vw;
     }
     
     .details-svg{
-        width: 2.086vw;
+        width: 2.347vw;
     }
     
     .edit-svg{
-        width: 2.868vw;
+        width: 2.347vw;
     }
     
     .product-desc{

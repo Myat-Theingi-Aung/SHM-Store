@@ -47,13 +47,13 @@
   float: left;
   width: 23%;
   margin-right: 2.6%;
-  margin-bottom: 2%;
+  margin-bottom: 3.5%;
+  transition: .4s;
+  background-color: #ffffff;
 }
+
 .home-product .home-pcol1:hover {
   transform: scale(1.1);
-}
-.home-product .home-pcol1 img {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 
 .home-product .home-pcol1:nth-of-type(4n) {
@@ -62,6 +62,7 @@
 .home-product .home-pcol1-txt {
   width: 100%;
   margin-top: 20px;
+  padding-bottom: 50px;
   font-family: 'RobotoCondensed', sans-serif;
   text-align: center;
 }
@@ -77,7 +78,7 @@
   font-size: 16px;
 }
 .home-product .cmn-h5 {
-  padding: 40px 0;
+  padding: 30px 0;
   font-size: 17px;
 }
 .home-product .add-to-cart-btn, .home-product .viewmore {
@@ -95,7 +96,7 @@
   border: 1px solid #006699;
 }
 .laptop-row {  
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   background-color: #f3f3f3;
 }
 
@@ -104,7 +105,8 @@
 .mobile-row .home-ttl,
 .watch-row .home-ttl {
   margin-top: 33px;
-  padding-top: 35px;
+  padding-top: 72px;
+  padding-bottom: 30px;
 }
 .mobile-row {
   padding-bottom: 50px;
@@ -221,6 +223,7 @@
 .home-product .home-pcol1-txt {
   width: 100%;
   margin-top: 1.563vw;
+  padding-bottom: 3.906vw;
 }
 .home-product .cmn-p {
   padding-top: 1.563vw;
@@ -253,8 +256,9 @@
 .mobile-row .home-ttl,
 .watch-row .home-ttl {
   margin-top: 2.578vw;
-  padding-top: 2.891vw;
+  padding-top: 5.625vw;
   padding-left: 1.563vw;
+  padding-bottom: 2.344vw;
 }
 .mobile-row {
   padding-bottom: 1.172vw;
@@ -360,10 +364,12 @@
   }
   .home-product .home-pcol1 {
     width: 45%;
-    margin-right: 9%;
+    margin-right: 6%;
     margin-bottom: 8%;
   }
-  
+  .home-product .home-pcol1 img {
+    width: 38.331vw;
+  }
   .home-product .home-pcol1:nth-of-type(2n) {
     margin-right: 0;
   }
@@ -371,6 +377,7 @@
   .home-product .home-pcol1-txt {
     width: 100%;
     margin-top: 2.608vw;
+    padding-bottom: 6.519vw;
   }
   .home-product .cmn-p {
     padding-top: 2.608vw;
@@ -395,7 +402,7 @@
     border: 0.13vw solid #006699;
   }
   .laptop-row {  
-    padding-bottom: 6.519vw;
+    padding-bottom: 1.519vw;
   }
   
   /* Mobile Row */
@@ -403,8 +410,9 @@
   .mobile-row .home-ttl,
   .watch-row .home-ttl {
     margin-top: 4.302vw;
-    padding-top: 5.911vw;
+    padding-top: 8.911vw;
     padding-left: 2.999vw;
+    padding-bottom: 1.911vw;
   }
   .mobile-row {
     padding-bottom: 6.519vw;

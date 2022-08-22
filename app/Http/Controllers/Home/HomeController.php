@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,16 +17,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->latest()->take(6)->orderBy('created_at', 'DESC')->get();
-        return view('home', compact('products'));
+        $products = Product::with('category')->take(8)->inRandomOrder()->get();
+        $reviews =  Review::take(4)->inRandomOrder()->get();
+        return view('home', compact('products','reviews'));
     }
     public function about()
     {
         return view('about');
-    }
-    public function home()
-    {
-        return view('home');
     }
     public function feedback()
     {

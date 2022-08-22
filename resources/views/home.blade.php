@@ -19,185 +19,51 @@ SHM Store| Home
   <section class="laptop-row">
     <div class="l-inner">
       <div class="home-ttl">
-        <h2 class="cmn-h2">Hot Best Seller(Laptop)</h2>
+        <h2 class="cmn-h2">Our Available Products</h2>
       </div>
     
-      <ul class="home-product clearfix"> 
+      <ul class="home-product clearfix">
+        @foreach($products as $product) 
         <li class="home-pcol1">
-          <img src="frontend/img/home/img_laptop3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
+          <div class="img-test"> 
+          @if( $product->image )
+            <img src="{{ asset('uploads/product/'.$product->photo) }}" alt="{{$product->name}}">
+          @else
+          <img src="frontend/img/home/img_laptop3.jpg" alt="Dummy Product">
+          @endif
+          </div>
+          
+          
           <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
+            <p class="cmn-p"><sup><del>{{number_format($product->original_price)}} MMK</del></sup>{{number_format($product->offer_price)}} MMK</p>
+            <h5 class="cmn-h5">{{$product->name}}</h5>
             <button class="add-to-cart-btn">Add to cart</button>
             <button class="viewmore">View More</button>
           </div>
         </li>
+        @endforeach
 
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_laptop3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_laptop3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_laptop3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
+        
       </ul>
     </div>
   </section> <!-- /.laptop-row -->
 
-  <section class="mobile-row">
-    <div class="l-inner">
-      <div class="home-ttl">
-        <h2 class="cmn-h2">Hot Best Seller(Mobile)</h2>
-      </div>
-    
-      <ul class="home-product clearfix">
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_ph4.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_ph4.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_ph4.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_ph4.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section> <!-- /.mobile-row -->
-
-  <section class="watch-row">
-    <div class="l-inner">
-      <div class="home-ttl">
-        <h2 class="cmn-h2">Hot Best Seller(Watch)</h2>
-      </div>
-    
-      <ul class="home-product clearfix">
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_watch5.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_watch3.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_watch4.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-
-        <li class="home-pcol1">
-          <img src="frontend/img/home/img_watch1.jpg" alt="HP 15s-eq2113AU ( Natural Silver )">
-          <div class="home-pcol1-txt">
-            <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-            <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
-            <button class="viewmore">View More</button>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section> <!-- /.watch-row -->
+  
 
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Reviews</h2>
       <div class="home-review clearfix">
-        <div class="review-col">
-          <h3 class="cmn-h3">John</h3>
-          <p class="cmn-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit necessitatibus consequuntur, et alias cumque laboriosam aspernatur magnam unde quibusdam ex, id rerum eius dolore labore asperiores, optio placeat est?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit necessitatibus consequuntur, et alias cumque laboriosam aspernatur magnam unde quibusdam ex, id rerum eius dolore labore asperiores, optio placeat est?
-            
-          </p>
-        </div>
 
+      @foreach($reviews as $review)
         <div class="review-col">
-          <h3 class="cmn-h3">John</h3>
+          <h3 class="cmn-h3">{{$review->name}}</h3>
           <p class="cmn-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit necessitatibus consequuntur, et alias cumque laboriosam aspernatur magnam unde quibusdam ex, id rerum eius dolore labore asperiores, optio placeat est?
-           </p>
-        </div>
-
-        <div class="review-col">
-          <h3 class="cmn-h3">John</h3>
-          <p class="cmn-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit necessitatibus consequuntur, et alias cumque laboriosam aspernatur magnam unde quibusdam ex, id rerum eius dolore labore asperiores, optio placeat est?
+            {{$review->message}}
           </p>
         </div>
-        <div class="review-col">
-          <h3 class="cmn-h3">John</h3>
-          <p class="cmn-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sit necessitatibus consequuntur, et alias cumque laboriosam aspernatur magnam unde quibusdam ex, id rerum eius dolore labore asperiores, optio placeat est?
-          </p>
-        </div>
+      @endforeach
+        
       </div>
     </div>
   </section> <!-- /.review-row -->

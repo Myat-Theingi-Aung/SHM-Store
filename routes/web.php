@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Models\Product;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -24,6 +25,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
     Route::post('/product/create',[ProductController::class,'store'])->name('product.store');
     Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
+    Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
 

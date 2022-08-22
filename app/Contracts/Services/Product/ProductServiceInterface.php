@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\Product;
 
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 interface ProductServiceInterface
 {
@@ -10,6 +10,7 @@ interface ProductServiceInterface
     public function create();
 	public function store(Request $request);
 	public function destroy($id);
+    public function show($id);
     public function edit($id);
     public function update(Request $request,$id);
 }

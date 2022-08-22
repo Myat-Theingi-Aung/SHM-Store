@@ -2,7 +2,7 @@
 
 namespace App\Services\Product;
 
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use App\Contracts\Dao\Product\ProductDaoInterface;
 use App\Contracts\Services\Product\ProductServiceInterface;
 
@@ -38,6 +38,11 @@ class ProductService implements ProductServiceInterface
     public function edit($id)
     {
         return $this->productDao->edit($id);
+    }
+
+    public function show($id)
+    {
+        return $this->productDao->show($id);
     }
 
     public function update($validated,$id)

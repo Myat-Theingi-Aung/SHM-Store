@@ -2,9 +2,9 @@
 @section('title', 'SHM Store | Show User List' )
 <link rel="stylesheet" href="{{ asset('backend/css/product.css') }}">
 <style>
-    img{
+    /*img{
         border-radius: 50%;
-    }
+    }*/
     table tr td{
         vertical-align: middle;
     }
@@ -59,9 +59,7 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>
-                        <div class="admin-info">
-                            <img src="{{ $user->getPhotoPath() }}" alt="{{ $user->name }}">
-                        </div>
+                        <img src="{{ $user->getPhotoPath() }}" alt="{{ $user->name }}" class="img-user">
                     </td>
                     <td>{{ ucwords(strtolower($user->name)) }}</td>
                     <td>{{ $user->email }}</td>

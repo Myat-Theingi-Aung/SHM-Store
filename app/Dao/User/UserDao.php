@@ -2,6 +2,7 @@
 
 namespace App\Dao\User;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Contracts\Dao\User\UserDaoInterface;
@@ -14,7 +15,7 @@ class UserDao implements UserDaoInterface
      */
     public function getUserList()
     {
-        $userList = User::orderBy('id', 'DESC')->paginate(2);
+        $userList = User::orderBy('id', 'DESC')->paginate(5);
         return $userList;
     }
 
@@ -78,7 +79,8 @@ class UserDao implements UserDaoInterface
     public function deleteUserById($id)
     {
         $user = User::find($id);
-        $user->delete();
+        $user->deleted_at = Carbon::now();
+        $user->save();
         return $user;
     }
     

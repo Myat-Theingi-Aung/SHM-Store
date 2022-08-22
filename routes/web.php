@@ -5,6 +5,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -27,7 +28,16 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+
+    // User Module
+    Route::get('/user',                [UserController::class, 'showUserList'])->name('user.index');
+    Route::get('/user/create',         [UserController::class, 'showCreateUserView'])->name('user.create');
+    Route::post('/user/create',        [UserController::class, 'submitCreateUserView'])->name('user.store');
+    Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
+    Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
+    Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 });
+
 
 
 

@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,9 +16,11 @@ class AppServiceProvider extends ServiceProvider
     {
         // Dao Registration
         $this->app->bind('App\Contracts\Dao\Product\ProductDaoInterface', 'App\Dao\Product\ProductDao');
+        $this->app->bind('App\Contracts\Dao\User\UserDaoInterface', 'App\Dao\User\UserDao');
 
         // Business Logic Registration
         $this->app->bind('App\Contracts\Services\Product\ProductServiceInterface', 'App\Services\Product\ProductService');
+        $this->app->bind('App\Contracts\Services\User\UserServiceInterface', 'App\Services\User\UserService');
 
     }
 

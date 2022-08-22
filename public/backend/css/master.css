@@ -121,6 +121,12 @@
     border: 2px solid #fff;
 }
 
+.img-user{
+    width: 58px;
+    border-radius: 50%;
+    border: 2px solid #006699;
+}
+
 .admin-info p{
     float: left;
     padding-top: 10px;
@@ -242,6 +248,11 @@
         float: left;
         padding-top: 0.781vw;
         width: 75%;
+    }
+
+    .img-user{
+        width: 4.531vw;
+        border: 0.156vw solid #006699;
     }
     
     .content-area{
@@ -447,6 +458,11 @@
         width: 75%;
     }
     
+    .img-user{
+        width: 7.562vw;
+        border: 0.261vw solid #006699;
+    }
+
     .content-area{
         margin-top: 13.038vw;
     }

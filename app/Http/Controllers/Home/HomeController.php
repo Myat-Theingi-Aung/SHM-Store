@@ -27,4 +27,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function feedback()
+    {
+        return view('feedback');
+    }
+    public function product()
+    {
+        return view('product');
+    }
 }

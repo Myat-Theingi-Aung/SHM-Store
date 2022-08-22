@@ -49,6 +49,12 @@
   margin-right: 2.6%;
   margin-bottom: 2%;
 }
+.home-product .home-pcol1:hover {
+  transform: scale(1.1);
+}
+.home-product .home-pcol1 img {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
 
 .home-product .home-pcol1:nth-of-type(4n) {
   margin-right: 0;
@@ -56,7 +62,7 @@
 .home-product .home-pcol1-txt {
   width: 100%;
   margin-top: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'RobotoCondensed', sans-serif;
   text-align: center;
 }
 .home-product .cmn-p {
@@ -81,6 +87,7 @@
   border-radius: 15px;
   padding: 8px 20px;
   font-size: 16px;
+  cursor: pointer;
 }
 .home-product .add-to-cart-btn:hover, .home-product .viewmore:hover {
   background-color: #ffffff;

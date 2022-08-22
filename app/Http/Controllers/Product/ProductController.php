@@ -38,9 +38,9 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        //dd($request->input('page'));
         $products = $this->productInterface->index();
         $i = ($request->input('page', 1) - 1) * 5;
+
         return view('admin.product.index', compact('products','i'));
     }
     

@@ -1,4 +1,4 @@
-@extends('../layout/backend/master')
+@extends('../layouts/backend/master')
 @section('title', 'SHM Store | Show User List' )
 <link rel="stylesheet" href="{{ asset('backend/css/product.css') }}">
 <style>

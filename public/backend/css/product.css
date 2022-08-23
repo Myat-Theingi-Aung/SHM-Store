@@ -1,0 +1,817 @@
+
+.category{
+    float: left;
+    width: 100% !important;
+}
+.category input{
+    width: 100% !important;
+}
+.cat-btn{
+    float: none;
+    width: 20%;
+    font-size: 16px !important;
+}
+
+nav{
+    display: inline-block;
+    text-align:end;
+}
+.pagination{
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.pagination .active{
+    border-radius: 50%;
+    width: 36px;
+    color: #fff;
+}
+
+.page-item{
+    float: left;
+    padding: 10px 5px;
+    width: 36px;
+    text-align: center !important;
+}
+
+.page-item:first-child {
+    padding: 8px !important;
+    font-size: 20px !important;
+    margin-right: 15px;
+}
+
+.page-item:last-child{
+    padding: 8px !important;
+    font-size: 20px !important;
+}
+
+
+.card{
+    margin-top: 110px;
+    margin-bottom: 40px;
+    margin-right: 5px;
+    background-color: #fff;
+}
+
+.card-body{
+    padding: 30px;
+}
+
+.ttl .cmn-btn a{
+    color: #fff;
+}
+
+textarea{
+    width: 100%;
+}
+
+.ttl{
+    padding-bottom: 10px;
+}
+
+.ttl .cmn-h3{
+    font-size: 28px;
+    padding-top: 6px;
+    float: left;
+    font-weight: 700;
+}
+
+.ttl button{
+    float: right;
+}
+
+.l-col{
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+}
+
+.r-col{
+    float: right;
+    width: 50%;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+}
+
+.r-col:last-child{
+    margin-bottom: 10px;
+}
+
+.input-gp{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-gp select{
+    padding: 12px 5px;
+    width: 100%;
+    outline: none;
+}
+
+.input-gp label{
+    font-size: 20px;
+    display: inline-block;
+    padding-bottom: 15px; 
+}
+
+.input-gp input{
+    width: 100%;
+    border: 1px solid;
+    padding: 13px 10px;
+    outline: none;
+}
+
+.message{
+    width: 100% !important;
+}
+
+.message label{
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    padding-bottom: 15px; 
+}
+
+.photo input[type=file]{
+    padding: 10px;
+}
+
+.btn-gp .cmn-btn{
+    margin-top: 20px;
+}
+
+.msg{
+    font-weight: 700;
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+}
+
+button{
+    padding : 5px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+table{
+    border: 1px solid black !important;
+    border-collapse: collapse;
+    margin-top: 30px !important;
+    text-align: center;
+    width: 100%;
+}
+
+th,tr,td{
+    border: 1px solid black !important;
+}
+
+thead tr{
+    background-color: #00000050;
+    color: #fff;
+}
+
+tbody tr:hover{
+    background-color: #f3f3f3;
+}
+
+
+td{
+    padding: 10px 0px !important;
+    vertical-align: middle;
+}
+
+td:last-child{
+    padding-top: 0 !important;
+}
+
+th{
+    padding: 10px 26px !important;
+}
+
+.btn-div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-div form{
+    display: inline-block;
+}
+
+.details-info{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.details-info .lft{
+    float : right;
+    width: 50%;
+   
+}
+
+.details-info .lft img{
+    width: 80% !important;
+    margin-left: 80px;
+}
+
+.details-info .rgt{
+    float : left;
+    width: 50%;
+    margin-top: 18px; 
+    border-right: 1px solid #006699;
+}
+
+.details-info p{
+    padding: 13px 0px;
+}
+
+.details-info p .pdt-ttl{
+    display: inline-block;
+    width: 28%;
+}
+
+.details-info p .full-col{
+    display: inline-block;
+    width: 5%;
+}
+
+.edit-icon{
+    fill: #006699;
+}
+
+.del-icon{
+    fill: red;
+}
+
+.details-icon{
+    fill: green;
+}
+
+.del-svg{
+    width: 18px;
+}
+
+.details-svg{
+    width: 21px;
+}
+
+.edit-svg{
+    width: 22px;
+}
+
+.product-desc{
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+.product-desc .lft{
+    float: left;
+    width: 17%;
+}
+
+.product-desc .rgt{
+    float: right;
+    width: 83%;
+    text-align: justify;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+
+@media screen and (min-width:768px) and (max-width:1280px)
+{
+    .cat-btn{
+        font-size: 1.25vw !important;
+    }
+    nav{
+        display: inline-block;
+        text-align:end;
+    }
+    .pagination{
+        margin-top: 3.125vw;
+        display: inline-block;
+    }
+    
+    .pagination .active{
+        border-radius: 50%;
+        width: 2.813vw;
+        color: #fff;
+    }
+    
+    .page-item{
+        float: left;
+        padding: 0.781vw 0.391vw;
+        width: 2.813vw;
+        text-align: center !important;
+    }
+    
+    .page-item:first-child {
+        padding: 0.625vw !important;
+        font-size: 1.563vw !important;
+        margin-right: 1.172vw;
+    }
+    
+    .page-item:last-child{
+        padding: 0.625vw !important;
+        font-size: 1.563vw !important;
+    }
+    
+    .card{
+        margin-top: 8.594vw;
+        margin-bottom: 3.125vw;
+        margin-right: 0.391vw;
+        background-color: #fff;
+    }
+    .card-body{
+        padding: 2.344vw;
+    }
+    
+    .ttl .cmn-btn a{
+        color: #fff;
+    }
+    
+    textarea{
+        width: 100%;
+        font-size: 1.25vw;
+    }
+    
+    .ttl{
+        padding-bottom: 0.781vw;
+    }
+    
+    .ttl .cmn-h3{
+        font-size: 2.188vw;
+        padding-top: 0.469vw;
+        float: left;
+        font-weight: 700;
+    }
+    
+    .ttl button{
+        float: right;
+    }
+    
+    .l-col{
+        float: left;
+        width: 50%;
+        padding-right: 1.563vw;
+    }
+    
+    .r-col{
+        margin-bottom: 2.344vw;
+        float: right;
+        width: 50%;
+        padding-left: 1.563vw;
+    }
+    
+    .r-col:last-child{
+        margin-bottom: 0.781vw;
+    }
+    
+    .input-gp{
+        margin-top: 0.781vw;
+        margin-bottom: 0.781vw;
+        width: 100%;
+    }
+    
+    .input-gp select{
+        padding: 0.938vw 0.391vw;
+        width: 100%;
+        outline: none;
+        font-size: 1.25vw;
+    }
+    
+    .input-gp label{
+        font-size: 1.563vw;
+        display: inline-block;
+        padding-bottom: 1.172vw; 
+    }
+    
+    .input-gp input{
+        width: 100%;
+        font-size: 1.25vw;
+        border: 0.078vw solid;
+        padding: 1.016vw 0.781vw;
+        outline: none;
+    }
+    
+    .message{
+        width: 100% !important;
+    }
+    
+    .message label{
+        font-size: 1.563vw;
+        display: inline-block;
+        margin-top: 1.172vw;
+        padding-bottom: 1.172vw; 
+    }
+    
+    .photo input[type=file]{
+        padding: 0.781vw;
+    }
+    
+    .btn-gp .cmn-btn{
+        margin-top: 1.563vw;
+    }
+    
+    .msg{
+        font-weight: 700;
+        font-size: 1.094vw;
+        color: red;
+        margin-top: 0.391vw;
+    }
+    
+    button{
+        padding : 0.391vw;
+        outline: none;
+        border: none;
+        background: none;
+    }
+    
+    table{
+        border: 0.078vw solid black !important;
+        border-collapse: collapse;
+        margin-top: 2.344vw !important;
+        text-align: center;
+        width: 100%;
+    }
+    
+    th,tr,td{
+        border: 0.078vw solid black !important;
+    }
+    
+    thead tr{
+        background-color: #00000050;
+        color: #fff;
+    }
+    
+    tbody tr:hover{
+        background-color: #f3f3f3;
+    }
+    
+    
+    td{
+        padding: 0.781vw 0vw !important;
+        vertical-align: middle;
+    }
+    
+    td:last-child{
+        padding-top: 0 !important;
+    }
+    
+    th{
+        padding: 0.781vw 2.031vw !important;
+    }
+    
+    .btn-div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .btn-div form{
+        display: inline-block;
+    }
+    
+    .details-info{
+        width: 80%;
+        margin: auto;
+        margin-top: 2.344vw;
+        font-weight: 500;
+    }
+    
+    .details-info .lft{
+        float : right;
+        width: 50%;
+       
+    }
+    
+    .details-info .lft img{
+        width: 80% !important;
+        margin-left: 6.25vw;
+    }
+    
+    .details-info .rgt{
+        float : left;
+        width: 50%;
+        margin-top: 1.406vw; 
+        border-right: 0.078vw solid #006699;
+    }
+    
+    .details-info p{
+        padding: 1.016vw 0vw;
+    }
+    
+    .details-info p .pdt-ttl{
+        display: inline-block;
+        width: 28%;
+    }
+    
+    .details-info p .full-col{
+        display: inline-block;
+        width: 5%;
+    }
+    
+    .del-svg{
+        width: 1.406vw;
+    }
+    
+    .details-svg{
+        width: 1.641vw;
+    }
+    
+    .edit-svg{
+        width: 1.719vw;
+    }
+    
+    .product-desc{
+        width: 80%;
+        margin: auto;
+        margin-top: 1.953vw;
+        font-weight: 500;
+    }
+    
+    .product-desc .lft{
+        float: left;
+        width: 17%;
+    }
+    
+    .product-desc .rgt{
+        float: right;
+        width: 83%;
+        line-height: 1.4;
+        letter-spacing: 0.078vw;
+    }
+}
+
+@media screen and (max-width:767.9px) 
+{
+    .cat-btn{
+        float: right;
+        width: 20%;
+        font-size: 2.086vw !important;
+    }
+    nav{
+        display: inline-block;
+        text-align:end;
+    }
+    .pagination{
+        margin-top: 5.215vw;
+        display: inline-block;
+    }
+    
+    .pagination .active{
+        border-radius: 50%;
+        width: 4.694vw;
+        color: #fff;
+        padding: 1.304vw;
+    }
+    
+    .page-item{
+        float: left;
+        padding: 1.304vw 0.652vw;
+        width: 4.694vw;
+        text-align: center !important;
+    }
+    
+    .page-item:first-child {
+        padding: 1.043vw !important;
+        font-size: 2.608vw !important;
+        margin-right: 1.956vw;
+    }
+    
+    .page-item:last-child{
+        padding: 1.043vw !important;
+        font-size: 2.608vw !important;
+    }
+    
+    .card{
+        margin-top: 14.342vw;
+        margin-bottom: 5.215vw;
+        margin-right: 0.652vw;
+        background-color: #fff;
+    }
+    .card-body{
+        padding: 3.911vw;
+    }
+    
+    .ttl .cmn-btn a{
+        color: #fff;
+    }
+    
+    textarea{
+        width: 100%;
+        font-size: 2.086vw;
+    }
+    
+    .ttl{
+        padding-bottom: 1.304vw;
+    }
+    
+    .ttl .cmn-h3{
+        font-size: 3.651vw;
+        padding-top: 0.782vw;
+        float: left;
+        font-weight: 700;
+    }
+    
+    .ttl button{
+        float: right;
+    }
+    
+    .l-col{
+        float: left;
+        width: 50%;
+        padding-right: 2.608vw;
+    }
+    
+    .r-col{
+        float: right;
+        margin-bottom: 6.911vw;
+        width: 50%;
+        padding-left: 2.608vw;
+    }
+    
+    .r-col:last-child{
+        margin-bottom: 1.304vw;
+    }
+    
+    .input-gp{
+        margin-top: 1.304vw;
+        margin-bottom: 1.304vw;
+        width: 100%;
+    }
+    
+    .input-gp select{
+        padding: 1.565vw 0.652vw;
+        width: 100%;
+        font-size: 2.086vw;
+        outline: none;
+    }
+    
+    .input-gp label{
+        font-size: 2.608vw;
+        display: inline-block;
+        padding-bottom: 1.956vw; 
+    }
+    
+    .input-gp input{
+        width: 100%;
+        font-size: 2.086vw;
+        border: 0.13vw solid;
+        padding: 1.695vw 1.304vw;
+        outline: none;
+    }
+    
+    .message{
+        width: 100% !important;
+    }
+    
+    .message label{
+        font-size: 2.608vw;
+        display: inline-block;
+        margin-top: 1.956vw;
+        padding-bottom: 1.956vw; 
+    }
+    
+    .photo input[type=file]{
+        padding: 1.304vw;
+    }
+    
+    .btn-gp .cmn-btn{
+        margin-top: 2.608vw;
+    }
+    
+    .msg{
+        font-weight: 700;
+        font-size: 1.825vw;
+        color: red;
+        margin-top: 0.652vw;
+    }
+    
+    button{
+        padding : 0.652vw;
+        outline: none;
+        border: none;
+        background: none;
+    }
+    
+    table{
+        border: 0.13vw solid black !important;
+        border-collapse: collapse;
+        margin-top: 3.911vw !important;
+        text-align: center;
+        width: 100%;
+    }
+    
+    th,tr,td{
+        border: 0.13vw solid black !important;
+    }
+    
+    thead tr{
+        background-color: #00000050;
+        color: #fff;
+    }
+    
+    tbody tr:hover{
+        background-color: #f3f3f3;
+    }
+    
+    
+    td{
+        padding: 1.304vw 0vw !important;
+        vertical-align: middle;
+    }
+    
+    td:last-child{
+        padding-top: 0 !important;
+    }
+    
+    th{
+        padding: 1.304vw 3.39vw !important;
+    }
+    
+    .btn-div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .btn-div form{
+        display: inline-block;
+    }
+    
+    .details-info{
+        width: 95%;
+        margin: auto;
+        margin-top: 3.911vw;
+        font-weight: 500;
+    }
+    
+    .details-info .lft{
+        float : right;
+        width: 50%;
+       
+    }
+    
+    .details-info .lft img{
+        width: 80% !important;
+        margin-left: 10.43vw;
+    }
+    
+    .details-info .rgt{
+        float : left;
+        width: 50%;
+        margin-top: 2.347vw; 
+        border-right: 0.13vw solid #006699;
+    }
+    
+    .details-info p{
+        padding: 1.695vw 0vw;
+    }
+    
+    .details-info p .pdt-ttl{
+        display: inline-block;
+        width: 32%;
+    }
+    
+    .details-info p .full-col{
+        display: inline-block;
+        width: 5%;
+    }
+
+    .del-svg{
+        width: 1.956vw;
+    }
+    
+    .details-svg{
+        width: 2.347vw;
+    }
+    
+    .edit-svg{
+        width: 2.347vw;
+    }
+    
+    .product-desc{
+        width: 95%;
+        margin: auto;
+        margin-top: 3.259vw;
+        font-weight: 500;
+    }
+    
+    .product-desc .lft{
+        float: left;
+        width: 18%;
+    }
+    
+    .product-desc .rgt{
+        float: right;
+        width: 81%;
+        line-height: 1.4;
+        text-align: justify;
+        letter-spacing: 0.13vw;
+    }
+}

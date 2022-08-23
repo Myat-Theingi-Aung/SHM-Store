@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\OrderItem;
 use App\Models\Subscriber;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
@@ -108,5 +109,25 @@ class DatabaseSeeder extends Seeder
         $review->email   = 'jane@exmaple.com';
         $review->message = $faker->sentence();
         $review->save();
+
+        // Orders
+        $json = File::get(public_path() . '/files/orders.json');
+        $objs = json_decode($json);
+
+        foreach($objs as $obj){
+            DB::table('orders')->insert([
+                'user_id'    => $obj->user_id,
+                'total_amt'  => $obj->total_amt,
+                'created_at' => $obj->created_at,
+            ]);
+
+            DB::table('order_items')->insert([
+                'order_id'   => $obj->order_id,
+                'product_id' => $obj->product_id,
+                'price'      => $obj->price,
+                'qty'        => $obj->qty,
+                'created_at' => $obj->created_at,
+            ]);
+        }
     }
 }

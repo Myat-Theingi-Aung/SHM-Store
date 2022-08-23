@@ -1,5 +1,5 @@
-@extends('../layout/backend/master')
+@extends('../layouts/backend/master')
 @section('title')SHM Store | Admin dashboard @endsection
 @section('content')
-<h1>dashboard page</h1>
+
 @endsection

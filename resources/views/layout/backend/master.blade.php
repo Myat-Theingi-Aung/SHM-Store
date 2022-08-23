@@ -50,7 +50,7 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">User</a>
+                        <a href="{{ route('admin.user.index') }}" class="menu-item-link {{ Request::is('admin/user*') ? 'active' : '' }}">User</a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">

@@ -89,6 +89,7 @@ textarea{
 .r-col{
     float: right;
     width: 50%;
+    margin-bottom: 50px;
     padding-left: 20px;
     margin-bottom: 50px;
 }

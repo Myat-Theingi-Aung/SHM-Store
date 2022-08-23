@@ -39,7 +39,6 @@
     <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
-    {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
     <script>
         @if(session('alert_msg'))
         let alert_msg = "<?php echo session('alert_msg'); ?>";

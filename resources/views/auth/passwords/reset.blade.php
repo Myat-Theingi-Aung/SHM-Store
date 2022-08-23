@@ -28,13 +28,13 @@
                 </div>
 
                 <div class="input-box">
-                    <input type="text" name="password" class="input @error('password') is-invalid @enderror" 
+                    <input type="password" name="password" class="input @error('password') is-invalid @enderror" 
                     placeholder="Enter Your New Password">
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" name="password_confirmation" class="input" 
+                    <input type="password" name="password_confirmation" class="input" 
                     placeholder="Confirm Your New Password">
                 </div>
 

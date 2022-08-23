@@ -3,6 +3,5 @@ $(document).ready(function () {
     fontSizeCheck: true
     
   })
- 
 });
 

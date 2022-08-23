@@ -1,7 +1,5 @@
 <?php
 
-
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
@@ -37,6 +35,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 });
+
 
 
 

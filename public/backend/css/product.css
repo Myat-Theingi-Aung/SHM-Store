@@ -1,3 +1,17 @@
+
+.category{
+    float: left;
+    width: 100% !important;
+}
+.category input{
+    width: 100% !important;
+}
+.cat-btn{
+    float: none;
+    width: 20%;
+    font-size: 16px !important;
+}
+
 nav{
     display: inline-block;
     text-align:end;
@@ -31,12 +45,14 @@ nav{
     font-size: 20px !important;
 }
 
+
 .card{
     margin-top: 110px;
     margin-bottom: 40px;
     margin-right: 5px;
     background-color: #fff;
 }
+
 .card-body{
     padding: 30px;
 }
@@ -270,6 +286,9 @@ th{
 
 @media screen and (min-width:768px) and (max-width:1280px)
 {
+    .cat-btn{
+        font-size: 1.25vw !important;
+    }
     nav{
         display: inline-block;
         text-align:end;
@@ -531,6 +550,11 @@ th{
 
 @media screen and (max-width:767.9px) 
 {
+    .cat-btn{
+        float: right;
+        width: 20%;
+        font-size: 2.086vw !important;
+    }
     nav{
         display: inline-block;
         text-align:end;

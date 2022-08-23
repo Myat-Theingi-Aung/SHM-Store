@@ -67,10 +67,14 @@
                 <div class="login-btn">
                     <button type="submit" class="submit">Sign In</button>
                 </div>
-                <a href="{{ route('password.request') }}" class="forgot">Forgot Password ?</a>
-                <p class="or">OR</p>
-                <a href="#" class="create">Create an New Account</a>
-                 
+
+ 
+                 <a href="{{ route('password.request') }}" class="forgot">Forgot Password ?</a>
+                 <p class="or">OR</p>
+                 <a href="{{route('register')}}" class="create">Create an New Account</a>
+
+                              
+         
                 </div>
                
             </form>

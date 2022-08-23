@@ -32,11 +32,17 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Category</a>
+                        <a href="{{ route('admin.category.index') }}"
+                        class="menu-item-link {{ Request::is('admin/category*') ? 'active' : '' }}">
+                            Category
+                        </a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="{{ url('admin/product') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">Product</a>
+                        <a href="{{ url('admin/product') }}" 
+                        class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">
+                            Product
+                        </a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">

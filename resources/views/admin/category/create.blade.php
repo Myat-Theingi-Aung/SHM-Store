@@ -11,13 +11,13 @@
         <hr>
         <form action="{{ route('admin.category.store') }}" method="post" class="clearfix" enctype="multipart/form-data">
             @csrf
-            <div class="l-col">
-                <div class="input-gp">
-                    <label for="name">Product Name</label><br>
-                    <input type="text" name="name" value="{{ @old('name') }}">
+            
+                <div class="input-gp category">
+                    <label for="name">Category Name</label><br>
+                    <input type="text" name="name" value="{{ @old('name') }}" class="">
                     <p class="msg">{{ $errors->first('name') }}</p>
                 </div>
-            </div>
+            
             
             <div class="btn-gp">
                 <button class="cmn-btn">Create</button>

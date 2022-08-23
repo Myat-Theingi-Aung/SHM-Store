@@ -22,6 +22,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
     Route::post('/product/create',[ProductController::class,'store'])->name('product.store');
     Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
+    Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
 
@@ -31,7 +32,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/category/create',  [CategoryController::class, 'submitCreateCategoryView'])->name('category.store');
     Route::get('/category/edit/{id}', [CategoryController::class, 'showEditCategoryView'])->name('category.edit');
     Route::post('/category/edit/{id}',  [CategoryController::class, 'submitEditCategoryView'])->name('category.update');
-    Route::get('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+    Route::delete('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 });
 
 

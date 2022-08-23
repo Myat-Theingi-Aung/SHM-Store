@@ -15,7 +15,7 @@
                 <div class="input-gp category">
                 
                     <label for="name">Category Name</label><br>
-                    <input type="text" name="name" value="{{ $category->name ?? @old('name') }}">
+                    <input type="text" name="name" value="{{ old('name', $category->name) }}" >
                     <p class="msg">{{ $errors->first('name') }}</p>
                 </div>
         

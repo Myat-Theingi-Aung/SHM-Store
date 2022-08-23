@@ -29,10 +29,12 @@ class CategoryController extends Controller
      * To show category list
      * @return View category list
      */
-    public function showCategoryList()
+    public function showCategoryList(Request $request)
     {
         $categories = $this->categoryInterface->getCategoryList();
-        return view('admin.category.index', compact('categories'));
+        $i = ($request->input('page', 1) - 1) * 5;
+        return view('admin.category.index', compact('categories','i'));
+     
     }
 
      /**
@@ -71,7 +73,7 @@ class CategoryController extends Controller
     /**
      * To submit edit category view
      * @param array $validated validated values from category request
-     * @param $id category idှ
+     * @param $id category id
      * @return View category list
      */
     public function submitEditCategoryView(CategoryRequest $request, $id)

@@ -54,10 +54,6 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Customer</a>
-                    </li>
-                    <li class="menu-spacer"></li>
-                    <li class="menu-item">
                         <a href="" class="menu-item-link">Subscriber</a>
                     </li> 
                     <li class="menu-spacer"></li>
@@ -97,5 +93,8 @@
 <script src="{{ asset('backend/js/master.js') }}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
+<!-- Sweet Alert v2 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@stack('js')
 </body>
 </html>

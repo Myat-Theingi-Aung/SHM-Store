@@ -1,3 +1,21 @@
+.swal2-popup {
+    font-size: 12.5px !important;
+}
+
+.swal2-styled.swal2-confirm {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+.btn,
+.swal2-styled.swal2-cancel,
+.swal2-styled.swal2-confirm {
+    box-shadow: none !important; 
+    outline: none !important;
+    border-radius: 0 !important;
+    padding: 10px 24px !important;
+}
+
 .main .nav-brand{
     margin-top: 20px;
     padding: 15px 30px;
@@ -111,6 +129,24 @@
 
 @media screen and (min-width:768px) and (max-width:1280px)
 {
+    .swal2-popup {
+        font-size: 0.977vw !important;
+    }
+    
+    .swal2-styled.swal2-confirm {
+        padding-left: 1.953vw !important;
+        padding-right: 1.953vw !important;
+    }
+    
+    .btn,
+    .swal2-styled.swal2-cancel,
+    .swal2-styled.swal2-confirm {
+        box-shadow: none !important; 
+        outline: none !important;
+        border-radius: 0 !important;
+        padding: 0.781vw 1.875vw !important;
+    }
+
     .main .nav-brand{
         margin-top: 1.563vw;
         padding: 1.172vw 1.797vw;
@@ -201,8 +237,26 @@
     }
 }
 
-@media screen and (max-width:767.9px) {
+@media screen and (max-width:767.9px) 
+{
+    .swal2-popup {
+        font-size: 1.63vw !important;
+    }
     
+    .swal2-styled.swal2-confirm {
+        padding-left: 3.259vw !important;
+        padding-right: 3.259vw !important;
+    }
+    
+    .btn,
+    .swal2-styled.swal2-cancel,
+    .swal2-styled.swal2-confirm {
+        box-shadow: none !important; 
+        outline: none !important;
+        border-radius: 0 !important;
+        padding: 1.304vw 3.129vw !important;
+    }
+
     .main  .logo{
         margin-bottom: 2.608vw;
         float: left;

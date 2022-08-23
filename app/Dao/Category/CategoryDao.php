@@ -2,6 +2,7 @@
 
 namespace App\Dao\Category;
 
+use Carbon\Carbon;
 use App\Models\Category;
 use App\Contracts\Dao\Category\CategoryDaoInterface;
 
@@ -13,7 +14,7 @@ class CategoryDao implements CategoryDaoInterface
      */
     public function getCategoryList()
     {
-        $categoryList = Category::all();
+        $categoryList = Category::orderBy('created_at','desc')->paginate(5);
         return $categoryList;
     }
 
@@ -63,7 +64,8 @@ class CategoryDao implements CategoryDaoInterface
     public function deleteCategoryById($id)
     {
         $category = Category::find($id);
-        $category->delete();
+        $category->deleted_at = Carbon::now();
+        $category->save();
         return $category;
     }
 }

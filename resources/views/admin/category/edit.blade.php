@@ -9,7 +9,7 @@
             <button class="cmn-btn "><a href="{{ route('admin.category.index') }}">Back</a></button>
         </div>
         <hr>
-        <form action="{{ route('admin.category.store') }}" method="post" class="clearfix" enctype="multipart/form-data">
+        <form action="{{ route('admin.category.update',$category->id) }}" method="post" class="clearfix" enctype="multipart/form-data">
             @csrf
          
                 <div class="input-gp category">

@@ -5,6 +5,8 @@ $(document).ready(function () {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
     // adaptiveHeight: true
   });
 

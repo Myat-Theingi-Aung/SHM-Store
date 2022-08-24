@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('common/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/master.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/dashboard.css') }}">
 </head>
 <body>
     <section class="main clearfix">
@@ -92,10 +91,11 @@
         </div>
     </section>
 <script src="{{ asset('common/js/jquery.min.js') }}"></script>
+<script src="{{ asset('common/js/way_point/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('common/js/counter_up.js') }}"></script>
 <script src="{{ asset('backend/js/master.js') }}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
-<!-- Sweet Alert v2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @stack('js')
 </body>

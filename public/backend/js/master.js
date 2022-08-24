@@ -15,6 +15,11 @@ $(document).ready(function () {
 
     $('.pagination').addClass('clearfix');
 
+    $('.counter-up').counterUp({
+        delay: 10,
+        time : 1000
+    });
+
     $(document).on('click', '.del-product-btn', function(e){
         e.preventDefault();
         let id = $(this).data('id');

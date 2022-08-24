@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+
+.sidebar a{
+    text-decoration: none !important;
+    font-family: 'poppins',sans-serif;
+}
+
+.main h1 {
+    font-weight: 700 !important;
+}
+
+.main .nav-brand {
+    padding: 10px 25px !important;
+}
+
+.nav-brand .logo{
+    margin-top: 10px !important;
+}
+
+.main .nav-brand{
+    margin-top: 20px;
+    padding: 0 !important;
+    text-align: center;
+    width: 16.2%;
+    background-color: #f8f9fa;
+    position: fixed;
+    left: 1.4%;
+}
+
+.menu-item .menu-item-link {
+    padding: 12px 17px !important;
+}
+
+.row-up{
+    margin-top: 135px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.col-up{
+    float: left;
+    max-width: 23.45%;
+    width: 23.45%;
+    margin-right: 20px;
+}
+
+.col-up:hover{
+    box-shadow: 5px 10px 18px #888888;
+    transition: 1s;
+}
+
+.col-up:last-child{
+    margin-right: 0px !important;
+}
+
+.card-up{
+    background-color: #fff;
+}
+
+.card-body-up{
+    padding-top: 20px;
+}
+
+.icon{
+    float: left;
+    width: 30%;
+}
+
+.txt{
+    float: right;
+    width: 70%;
+    text-align: left;
+}
+
+.txt p {
+    font-size: 20px;
+    color: rgb(135, 121, 121);
+}
+
+h4.cmn-h4 {
+    margin-bottom: 10px;
+}
+
+svg{
+    width: 40px;
+    margin-top: 10px;
+}
+
+svg path{
+    fill: #006699;
+}
+
+.chart-container {
+    width: 60% !important;
+    height: 400px !important;
+}
+
+canvas{
+    width: 60%;
+}
+.footer{
+    margin: 50px 0px;
+}

@@ -14,6 +14,8 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',     [HomeController::class, 'index'])->name('home');
 Route::get('/about',     [HomeController::class, 'about'])->name('about');
+Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
+Route::get('/product',     [HomeController::class, 'product'])->name('product');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -43,7 +45,6 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
     Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
-
 });
 
 

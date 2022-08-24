@@ -24,11 +24,14 @@
 
 .main .nav-brand{
     margin-top: 20px;
-    padding: 15px 35px;
+    padding: 15px 0px;
+    text-align: center;
+    width: 16.5%;
     background-color: #f8f9fa;
     position: fixed;
-    left: 1.7%;
+    left: 20px;
 }
+
 
 .main h1{
     font-size: 32px;

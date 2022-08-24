@@ -2,63 +2,36 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use DB;
-use Carbon\Carbon;
-use App\Models\User;
-use App\Models\Order;
-use App\Models\Product;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Contracts\Services\Dashboard\DashboardServiceInterface;
 
 class DashboardController extends Controller
 {
-    public function dashboard()
+        /**
+     * dashboard interface
+     */
+    private $dashboardInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(DashboardServiceInterface $dashboardInterface)
     {
-        $users = User::where('role','user')->count();
-        $products = Product::count();
-        $categories = Category::count();
-        $orders = Order::count();
-
-        $orderCountByMonth = Order::select( 
-            DB::raw('YEAR(created_at) AS year'), 
-            DB::raw('DATE_FORMAT(created_at, "%M") AS month'),
-            DB::raw('SUM(total_amt) AS sales_volume')
-        )->whereYear('created_at', date('Y')) 
-         ->groupBy('month','year')
-         ->get();
-        
-        $data = [];
-        
-        foreach($orderCountByMonth  as $row) {
-            $data['label'][] = $row->month;
-            $data['data'][] = (int) $row->sales_volume;
-        }
-    
-        $data['chart_data'] = json_encode($data);
-
-        return view('admin.dashboard',compact('users','products','categories','orders'),$data);
+        $this->dashboardInterface = $dashboardInterface;
     }
 
-    public function line()
+    /**
+     * To show order information
+     * 
+     * @return View dashboard
+     */
+    public function dashboard()
     {
-        $orderCountByMonth = Order::select( 
-            DB::raw('YEAR(created_at) AS year'), 
-            DB::raw('DATE_FORMAT(created_at, "%M") AS month'),
-            DB::raw('SUM(total_amt) AS sales_volume')
-        )->whereYear('created_at', date('Y')) 
-         ->groupBy('month','year')
-         ->get();
-        
-        $data = [];
-        
-        foreach($orderCountByMonth  as $row) {
-            $data['label'][] = $row->month;
-            $data['data'][] = (int) $row->sales_volume;
-        }
-    
-        $data['chart_data'] = json_encode($data);
-        return view('bar', $data);
+        $dataList = $this->dashboardInterface->dashboard();
+
+        return view('admin.dashboard', compact('dataList'));
     }
 
 }

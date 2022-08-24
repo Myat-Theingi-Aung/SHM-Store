@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6">
-            <div class="card mt-5">
+            <div class="card">
                 <div class="card-header">
                     SHM Store
                 </div>
@@ -31,16 +31,19 @@
 <script src="{{ asset('common/js/chart_js/Chart.min.js') }}"></script>
 
 <script>
-    var cData = JSON.parse(`<?php echo $chart_data; ?>`);
+    var cData = JSON.parse(`<?php echo $dataList['data']['chart_data']; ?>`);
+    var label = cData.label.reverse();
+    var data = cData.data.reverse()
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: cData.label,
+            labels: label,
             datasets: [
                 {
                     label: 'Monthly Sales Volume',
-                    data: cData.data,
+                    data: data,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

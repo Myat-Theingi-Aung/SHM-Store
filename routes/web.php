@@ -17,8 +17,6 @@ Route::get('/about',     [HomeController::class, 'about'])->name('about');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('/chart',[DashboardController::class,'chart'])->name('chart');
-    Route::get('/line',[DashboardController::class,'line'])->name('line');
 
     //product
     Route::get('/product',[ProductController::class,'index'])->name('product.index');

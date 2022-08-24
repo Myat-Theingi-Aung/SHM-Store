@@ -174,7 +174,7 @@
         padding: 1.172vw 1.797vw;
         background-color: #f8f9fa;
         position: fixed;
-        left: 1.7%;
+        left: 1.563vw;
     }
 
     .main h1{
@@ -299,12 +299,13 @@
     }
     
     .main .nav-brand{
+        width: 34% !important;
         margin-left: -100%;
         margin-top: 2.608vw;
         padding: 0.261vw 1.304vw;
         background-color: #f8f9fa;
         position: fixed;
-        left: 2.7%;
+        left: 2.608vw;
     }
 
     .active{
@@ -401,7 +402,7 @@
         margin-left: -100%;
         width: 39.113vw; 
         position: absolute;
-        z-index: 5;
+        z-index: 100000;
     }
     
     .content{

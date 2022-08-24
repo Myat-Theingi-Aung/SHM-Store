@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
@@ -26,10 +27,9 @@
       <nav class="gnav">
         <ul>
           <li><a href="{{route('home')}}" class="{{  Request::is('home') ? 'active' : '' }}" >Home</a></li>
-          <li><a href="">Product</a></li>
+          <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-          <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About
-            </a>
+          <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a>
           </li>
           <li><a href="">Feedback</a></li>
           @auth

@@ -1,4 +1,3 @@
-console.log('master js file');
 $(document).ready(function () {
     $(".show-sidebar-btn").click(function () {
         console.log('click show sidebar btn');

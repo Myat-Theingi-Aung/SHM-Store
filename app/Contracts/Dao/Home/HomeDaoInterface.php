@@ -21,4 +21,10 @@ interface HomeDaoInterface
      * @return $productList
      */
     public function getProductsByCategoryId($category_id);
+
+    /**
+     * To get random feedback list
+     * @return $feedbackList
+     */
+    public function getRandomFeedbackList();
 }

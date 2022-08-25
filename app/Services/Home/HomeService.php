@@ -49,4 +49,13 @@ class HomeService implements HomeServiceInterface
     {
         return $this->homeDao->getProductsByCategoryId($category_id);
     }
+
+    /**
+     * To get random feedback list
+     * @return $feedbackList
+     */
+    public function getRandomFeedbackList()
+    {
+        return $this->homeDao->getRandomFeedbackList();
+    }
 }

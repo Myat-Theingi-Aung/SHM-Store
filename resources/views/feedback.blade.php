@@ -6,7 +6,7 @@ SHM Store| Feedback
 
 <div class="l-inner">
     <div class="feedback-form"> 
-      <form name="feedback" method="post" action=" ">
+      <form name="feedback" method="POST" action="">
           @csrf
           <p class="feedback-p"><sup>**</sup>You can freely advise us on our service and products!<sup>**</sup></p> 
           <div class="input-gp"> 
@@ -30,15 +30,9 @@ SHM Store| Feedback
               <button class="btn-submit" name="send">Send</button>
               <p class="cmn-p"><sup>*</sup>We appreciate you taking the time to review our service!<sup>*</sup></p>
             </div>
-            
           </div>
-
-          
         </form>
     </div> 
-      
   </div>
-
-
 
 @endsection

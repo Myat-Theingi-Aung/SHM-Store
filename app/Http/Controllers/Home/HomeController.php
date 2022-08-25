@@ -35,8 +35,9 @@ class HomeController extends Controller
      */
     public function showHomePage()
     {
-        $products = $this->homeInterface->getRandomProductList();
-        return view('home', compact('products'));
+        $products  = $this->homeInterface->getRandomProductList();
+        $feedbacks = $this->homeInterface->getRandomFeedbackList();
+        return view('home', compact('products', 'feedbacks'));
     }
 
     /**
@@ -74,13 +75,14 @@ class HomeController extends Controller
         return view('product-category', compact('categories','products'));
     }
 
-    public function cart()
-    {
-        return view('cart');
-    }
-
-    public function feedback()
-    {
-        return view('feedback');
-    }
+    /**
+     * To show feedback page
+     * @return $feedbacks
+     * @return View feedback
+     */
+    //public function showFeedbackPage()
+    //{
+    //    $feedbacks = $this->homeInterface->getRandomFeedbackList();
+    //    return view('feedback', compact('feedbacks'));
+    //}
 }

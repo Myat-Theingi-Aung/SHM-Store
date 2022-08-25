@@ -30,7 +30,8 @@
           <li><a href="{{route('home')}}" class="{{  Request::is('home') ? 'active' : '' }}" >Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-            <a href="">
+            <a href="{{ route('cart.view') }}">
+              Cart
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
             </a>
           </li>
@@ -103,6 +104,15 @@
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
+  <script>
+    @if(session('status'))
+    let alert_msg = "<?php echo session('status'); ?>";
+    toastr.success(alert_msg, 'SUCCESS', {
+        closeButton: true,
+        progressBar: true,
+    });
+    @endif
+  </script>
   @stack('js')
 </body>
 </html>

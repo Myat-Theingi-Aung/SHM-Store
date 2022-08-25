@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Home;
 
 
 use App\Models\Product;
-<<<<<<< HEAD
 use App\Models\Review;
-=======
 use App\Models\Category;
->>>>>>> 79e57b9485a1acb082b7afe268f616bbff125f17
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Contracts\Services\Home\HomeServiceInterface;
@@ -38,14 +35,8 @@ class HomeController extends Controller
      */
     public function showHomePage()
     {
-<<<<<<< HEAD
-        $products = Product::with('category')->take(8)->inRandomOrder()->get();
-        $reviews =  Review::take(4)->inRandomOrder()->get();
-        return view('home', compact('products','reviews'));
-=======
         $products = $this->homeInterface->getRandomProductList();
         return view('home', compact('products'));
->>>>>>> 79e57b9485a1acb082b7afe268f616bbff125f17
     }
 
     /**
@@ -56,15 +47,16 @@ class HomeController extends Controller
     {
         return view('about');
     }
-<<<<<<< HEAD
+
     public function feedback()
     {
         return view('feedback');
     }
+
     public function product()
     {
         return view('product');
-=======
+    }
 
     /**
      * To show product page
@@ -90,6 +82,5 @@ class HomeController extends Controller
         $categories = Category::has('products')->get();
         $products   = $this->homeInterface->getProductsByCategoryId($category_id);
         return view('product-category', compact('categories','products'));
->>>>>>> 79e57b9485a1acb082b7afe268f616bbff125f17
     }
 }

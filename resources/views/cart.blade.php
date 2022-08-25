@@ -2,6 +2,8 @@
 
 <div align="center" style="margin-top: 50px;" >
     <a href="{{ route('product') }}">[ Back to Product Page ]</a>
+    &nbsp;
+    <a href="{{ route('login') }}">Login</a>
 </div>
 
 <table border="1" width=700 align="center" style="margin-top: 30px;" id="cartListTable">
@@ -51,8 +53,24 @@
             <td><span>{{ number_format($total_price) }}</span> <small>MMK</small></td>
             <td><a href="{{ route('cart.clear') }}">Clear Cart</a></td>
         </tr>
+
+        <tr align="center">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @auth
+                    <a href="{{ route('checkout') }}">[ Checkout ]</a>
+                @else
+                    <a href="javascript:;" onclick="toastr.error('You Need to Login First', 403)">[ Checkout ]</a>
+                @endauth
+            </td>
+        </tr>
     </tfoot>
 </table>
+
+
 
 <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>

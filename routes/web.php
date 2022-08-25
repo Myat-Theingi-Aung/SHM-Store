@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Checkout\CheckoutController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 Auth::routes();
@@ -29,8 +30,8 @@ Route::get('/remove-cart/{id}', [CartController::class, 'removeCart'])->name('ca
 Route::get('/clear-cart',       [CartController::class, 'clearCart'])->name('cart.clear');
 
 Route::middleware('auth')->group(function(){
-    //Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
-    //Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
+    Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
+    Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
 });
 
 
@@ -71,12 +72,3 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
 
 });
-
-
-
-
-
-
-
-
-

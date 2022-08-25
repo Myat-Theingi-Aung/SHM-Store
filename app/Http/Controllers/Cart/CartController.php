@@ -47,7 +47,6 @@ class CartController extends Controller
         $result = $this->cartInterface->getCart();
         if( $result['status'] ){
             return view('cart')->with([ 'cart' => $result['cart'] ]);
-            return redirect(url('/'));
         }
         Toastr::info('Your Cart is Empty &nbsp;<i class="fa fa-exclamation-circle"></i>', 'INFO');
         return back();
@@ -73,7 +72,7 @@ class CartController extends Controller
             Toastr::success('Cart Item Removed Successfully &nbsp;<i class="fa fa-exclamation-circle"></i>', 'SUCCESS');
             return back();
         }
-        return redirect(url('/'));
+        return redirect()->route('home');
     }
 
     /**

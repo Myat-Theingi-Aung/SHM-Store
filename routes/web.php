@@ -14,10 +14,8 @@ Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',     [HomeController::class, 'index'])->name('home');
-Route::get('/about',     [HomeController::class, 'about'])->name('about');
-Route::get('/product', function(){
-    return view('product');
-})->name('product');
+Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
+Route::get('/product',     [HomeController::class, 'product'])->name('product');
 
 // Cart Module
 Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
@@ -30,6 +28,7 @@ Route::middleware('auth')->group(function(){
     //Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
     //Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
 });
+
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');

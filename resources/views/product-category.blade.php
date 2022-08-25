@@ -3,20 +3,24 @@
 SHM Store| Product
 @endsection
 @section('content')
-
-
 <section class="box-container">
 	<div class="l-inner">
-		<ul class="ttl-box clearfix"> 
-			<li class="ttl-list active">
-      <a href="{{ route('product') }}">All Products</a>
+		<ul class="ttl-box clearfix">
+      <li class="ttl-list">
+        <a href="{{ route('product') }}" 
+        class="category-tab-link">
+          All Products
+        </a>
       </li>
       @foreach($categories as $category)
-      <li class="ttl-list" data-id="laptop-tab">
-        <a href="{{ route('product.category', $category->id) }}">{{$category->name}}</a>
+      <li class="ttl-list">
+        <a href="{{ route('product.category', $category->id) }}"
+        class="category-tab-link {{ Request::is('product/'.$category->id) ? 'tab-active' : '' }}">
+          {{$category->name}}
+        </a>
       </li>
       @endforeach
-		</ul>
+    </ul>
 
 		<!-- all tab -->
 		<ul class="item-box clearfix"> 
@@ -31,7 +35,7 @@ SHM Store| Product
             </div>
             <div class="item-txt">
               <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
-              <h5 class="cmn-h5">HP 15s-eq2113AU ( Natural Silver )</h5>
+              <h5 class="cmn-h5">{{ $product->name }}</h5>
               <button class="add-to-cart-btn">Add to cart</button>
               <button class="viewmore">View More</button>
             </div>

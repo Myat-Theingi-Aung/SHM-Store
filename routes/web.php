@@ -13,10 +13,10 @@ use App\Http\Controllers\Dashboard\DashboardController;
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/',     [HomeController::class, 'index'])->name('home');
-Route::get('/about',     [HomeController::class, 'about'])->name('about');
-Route::get('/product',     [HomeController::class, 'product'])->name('product');
-Route::get('/product/{category_id}',     [HomeController::class, 'getProductsByCategory'])->name('product.category');
+Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
+Route::get('/about', [HomeController::class, 'showAboutPage'])->name('about');
+Route::get('/product', [HomeController::class, 'showProductPage'])->name('product');
+Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -48,10 +48,10 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 
     // Profile 
-    Route::get('/profile',[ProfileController::class, 'showUserProfile'])->name('user.profile');
-    Route::get('/profile/edit',[ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
-    Route::post('/profile/update',[ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
-    Route::post('/password-update',[ProfileController::class, 'updateUserPassword'])->name('user.password-update');
+    Route::get('/profile', [ProfileController::class, 'showUserProfile'])->name('user.profile');
+    Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
+    Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
+    Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
 
 });
 

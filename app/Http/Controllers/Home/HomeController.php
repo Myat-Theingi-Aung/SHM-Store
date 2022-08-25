@@ -7,37 +7,69 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Contracts\Services\Home\HomeServiceInterface;
 
 class HomeController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * home interface
      *
-     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    private $homeInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(HomeServiceInterface $homeInterface)
     {
-        $products = Product::with('category')->latest()->take(6)->orderBy('created_at', 'DESC')->get();
+        $this->homeInterface = $homeInterface;
+    }
+
+    /**
+     * To show home page
+     * @return $products
+     * @return View user list
+     */
+    public function showHomePage()
+    {
+        $products = $this->homeInterface->getRandomProductList();
         return view('home', compact('products'));
     }
-    public function about()
+
+    /**
+     * To show about page
+     * @return View about
+     */
+    public function showAboutPage()
     {
         return view('about');
     }
-    public function home()
-    {
-        return view('home');
-    }
-    public function product()
+
+    /**
+     * To show product page
+     * @return $categories
+     * @return $products
+     * @return View product
+     */
+    public function showProductPage()
     {
         $categories = Category::has('products')->get();
-        $products = Product::with('category')->orderBy('created_at', 'DESC')->get();
+        $products   = $this->homeInterface->getProductList();
         return view('product', compact('products','categories'));
     }
-    public function getProductsByCategory($category_id) 
+    
+    /**
+     * To show product-category page
+     * @return $categories
+     * @return $products
+     * @return View product-category
+     */
+    public function showProductPageByCategory($category_id) 
     {
         $categories = Category::has('products')->get();
-        $products = Product::where('category_id',$category_id)->get();
-        return view('product-category', compact('products','categories'));
+        $products   = $this->homeInterface->getProductsByCategoryId($category_id);
+        return view('product-category', compact('categories','products'));
     }
 }

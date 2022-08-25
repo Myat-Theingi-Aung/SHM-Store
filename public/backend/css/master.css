@@ -1,0 +1,475 @@
+.swal2-popup {
+    font-size: 12.5px !important;
+}
+
+.swal2-styled.swal2-confirm {
+    
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+#toast-container>div { 
+    width: 380px !important; 
+    opacity: 1 !important;
+}
+
+.btn,
+.swal2-styled.swal2-cancel,
+.swal2-styled.swal2-confirm {
+    box-shadow: none !important; 
+    outline: none !important;
+    border-radius: 0 !important;
+    padding: 10px 24px !important;
+}
+
+.main .nav-brand{
+    margin-top: 20px;
+    padding: 15px 0px;
+    text-align: center;
+    width: 16.5%;
+    background-color: #f8f9fa;
+    position: fixed;
+    left: 20px;
+}
+
+
+.main h1{
+    font-size: 32px;
+}
+
+.main h1 a{
+    color: #006699;
+}
+
+.sidebar{
+    background-color: #fff;
+    float: left;
+    margin-left: 0px;
+    overflow: scroll;
+    height: 100vh;
+    width: 20%; 
+}
+
+.content{
+    float: right;
+    overflow: scroll;
+    width: 79%;
+    height: 100vh;
+    padding-right: 10px;
+}
+
+.show-sidebar-btn, .hide-sidebar-btn{
+    display: none;
+}
+
+.active{
+    width: 86%;
+    color: #fff;
+    background-color: #006699;
+}
+
+.nav-menu {
+    margin-top: 105px;
+}
+
+.menu-item{
+    margin-left: 25px;
+}
+
+.menu-spacer{
+    margin-bottom: 20px;
+}
+
+.menu-item-link:hover{
+    width: 86%;
+    color: #fff;
+    background-color: #006699;
+}
+
+.menu-item .menu-item-link{
+    font-size: 18px;
+    padding: 15px 17px;
+    display: inline-block;
+}
+
+.hdr{
+    position: fixed;
+    top: 20px;
+    z-index: 10000;
+    margin-right: 10px;
+    right: 5px;
+    margin-bottom: 20px;
+    width: 78%;
+    background-color: #006699;
+    padding: 8px 20px;
+}
+
+.blank{
+    float: left;
+    width: 500px;
+}
+
+
+.admin-info{
+    font-size: 20px;
+    float: right;
+    color: #fff;
+    padding: 5px;
+    width: 265px;
+}
+
+.admin-info img{
+    float: right;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.img-user{
+    width: 58px;
+    border-radius: 50%;
+    border: 2px solid #006699;
+}
+
+.admin-info p{
+    float: left;
+    padding-top: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 75%;
+}
+
+.content-area{
+    margin-top: 110px;
+}
+
+@media screen and (min-width:768px) and (max-width:1280px)
+{
+    #toast-container>div { 
+        width: 29.688vw !important; 
+        opacity: 1 !important;
+    }
+    
+    .swal2-popup {
+        font-size: 0.977vw !important;
+    }
+    
+    .swal2-styled.swal2-confirm {
+        padding-left: 1.953vw !important;
+        padding-right: 1.953vw !important;
+    }
+    
+    .btn,
+    .swal2-styled.swal2-cancel,
+    .swal2-styled.swal2-confirm {
+        box-shadow: none !important; 
+        outline: none !important;
+        border-radius: 0 !important;
+        padding: 0.781vw 1.875vw !important;
+    }
+
+    .main .nav-brand{
+        margin-left: 0px !important;
+        margin-top: 1.563vw;
+        padding: 1.172vw 1.797vw;
+        background-color: #f8f9fa;
+        position: fixed;
+        left: 1.563vw;
+    }
+
+    .main h1{
+        font-size: 2.5vw;
+    }
+
+    .sidebar{
+        float: left;
+        margin-left: 0px !important;
+        width: 20%; 
+    }
+    
+    .content{
+        width: 79%;
+        height: 100vh;
+    }
+    
+    .active{
+        width: 86%;
+    }
+
+    .nav-menu {
+        margin-top: 8.203vw;
+    }
+    
+    .menu-spacer{
+        margin-bottom: 1.563vw;
+    }
+
+    .menu-item{
+        margin-left: 1.953vw;
+    }
+
+    .menu-item-link:hover{
+        width: 86%;
+        color: #fff;
+        background-color: #006699;
+    }
+    
+    .menu-item .menu-item-link{
+        font-size: 1.406vw;
+        padding: 1.172vw 1.328vw;
+        display: inline-block;
+    }
+    
+   .hdr{
+        position: fixed;
+        top: 1.563vw;
+        margin-right: 0.781vw;
+        right: 0.391vw;
+        margin-bottom: 1.563vw;
+        padding: 0.625vw 1.563vw;
+    }
+    
+    .blank{
+        width: 39.063vw;
+    }
+    
+    .admin-info{
+        font-size: 1.563vw;
+        float: right;
+        color: #fff;
+        padding: 0.391vw;
+        width: 20.703vw;
+    }
+    
+    .admin-info img{
+        float: right;
+        width: 3.125vw;
+        border-radius: 50%;
+        border: 0.156vw solid #fff;
+    }
+    
+    .admin-info p{
+        float: left;
+        padding-top: 0.781vw;
+        width: 75%;
+    }
+
+    .img-user{
+        width: 4.531vw;
+        border: 0.156vw solid #006699;
+    }
+    
+    .content-area{
+        margin-top: 7.813vw;
+    }
+}
+
+@media screen and (max-width:767.9px) 
+{
+    #toast-container>div { 
+        width: 49.544vw !important; 
+        opacity: 1 !important;
+    }
+
+    .swal2-popup {
+        font-size: 1.63vw !important;
+    }
+    
+    .swal2-styled.swal2-confirm {
+        padding-left: 3.259vw !important;
+        padding-right: 3.259vw !important;
+    }
+    
+    .btn,
+    .swal2-styled.swal2-cancel,
+    .swal2-styled.swal2-confirm {
+        box-shadow: none !important; 
+        outline: none !important;
+        border-radius: 0 !important;
+        padding: 1.304vw 3.129vw !important;
+    }
+
+    .main  .logo{
+        margin-bottom: 2.608vw;
+        float: left;
+    }
+
+    .main h1{
+        font-size: 4.172vw;
+    }
+    
+    .main .nav-brand{
+        width: 34% !important;
+        margin-left: -100%;
+        margin-top: 2.608vw;
+        padding: 0.261vw 1.304vw;
+        background-color: #f8f9fa;
+        position: fixed;
+        left: 2.608vw;
+    }
+
+    .active{
+        padding: 1.956vw 2.608vw;
+        width: 86%;
+    }
+
+    .nav-brand .btn-toggle{
+        float: right;
+    }
+
+    .nav-menu{
+        margin-top: 13.993vw;
+    }
+
+    .menu-item{
+        margin-left: 0px;
+        width: 96%;
+    }
+    
+    .menu-spacer{
+        margin-bottom: 2.608vw;
+    }
+
+    .hide-sidebar-btn , .show-sidebar-btn {
+        width: 5.215vw;
+        height: 5.215vw;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        transition: all 400ms;
+    }
+
+    .show-sidebar-btn span , .hide-sidebar-btn span{
+        position: absolute;
+        width: 3.911vw;
+        top: -1.434vw;
+        right: 0.522vw;
+        height: 0.261vw;
+        background: #006699;
+        -webkit-transition: all 400ms;
+        transition: all 400ms;
+    }
+
+    .hide-sidebar-btn{
+        margin-top: 1.304vw;
+        margin-left: 2.608vw;
+    }
+
+    .show-sidebar-btn{
+        height: 3.911vw !important;
+        margin-top : 0.782vw;
+    }
+
+    .show-sidebar-btn span{
+        background-color: #fff !important;
+    }
+
+    .nav-brand .hide-sidebar-btn span:nth-child(1) {
+        transform: translateY(3.911vw) rotate(-45deg);
+    }
+    
+    .nav-brand .hide-sidebar-btn span:nth-child(2) {
+        transform: translateY(3.911vw) rotate(45deg);
+    }
+    
+    .hdr .show-sidebar-btn span:nth-child(1) {
+        top: 1.304vw;
+    }
+    
+    .hdr .show-sidebar-btn span:nth-child(2) {
+        top: 2.347vw;
+    }
+    
+    .hdr .show-sidebar-btn span:nth-child(3) {
+        top: 3.39vw;
+    }
+
+    .main  .logo{
+        margin-top: 1.956vw;
+        margin-bottom: 1.565vw;
+    }
+    .main h1{
+        font-size: 4.172vw;
+        margin-left: 2.216vw;  
+    }
+    
+    .main h1 a{
+        display: inline-block;
+        color: #006699;
+    }
+    
+    .sidebar{
+        margin-left: -100%;
+        width: 39.113vw; 
+        position: absolute;
+        z-index: 100000;
+    }
+    
+    .content{
+        display: block;
+        float: none;
+        z-index : 2;
+        overflow: scroll;
+        width: 100%;
+    }
+    
+    .menu-spacer{
+        margin-bottom: 2.608vw;
+    }
+    
+    .menu-item .menu-item-link{
+        font-size: 2.347vw;
+        margin-left: 3.259vw;
+        margin-bottom: 2.608vw;
+        padding-left: 2.608vw;
+    }
+    
+    /* bar */
+    .hdr{
+        position: fixed;
+        right: 0;
+        top: 2.608vw;
+        margin-bottom: 2.608vw;
+        width: 97.726vw !important;
+        margin-right: 1.304vw;
+        padding: 1.043vw 2.608vw;
+    }
+    
+    .blank{
+        float: left;
+        width: 65.189vw;
+    }
+    
+    
+    .admin-info{
+        font-size: 2.608vw;
+        float: right;
+        color: #fff;
+        padding: 0.652vw;
+        width: 34.55vw;
+    }
+    
+    .admin-info img{
+        float: right;
+        width: 5.215vw;
+        border-radius: 50%;
+        border: 0.261vw solid #fff;
+    }
+    
+    .admin-info p{
+        float: left;
+        padding-top: 1.304vw;
+        text-align: right;
+        text-transform: uppercase;
+        width: 75%;
+    }
+    
+    .img-user{
+        width: 7.562vw;
+        border: 0.261vw solid #006699;
+    }
+
+    .content-area{
+        margin-top: 13.038vw;
+    }
+}

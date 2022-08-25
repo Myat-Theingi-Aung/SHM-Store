@@ -11,16 +11,14 @@ $(document).ready(function () {
         $(".nav-brand").animate({ marginLeft: "-100%" });
     });
 
+    $('.counter-up').counterUp({
+        delay: 10,
+        time: 1000,
+    });
+
     $('.pagination').addClass('clearfix');
 
     $(document).on('click', '.del-product-btn', function (e) {
-        $('.counter-up').counterUp({
-            delay: 10,
-            time : 1000
-        });
-    });
-
-    $(document).on('click', '.del-product-btn', function(e){
         e.preventDefault();
         let id = $(this).data('id');
 
@@ -37,6 +35,27 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $('.productDeleteForm' + id).submit();
+            }
+        })
+    });
+        
+    $(document).on('click', '.del-feedback-btn', function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+    
+        Swal.fire({
+            title: 'Are You Sure?',
+            text: "Do You Want to Delete this Feedback?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK',
+            cancelButtonText: 'CANCEL',
+            reverseButtons: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('.feedbackDeleteForm' + id).submit();
             }
         })
     });

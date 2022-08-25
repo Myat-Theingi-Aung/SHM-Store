@@ -29,8 +29,7 @@
       <!--logo-->
       <nav class="gnav">
         <ul>
-          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}" >Home</a></li>
-          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
+          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
               <a href="{{ route('cart.view') }}">
@@ -38,6 +37,7 @@
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
               </a>
           </li>
+          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
           <li><a href="{{route('feedback')}}" class="{{  Request::is('feedback') ? 'active' : '' }}">Feedback</a></li>
           @auth
           <li><a href="{{url('/logout')}}">Logout</a></li>
@@ -106,6 +106,7 @@
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
+
   <script>
     @if(session('status'))
     let alert_msg = "<?php echo session('status'); ?>";

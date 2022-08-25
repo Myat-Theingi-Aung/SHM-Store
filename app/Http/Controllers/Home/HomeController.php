@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Home;
 
 
-use App\Models\Product;
 use App\Models\Review;
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use App\Models\Category;
 use App\Contracts\Services\Home\HomeServiceInterface;
 
 class HomeController extends Controller
@@ -39,7 +40,7 @@ class HomeController extends Controller
         $feedbacks = $this->homeInterface->getRandomFeedbackList();
         return view('home', compact('products', 'feedbacks'));
     }
-
+    
     /**
      * To show about page
      * @return View about
@@ -47,6 +48,23 @@ class HomeController extends Controller
     public function showAboutPage()
     {
         return view('about');
+    }
+
+    public function feedback()
+    { 
+        return view('feedback');
+    }
+
+    public function storeFeedback(Request $request)
+    {
+        $review = new Review();
+        $review->name    = $request['name'];
+        $review->email   = $request['email'];
+        $review->message = $request['message'];
+        $review->save();
+
+        Toastr::success('Thank Your For Your Feedback', 'SUCCESS');
+        return redirect(url('/'));
     }
 
     /**
@@ -68,21 +86,10 @@ class HomeController extends Controller
      * @return $products
      * @return View product-category
      */
-    public function showProductPageByCategory($category_id) 
+    public function showProductPageByCategory($category_id)
     {
         $categories = Category::has('products')->get();
         $products   = $this->homeInterface->getProductsByCategoryId($category_id);
         return view('product-category', compact('categories','products'));
     }
-
-    /**
-     * To show feedback page
-     * @return $feedbacks
-     * @return View feedback
-     */
-    //public function showFeedbackPage()
-    //{
-    //    $feedbacks = $this->homeInterface->getRandomFeedbackList();
-    //    return view('feedback', compact('feedbacks'));
-    //}
 }

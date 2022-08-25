@@ -62,4 +62,5 @@ SHM Store| Home Page
       </div>
     </div>
   </section> <!-- /.review-row -->
+    
 @endsection

@@ -16,8 +16,9 @@
   <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
+
 <body>
-  
+
   <header class="sec-header">
     <div class="l-inner clearfix">
       <div class="logo">
@@ -36,7 +37,7 @@
           @auth
           <li><a href="{{url('/logout')}}">Logout</a></li>
           @else
-          <li><a href="{{route('register')}}">Register</a></li>
+          <li><a href="{{route('register')}}"  class="{{  Request::is('/register') ? 'active' : '' }}">Register</a></li>
           <li><a href="{{route('login')}}">Login</a></li>
           @endauth
         </ul>

@@ -1,47 +1,53 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHM Store | Reset Password</title>
+    <link rel="stylesheet" href="{{asset('frontend/css/reset.css')}}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/login.css')}}">
+</head>
+<body class="sec-login">
+    <section class="login">
+        
+        <form action="{{ route('password.email') }}"  method="post" class="log-form">
+        @csrf
+            <h2 class="cmn-ttl">
+                Reset Password
+            </h2>
+            <div class="input-gp">
+                <div class="input-box">
+                    <input type="email" name="email"  class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address">
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
                 </div>
+                <div class="login-btn">
+                    <button type="submit" class="submit">Send Password Reset Link</button>
+                </div>
+
+                <a href="{{ route('login') }}" class="forgot">Sign In Here</a>
+                <p class="or">OR</p>
+                <a href="{{ route('register') }}" class="create">Create an New Account</a>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+        </form>
+
+    </section>
+
+
+    <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
+    {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
+    <script>
+        @if(session('alert_msg'))
+        let alert_msg = "<?php echo session('alert_msg'); ?>";
+        toastr.info(alert_msg, 'Please Wait', {
+            closeButton: true,
+            progressBar: true,
+        });
+        @endif
+    </script>
+</body>
+</html>

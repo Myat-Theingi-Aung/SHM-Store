@@ -48,8 +48,6 @@ SHM Store| Home
     </div>
   </section> <!-- /.laptop-row -->
 
-  
-
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Reviews</h2>
@@ -67,25 +65,5 @@ SHM Store| Home
       </div>
     </div>
   </section> <!-- /.review-row -->
-
-  
-  <script>
-    var mybutton = document.getElementById("myBtn");
-    
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-    
 @endsection
+

@@ -1,4 +1,4 @@
-@extends('../layout/backend/master')
+@extends('../layouts/backend/master')
 @section('title')SHM Store | Product Create @endsection
 <link rel="stylesheet" href="{{ asset('backend/css/product.css') }}">
 @section('content')
@@ -50,7 +50,7 @@
             </div>    
             <div class="message">
                 <label for="description">Product Description</label><br>
-                <textarea name="description" id="" cols="" rows="5">{{ @old('description') }}</textarea>
+                <textarea name="description" id="" cols="" rows="6">{{ @old('description') }}</textarea>
                 <p class="msg">@error('description') {{$message}} @enderror</p>
             </div>
             <div class="btn-gp">

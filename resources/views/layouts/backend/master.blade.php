@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('common/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/master.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/dashboard.css') }}">
 </head>
 <body>
     <section class="main clearfix">
@@ -32,11 +31,15 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Category</a>
+                        <a href="{{ route('admin.category.index') }}" class="menu-item-link {{ Request::is('admin/category*') ? 'active' : '' }}">
+                            Category
+                        </a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="{{ url('admin/product') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">Product</a>
+                        <a href="{{ url('admin/product') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">
+                            Product
+                        </a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
@@ -44,12 +47,12 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">User</a>
+                        <a href="{{ route('admin.user.index') }}" class="menu-item-link {{ Request::is('admin/user*') ? 'active' : '' }}">User</a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Customer</a>
-                    </li>
+                        <a href="" class="menu-item-link">Feedback</a>
+                    </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
                         <a href="" class="menu-item-link">Subscriber</a>
@@ -88,8 +91,12 @@
         </div>
     </section>
 <script src="{{ asset('common/js/jquery.min.js') }}"></script>
+<script src="{{ asset('common/js/way_point/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('common/js/counter_up.js') }}"></script>
 <script src="{{ asset('backend/js/master.js') }}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@stack('js')
 </body>
 </html>

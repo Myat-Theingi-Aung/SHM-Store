@@ -16,15 +16,12 @@ use App\Http\Controllers\Feedback\FeedbackController;
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-
-Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
-Route::get('/about', [HomeController::class, 'showAboutPage'])->name('about');
-Route::get('/cart',     [HomeController::class, 'cart'])->name('cart');
-Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
-
-Route::post('/feedback',     [HomeController::class, 'storeFeedback'])->name('feedback.store');
-
-Route::get('/product', [HomeController::class, 'showProductPage'])->name('product');
+Route::get('/',          [HomeController::class, 'showHomePage'])->name('home');
+Route::get('/about',     [HomeController::class, 'showAboutPage'])->name('about');
+Route::get('/feedback',  [HomeController::class, 'showFeedbackPage'])->name('feedback');
+Route::post('/feedback', [HomeController::class, 'storeFeedback'])->name('feedback.store');
+Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');
+Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');
 Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
 
 // Cart Module
@@ -79,6 +76,4 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
     Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
-
-
 });

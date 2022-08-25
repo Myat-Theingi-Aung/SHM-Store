@@ -48,7 +48,7 @@ class CartController extends Controller
         if( $result['status'] ){
             return view('cart')->with([ 'cart' => $result['cart'] ]);
         }
-        Toastr::info('Your Cart is Empty &nbsp;<i class="fa fa-exclamation-circle"></i>', 'INFO');
+        Toastr::info('Your Cart is Empty', 'INFO');
         return back();
     }
 
@@ -69,7 +69,7 @@ class CartController extends Controller
     {
         $result = $this->cartInterface->removeCart($id);
         if($result){
-            Toastr::success('Cart Item Removed Successfully &nbsp;<i class="fa fa-exclamation-circle"></i>', 'SUCCESS');
+            Toastr::success('Cart Item Removed Successfully', 'SUCCESS');
             return back();
         }
         return redirect()->route('home');

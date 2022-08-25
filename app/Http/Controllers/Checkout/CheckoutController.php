@@ -10,56 +10,51 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Contracts\Services\Checkout\CheckoutServiceInterface;
 
 class CheckoutController extends Controller
 {
-    public function showCheckoutView()
+    /**
+     * checkout interface
+     */
+    private $checkoutInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(CheckoutServiceInterface $checkoutServiceInterface)
     {
-        $user = auth()->user();
-        $cart = session()->get('cart');
-        return view('checkout', compact('user', 'cart'));
+        $this->checkoutInterface = $checkoutServiceInterface;
     }
 
+    /**
+     * To show checkout view
+     * @return View checkout view
+     */
+    public function showCheckoutView()
+    {
+        $data = $this->checkoutInterface->getCheckoutData();
+        return view('checkout')->with([
+            'user' => $data['user'],
+            'cart' => $data['cart']
+        ]);
+    }
+    
+    /**
+     * To submit checkout view
+     * @param Request $request
+     * @return View home or back
+     */
     public function submitCheckoutView(Request $request)
     {   
-        //dd($request->all());
-        DB::beginTransaction();
-        try{
-            $user_id = auth()->id();
-
-            // Update User Info
-            $user = User::find($user_id);
-            $user->email   = $request['email'];
-            $user->phone   = $request['phone'];
-            $user->address = $request['address'];
-            $user->save();
-
-            // Store Order
-            $order = new Order();
-            $order->user_id   = $user_id;
-            $order->total_amt = $request['total_amt'];
-            $order->save();
-
-            // Store Order Items
-            $cart = session()->get('cart');
-            //dd($cart);
-            foreach($cart as $item){
-                $product = Product::where('id', $item['id'])->select('id', 'offer_price')->first();
-                OrderItem::create([
-                    'order_id'   => $order->id,
-                    'product_id' => $product->id,
-                    'price'      => $product->offer_price,
-                    'qty'        => $item['qty']
-                ]);
-            }
-
-            DB::commit();
-            session()->forget('cart');
-            Toastr::success('Your Order Submitted Successfully &nbsp;<i class="fa fa-check-circle"></i>', 'SUCCESS');
+        $result = $this->checkoutInterface->saveCheckoutData($request);
+        if( $result ){
+            Toastr::success('Your Order Submitted Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
             return redirect()->route('home');
-        }catch(\Exception $e){
-            DB::rollback();
-            Toastr::error($e->getMessage(), 'ERROR');
+        }else{
+            Toastr::error('Order Submitted Failed &nbsp;<i class="far fa-times-circle"></i>', 'ERROR');
             return back();
         }
     }

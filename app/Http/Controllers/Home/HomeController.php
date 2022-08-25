@@ -36,8 +36,9 @@ class HomeController extends Controller
      */
     public function showHomePage()
     {
-        $products = $this->homeInterface->getRandomProductList();
-        return view('home', compact('products'));
+        $products  = $this->homeInterface->getRandomProductList();
+        $feedbacks = $this->homeInterface->getRandomFeedbackList();
+        return view('home', compact('products', 'feedbacks'));
     }
     
     /**
@@ -91,10 +92,4 @@ class HomeController extends Controller
         $products   = $this->homeInterface->getProductsByCategoryId($category_id);
         return view('product-category', compact('categories','products'));
     }
-
-    public function cart()
-    {
-        return view('cart');
-    }
-    
 }

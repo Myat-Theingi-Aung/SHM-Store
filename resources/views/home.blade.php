@@ -50,11 +50,11 @@ SHM Store| Home Page
       <h2 class="cmn-h2">Reviews</h2>
       <div class="home-review clearfix">
 
-      @foreach(App\Models\Review::all() as $review)
+      @foreach($feedbacks as $feedback)
         <div class="review-col">
-          <h3 class="cmn-h3">{{$review->name}}</h3>
+          <h3 class="cmn-h3">{{$feedback->name}}</h3>
           <p class="cmn-p">
-            {{$review->message}}
+            {{$feedback->message}}
           </p>
         </div>
       @endforeach

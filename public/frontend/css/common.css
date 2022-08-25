@@ -13,22 +13,22 @@
 }
 
 @font-face {
-  font-family: 'RobotoCondensed-Bold';
+  font-family: 'RobotoCondensed';
   src: url(../Font/RobotoCondensed-Bold.ttf);
   font-weight: 600;
 }
 @font-face {
-  font-family:'RobotoCondensed-LightItalic' ;
+  font-family:'RobotoCondensed' ;
   src: url(../Font/RobotoCondensed-LightItalic.ttf);
   font-weight:400;
 }
 @font-face {
-  font-family:'RobotoCondensed-Light' ;
+  font-family:'RobotoCondensed' ;
   src: url(../Font/RobotoCondensed-Light.ttf);
   font-weight:400;
 }
 @font-face {
-  font-family:'RobotoCondensed-Regular' ;
+  font-family:'RobotoCondensed' ;
   src: url(../Font/RobotoCondensed-Regular.ttf);
   font-weight:400;
 }
@@ -89,7 +89,7 @@ a {
 
 .logo-ttl {
   font-size: 36px;
-  font-family: 'RubikDistressed-Regular';
+  font-family:"RubikDistressed-Regular";
   font-weight: 400;
   margin-left: 40px;
   text-align: center;

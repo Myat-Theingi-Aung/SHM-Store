@@ -41,8 +41,8 @@
     {!! Toastr::message() !!}
     {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
     <script>
-        @if(session('alert_msg'))
-        let alert_msg = "<?php echo session('alert_msg'); ?>";
+        @if(session('status'))
+        let alert_msg = "<?php echo session('status'); ?>";
         toastr.info(alert_msg, 'Please Wait', {
             closeButton: true,
             progressBar: true,

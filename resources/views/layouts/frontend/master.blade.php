@@ -12,8 +12,12 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+
+  <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
+
   <link rel="stylesheet" href="{{asset('frontend/css/feedback.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
+
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
@@ -103,47 +107,8 @@
   <script src="{{asset('frontend/js/common.js')}}"></script>
 
  
-  <!--ProductPage LoadeMore-->
-  <script>
-	let loadMoreBtn = document.querySelector('.load-more');
-	let currentItem = 4;
+  
 
-	loadMoreBtn.onclick = () => {
-		let boxes = [...document.querySelectorAll('.box-container .item-box .item-list')];
-		for (var i = currentItem; i < currentItem + 4; i++) {
-			boxes[i].style.display = 'block';
-		}
-		currentItem += 4;
-
-		if(currentItem >= boxes.length) {
-			loadMoreBtn.style.display = 'none';
-		}
-	}
-</script>
-<!--ProductPage LoadeMore-->
-
-<!-- <script>
-  var load-more =document.querySelectorAll('.item-list');
-  var btn = document.querySelector('.load-more');
-  var currentItem = 4;
-
-  btn.addEventListener('click',)
-
-	var loadMoreBtn = document.querySelector('.load-more');
-	let currentItem = 4;
-
-	loadMoreBtn.onclick = () => {
-		let boxes = [...document.querySelectorAll('.box-container .item-box .item-list')];
-		for (var i = currentItem; i < currentItem + 4; i++) {
-			boxes[i].style.display = 'block';
-		}
-		currentItem += 4;
-
-		if(currentItem >= boxes.length) {
-			loadMoreBtn.style.display = 'none';
-		}
-	}
-</script> -->
 </body>
 
 </html>

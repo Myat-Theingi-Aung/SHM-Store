@@ -1,37 +1,5 @@
 
-    <!-- <form action="{{ route('login') }}" method="POST">
-    @csrf
-        <table>
-            <tr>
-                <td></td>
-                <td><h3>LOGIN</h3></td>
-            </tr>
-    
-            <tr>
-                <td><label>Email</label></td>
-                <td><input type="text" name="email"></td>
-            </tr>
-    
-            <tr>
-                <td><label>Password</label></td>
-                <td><input type="password" name="password"></td>
-            </tr>
-    
-            <tr>
-                <td></td>
-                <td><button type="submit">LOGIN</button></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td>
-                    <small>
-                        <a href="{{ route('register') }}">REGISTER HERE</a>
-                    </small>
-                </td>
-            </tr>
-        </table>
-    </form> -->
+ 
     
     <!DOCTYPE html>
     <html lang="en">

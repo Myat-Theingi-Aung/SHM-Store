@@ -9,14 +9,15 @@ $(document).ready(function () {
         console.log('hide button click');
         $(".sidebar").animate({ marginLeft: "-100%" });
         $(".nav-brand").animate({ marginLeft: "-100%" });
-
     });
 
     $('.pagination').addClass('clearfix');
 
-    $('.counter-up').counterUp({
-        delay: 10,
-        time : 1000
+    $(document).on('click', '.del-product-btn', function (e) {
+        $('.counter-up').counterUp({
+            delay: 10,
+            time : 1000
+        });
     });
 
     $(document).on('click', '.del-product-btn', function(e){
@@ -35,11 +36,12 @@ $(document).ready(function () {
             reverseButtons: true,
         }).then((result) => {
             if (result.isConfirmed) {
-                $('.productDeleteForm'+id).submit();
+                $('.productDeleteForm' + id).submit();
             }
         })
     });
-    $(document).on('click', '.del-category-btn', function(e){
+
+    $(document).on('click', '.del-category-btn', function (e) {
         e.preventDefault();
         let id = $(this).data('id');
 
@@ -55,11 +57,11 @@ $(document).ready(function () {
             reverseButtons: true,
         }).then((result) => {
             if (result.isConfirmed) {
-                $('.categoryDeleteForm'+id).submit();
+                $('.categoryDeleteForm' + id).submit();
             }
         })
     });
-})
+});
 
 let screenHeight = $(window).height();
 let currentMenuHeight = $(".nav-menu .active").offset().top;
@@ -69,9 +71,3 @@ if (currentMenuHeight > screenHeight * 0.8) {
         scrollTop: currentMenuHeight - 100
     }, 1000)
 }
-
-
-
-
-
-

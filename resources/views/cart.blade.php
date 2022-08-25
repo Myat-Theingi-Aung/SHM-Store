@@ -1,6 +1,6 @@
 @extends('layouts.frontend.master')
 @section('title')
-SHM Store| About
+SHM Store| Cart Page
 @endsection
 @section('content')
 <section class="sec-cart">

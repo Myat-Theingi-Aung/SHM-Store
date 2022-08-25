@@ -51,4 +51,11 @@ class User extends Authenticatable
             ";
         }
     }
+
+    public function isSelectedEditRole($roles, $user_role, $old_val)
+    {
+        foreach($roles as $role){
+            echo $role == $old_val || $role == $user_role ? 'selected' : '';
+        }
+    }
 }

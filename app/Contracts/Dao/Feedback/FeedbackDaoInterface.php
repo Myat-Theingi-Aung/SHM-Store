@@ -10,31 +10,16 @@ use Illuminate\Http\Request;
 interface FeedbackDaoInterface
 {
     /**
-    * To get post list
-    * @return $postList
+    * To get feedback list
+    * @param Request $request
+    * @return $feedbackList
     */
-    public function index();
-
-
-    /**
-    * To store feedback
-    * @param Request $request request with inputs
-    * @return Object $feedback store feedback
-    */
-	public function store(Request $request);
-
+    public function showFeedbackList(Request $request);
+    
     /**
     * To delete feedback by id
     * @param string $id feedback id
-    * @return string $message message success or not
     */
-	public function destroy($id);
-
-    /**
-    * To show feedback details
-    * @param string $id feedback id
-    * @return Object $feedback to show feedback details
-    */
-    public function show($id);
+    public function deleteFeedback($id);
 
 }

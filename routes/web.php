@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Feedback\FeedbackController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -15,6 +16,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/',     [HomeController::class, 'index'])->name('home');
 Route::get('/about',     [HomeController::class, 'about'])->name('about');
 Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
+Route::post('/feedback',     [HomeController::class, 'storeFeedback'])->name('feedback.store');
 Route::get('/product',     [HomeController::class, 'product'])->name('product');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
@@ -45,6 +47,10 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
     Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
+
+    // Feedback
+    Route::get('/feedback', [FeedbackController::class, 'showFeedbackList'])->name('feedback.index');
+    Route::delete('/feedback/delete/{id}', [FeedbackController::class, 'deleteFeedback'])->name('feedback.delete');
 });
 
 

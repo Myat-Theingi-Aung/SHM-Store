@@ -29,41 +29,20 @@ class FeedbackService implements FeedbackServiceInterface
     /**
     * To get feedback list
     * @return array $feedbacks Feedback list
-    */
-    public function index()
+    */    
+    public function showFeedbackList(Request $request) 
     {
-        return $this->feedbackDao->index();
-    }
-
-
-    /**
-    * To store feedback
-    * @param Request $validated request with inputs
-    * @return Object $feedback saved feedback
-    */
-    public function store($validated)
-    {
-        return $this->feedbackDao->store($validated);
+        return $this->feedbackDao->showFeedbackList($request);
     }
 
     /**
     * To destroy feedback by id
     * @param string $id feedback id
     * @return string $message message success or not
-   */
-    public function destroy($id)
-    {
-        return $this->feedbackDao->destroy($id);
-    }
-
-    /**
-    * To show feedback details view
-    * @param $feedback feedback information
-    * @return array feedback show view
     */
-    public function show($id)
+    public function deleteFeedback($id) 
     {
-        return $this->feedbackDao->show($id);
+        return $this->feedbackDao->deleteFeedback($id);
     }
     
 }

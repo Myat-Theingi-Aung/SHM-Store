@@ -52,7 +52,7 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Feedback</a>
+                        <a href="{{ route('admin.feedback.index') }}" class="menu-item-link {{ Request::is('admin/feedback*') ? 'active' : '' }}">Feedback</a>
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">

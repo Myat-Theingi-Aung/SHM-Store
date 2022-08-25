@@ -31,10 +31,6 @@
           <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-            <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About
-            </a>
-          </li>
-          <li>
               <a href="{{ route('cart.view') }}">
               Cart
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)

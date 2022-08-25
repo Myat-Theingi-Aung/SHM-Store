@@ -21,20 +21,21 @@
             </h2>
             <div class="input-gp">
                 <input type="hidden" name="token" value="{{ $token }}">
+                
                 <div class="input-box">
                     <input type="email" name="email" class="input @error('email') is-invalid @enderror" 
-                    placeholder="Enter Your Email Address">
+                    placeholder="Enter Your Email Address" value="{{ @old('email') }}">
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" name="password" class="input @error('password') is-invalid @enderror" 
+                    <input type="password" name="password" class="input @error('password') is-invalid @enderror" 
                     placeholder="Enter Your New Password">
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" name="password_confirmation" class="input" 
+                    <input type="password" name="password_confirmation" class="input" 
                     placeholder="Confirm Your New Password">
                 </div>
 

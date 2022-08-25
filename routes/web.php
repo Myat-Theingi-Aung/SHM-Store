@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -14,6 +15,21 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',     [HomeController::class, 'index'])->name('home');
 Route::get('/about',     [HomeController::class, 'about'])->name('about');
+Route::get('/product', function(){
+    return view('product');
+})->name('product');
+
+// Cart Module
+Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
+Route::get('/add-to-cart',      [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/update-cart',      [CartController::class, 'updateCart'])->name('cart.update');
+Route::get('/remove-cart/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::get('/clear-cart',       [CartController::class, 'clearCart'])->name('cart.clear');
+
+Route::middleware('auth')->group(function(){
+    //Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
+    //Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
+});
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');

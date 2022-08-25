@@ -12,6 +12,8 @@
 
     <h1>Home Page</h1>
     @guest
+    <a href="{{ route('product') }}">PRODUCT</a>
+    <a href="{{ route('cart.view') }}">CART</a>
     <a href="{{ route('login') }}">LOGIN</a>
     <a href="{{ route('register') }}">REGISTER</a>
     @else
@@ -28,10 +30,9 @@
     <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
-    {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
     <script>
-        @if(session('alert_msg'))
-        let alert_msg = "<?php echo session('alert_msg'); ?>";
+        @if(session('status'))
+        let alert_msg = "<?php echo session('status'); ?>";
         toastr.success(alert_msg, 'SUCCESS', {
             closeButton: true,
             progressBar: true,

@@ -23,7 +23,7 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $category->name }}</td>
-                    <td>{{ $category->created_at->toFormattedDateString() }} MMK</td>
+                    <td>{{ $category->created_at->toFormattedDateString() }}</td>
                     <td>
                         <div class="btn-div">
                             <button><a href="{{ route('admin.category.edit',$category->id) }}">

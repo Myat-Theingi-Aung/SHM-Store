@@ -18,25 +18,25 @@
         <div class="input-gp">
           <div class="input-box">
             <label for="name">Name</label>
-            <input type="text" id="name" class="name" name="name" placeholder="Enter Name">
+            <input type="text" id="name" class="name" name="name" placeholder="Enter Your Name" value="{{ @old('name') }}">
             <span class="text-danger">{{ $errors->first('name') }}</span><br>
           </div>
           
           <div class="input-box">
             <label for="email">Email</label>
-            <input type="email" id="email" class="email" name="email" placeholder="Enter Email">
+            <input type="email" id="email" class="email" name="email" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
             <span class="text-danger">{{ $errors->first('email') }}</span><br>
           </div>
 
           <div class="input-box">
             <label for="password">Password</label>
-            <input type="password" id="password" class="password" name="password" placeholder="Enter Password">
+            <input type="password" id="password" class="password" name="password" placeholder="Enter Your Password">
             <span class="text-danger">{{ $errors->first('password') }}</span><br>
           </div>
 
           <div class="input-box">
             <label for="comfirm-pwd">Comfirm Password</label>
-            <input type="password" id="comfirm-pwd" class="comfirm-pwd" name="password_confirmation" placeholder="Enter Comfirm Password">
+            <input type="password" id="comfirm-pwd" class="comfirm-pwd" name="password_confirmation" placeholder="Comfirm Your Password">
             <span class="text-danger">{{ $errors->first('password') }}</span><br>
           </div>
                     

@@ -8,8 +8,8 @@ use App\Contracts\Services\Category\CategoryServiceInterface;
 class CategoryService implements CategoryServiceInterface
 {
     /**
-    * category dao
-    */
+     * category dao
+     */
     private $categoryDao;
     
     /**

@@ -20,9 +20,10 @@
             </h2>
             <div class="input-gp">
                 <div class="input-box">
-                    <input type="email" name="email"  class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address">
+                    <input type="email" name="email" class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 </div>
+                
                 <div class="login-btn">
                     <button type="submit" class="submit">Send Password Reset Link</button>
                 </div>
@@ -39,10 +40,9 @@
     <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
-    {{--<script src="{{asset('frontend/js/common.js')}}"></script>--}}
     <script>
-        @if(session('alert_msg'))
-        let alert_msg = "<?php echo session('alert_msg'); ?>";
+        @if(session('status'))
+        let alert_msg = "<?php echo session('status'); ?>";
         toastr.info(alert_msg, 'Please Wait', {
             closeButton: true,
             progressBar: true,

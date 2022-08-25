@@ -14,6 +14,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',     [HomeController::class, 'index'])->name('home');
 Route::get('/about',     [HomeController::class, 'about'])->name('about');
+Route::get('/cart',     [HomeController::class, 'cart'])->name('cart');
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 

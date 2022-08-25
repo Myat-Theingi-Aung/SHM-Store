@@ -32,8 +32,13 @@
 
 <script>
     var cData = JSON.parse(`<?php echo $dataList['data']['chart_data']; ?>`);
-    var label = cData.label.reverse();
-    var data = cData.data.reverse()
+    //var label = cData.label.reverse();
+    //var data  = cData.data.reverse()
+
+    var label = cData.label;
+    var data  = cData.data;
+
+    console.log(label, data);
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {

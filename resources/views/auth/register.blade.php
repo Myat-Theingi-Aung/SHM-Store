@@ -13,7 +13,7 @@
     
     <div class="reg">
       <form name="regform" method="post" action="{{route('register')}}">
-        @csrf
+      @csrf
         <h2 class="reg-h2">Sign Up</h2>  
         <div class="input-gp">
           <div class="input-box">
@@ -47,6 +47,5 @@
       </form>
     </div>
   </div>
-
 </body>
 </html>

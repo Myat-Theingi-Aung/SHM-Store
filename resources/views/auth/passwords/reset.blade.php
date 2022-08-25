@@ -23,14 +23,12 @@
                 <input type="hidden" name="token" value="{{ $token }}">
                 
                 <div class="input-box">
-                    <input type="email" name="email" class="input @error('email') is-invalid @enderror" 
-                    placeholder="Enter Your Email Address" value="{{ @old('email') }}">
+                    <input type="email" name="email" class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" name="password" class="input @error('password') is-invalid @enderror" 
-                    placeholder="Enter Your New Password">
+                    <input type="password" name="password" class="input @error('password') is-invalid @enderror" placeholder="Enter Your New Password">
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                 </div>
 

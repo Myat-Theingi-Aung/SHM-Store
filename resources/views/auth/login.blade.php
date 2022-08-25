@@ -12,8 +12,6 @@
 </head>
 <body class="sec-login">
     <section class="login">
-        
-        
         <form action="{{ route('login') }}"  method="post" class="log-form">
         @csrf
             <h2 class="cmn-ttl">
@@ -35,10 +33,8 @@
                 <p class="or">OR</p>
                 <a href="{{route('register')}}" class="create">Create an New Account</a>
             </div>
-            
         </form>
     </section>
-
 
     <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>

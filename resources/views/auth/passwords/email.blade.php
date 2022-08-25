@@ -18,12 +18,12 @@
             <h2 class="cmn-ttl">
                 Reset Password
             </h2>
+
             <div class="input-gp">
                 <div class="input-box">
                     <input type="email" name="email" class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 </div>
-                
                 <div class="login-btn">
                     <button type="submit" class="submit">Send Password Reset Link</button>
                 </div>
@@ -43,7 +43,7 @@
     <script>
         @if(session('status'))
         let alert_msg = "<?php echo session('status'); ?>";
-        toastr.info(alert_msg, 'Please Wait', {
+        toastr.success(alert_msg, 'Please Wait', {
             closeButton: true,
             progressBar: true,
         });

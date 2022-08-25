@@ -7,15 +7,19 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/',     [HomeController::class, 'index'])->name('home');
+
+Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
+Route::get('/about', [HomeController::class, 'showAboutPage'])->name('about');
 Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
-Route::get('/product',     [HomeController::class, 'product'])->name('product');
+Route::get('/product', [HomeController::class, 'showProductPage'])->name('product');
+Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
 
 // Cart Module
 Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
@@ -28,6 +32,7 @@ Route::middleware('auth')->group(function(){
     //Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
     //Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
 });
+
 
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
@@ -58,6 +63,12 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
     Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
+
+    // Profile 
+    Route::get('/profile', [ProfileController::class, 'showUserProfile'])->name('user.profile');
+    Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
+    Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
+    Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
 
 });
 

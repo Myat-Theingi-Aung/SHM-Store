@@ -60,7 +60,8 @@
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Profile</a>
+                        <a href="{{ route('admin.user.profile') }}" 
+                        class="menu-item-link {{ Request::is('admin/profile*') ? 'active' : '' }}">Profile</a>
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">

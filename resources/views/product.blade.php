@@ -1,77 +1,92 @@
-<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-<style>
-    .add-to-cart{
-        border: 1px solid #1c1e1f;
-        padding: 5px;
-        cursor: pointer;
-        transition: .4s;
-    }
+@extends('layouts.frontend.master')
+@section('title')
+SHM Store| Product
+@endsection
+@section('content')
+<section class="box-container">
+  <div class="l-inner">
+    <ul class="ttl-box clearfix">
+      <li class="ttl-list">
+        <a href="{{ route('product') }}" 
+        class="category-tab-link {{ Request::is('product') ? 'tab-active' : '' }}">
+          All Products
+        </a>
+      </li>
+      @foreach($categories as $category)
+      <li class="ttl-list">
+        <a href="{{ route('product.category', $category->id) }}"
+        class="category-tab-link">
+          {{$category->name}}
+        </a>
+      </li>
+      @endforeach
+    </ul>
 
-    .add-to-cart:hover{
-        background-color: #1c1e1f;
-        color: #fff;
-    }
+    <!-- all tab -->
+    <ul class="item-box clearfix">
+      @foreach($products as $product)
+      <li class="item-list">
+        <div class="image"> 
+          @if( $product->photo )
+          <img src="{{ asset('uploads/product/'.$product->photo) }}" alt="{{ $product->name }}">
+          @else
+          <img src="{{ asset('frontend/img/home/img_laptop3.jpg') }}" alt="Dummy Product Image">
+          @endif
+        </div>
+        <div class="item-txt">
+          <p class="cmn-p">
+            <sup><del>{{ number_format($product->original_price) }} MMK</del></sup>
+            {{ number_format($product->offer_price) }} MMK
+          </p>
+          <h5 class="cmn-h5">{{ $product->name }}</h5>
+          <button class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">
+            Add to Cart
+          </button>
+          <button class="viewmore">View More</button>
+        </div>
+      </li>
+      
+      @endforeach
 
-    h1{
-        margin: 22px;
-        padding: 5px;
-        border: 1px solid #1c1e1f;
-    }
+    </ul>
+    <!-- End all tab -->
+    <div class="pagination-blk">
+      {{ $products->links() }}
+    </div>
 
-    a.cart-page{
-        margin: 22px;
-    }
-</style>
+  </div>
+</section>
+@endsection
 
-<h1>
-    Cart
-    (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
-</h1>
-
-<a href="{{ route('cart.view') }}" class="cart-page">[ Cart Page ]</a>
-
-<ul>
-    @foreach(App\Models\Product::all() as $product)
-    <li>
-        <p>{{ $product->name }}</p>
-        <p>{{ number_format($product->offer_price) }}</p>
-        <a class="add-to-cart" data-id="{{ $product->id }}">Add to Cart</a>
-    </li>
-    <br><hr>
-    @endforeach
-</ul>
-
-<script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>
-<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-{!! Toastr::message() !!}
-
+@push('js')
 <script>
-    $('.add-to-cart').click(function(e){
-        e.preventDefault();
-        let id = $(this).data('id');
+  $('.add-to-cart').click(function(e){
+      e.preventDefault();
+      let id = $(this).data('id');
 
-        $.ajax({
-            type: 'GET',
-            url : '{{ url("/add-to-cart") }}',
-            data: { id: id },
+      $.ajax({
+          type: 'GET',
+          url : '{{ url("/add-to-cart") }}',
+          data: { id: id },
 
-            success: function(response){
-                let cart_count = Object.keys(response.cart).length;
+          success: function(response){
+              let cart_count = Object.keys(response.cart).length;
 
-                if(response.msg == 'success'){
-                    toastr.success('Item Added to Your Cart Successfully &nbsp;<i class="fa fa-check-circle"></i>', 'SUCCESS', {
-                        closeButton: true,
-                        progressBar: true,
-                    });
-                }else{
-                    toastr.error('Item Already Exist in Your Cart &nbsp;<i class="fa fa-exclamation-circle"></i>', 'WARNING', {
-                        closeButton: true,
-                        progressBar: true,
-                    });
-                }
+              if(response.msg == 'success'){
+                  toastr.success('Item Added to Your Cart Successfully &nbsp;<i class="fa fa-check-circle"></i>', 'SUCCESS', {
+                      closeButton: true,
+                      progressBar: true,
+                  });
+              }else{
+                  toastr.error('Item Already Exist in Your Cart &nbsp;<i class="fa fa-exclamation-circle"></i>', 'WARNING', {
+                      closeButton: true,
+                      progressBar: true,
+                  });
+              }
 
-                $('.cart-count').html(cart_count);
-            }
-        })
-    })
+              $('.cart-count').html(cart_count);
+          }
+      })
+  })
 </script>
+@endpush

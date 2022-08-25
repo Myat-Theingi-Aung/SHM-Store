@@ -1,0 +1,81 @@
+[
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 1",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Lenovo"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 2",
+        "original_price" : 2500,
+        "offer_price"    : 2000,
+        "brand"          : "ACER"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 3",
+        "original_price" : 1000,
+        "offer_price"    : 500,
+        "brand"          : "ASUS"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 4",
+        "original_price" : 3000,
+        "offer_price"    : 2000,
+        "brand"          : "HP"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 5",
+        "original_price" : 3000,
+        "offer_price"    : 2000,
+        "brand"          : "HP"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "SP 1",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "SP 2",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "SP 3",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "SP 4",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "SP 5",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung"
+    }
+]

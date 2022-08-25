@@ -69,7 +69,7 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->store($request);
 
-        Toastr::success('Product Create Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        Toastr::success('Product Create Successfully!','SUCCESS');
         return redirect()->route('admin.product.index');
     }
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->destroy($id);
 
-        Toastr::success('Product Delete Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        Toastr::success('Product Delete Successfully!','SUCCESS');
         return redirect()->route('admin.product.index');
     }
 
@@ -120,7 +120,7 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->update($request,$id);
         
-        Toastr::success('Product Update Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
+        Toastr::success('Product Update Successfully!','SUCCESS');
         return redirect()->route('admin.product.index');
     }
 

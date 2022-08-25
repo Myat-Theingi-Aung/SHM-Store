@@ -42,7 +42,7 @@ SHM Store| Product
           <button class="viewmore">View More</button>
         </div>
       </li>
-
+      
       @endforeach
 
     </ul>

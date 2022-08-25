@@ -1,6 +1,7 @@
 @extends('../layouts/backend/master')
 @section('title')SHM Store | Show Product List @endsection
 <link rel="stylesheet" href="{{ asset('backend/css/product.css') }}">
+<link rel="stylesheet" href="{{ asset('backend/css/export.css') }}">
 @section('content')
 <div class="card">
     <div class="card-body">
@@ -9,6 +10,17 @@
             <button class="cmn-btn"><a href="{{ route('admin.product.create') }}">Create</a></button>
         </div>
         <hr>
+        <form action="{{ route('admin.product.import') }}" class="export-form" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="">
+                <div class="file-div">
+                    <input type="file" name="file">
+                </div>
+                <button class="cmn-btn">Import</button>
+                <button class="cmn-btn"><a href="{{ route('admin.product.export') }}">Export</a></button>
+            </div>
+            <p class="msg">{{ $errors->first('file') }}</p>
+        </form>
         <table>
             <thead>
                 <tr class="row">

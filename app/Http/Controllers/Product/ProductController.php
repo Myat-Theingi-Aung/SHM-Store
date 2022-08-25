@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Product;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Exports\ProductExport;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Maatwebsite\Excel\Excel as ExcelExcel;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Contracts\Services\Product\ProductServiceInterface;
+use App\Imports\ProductImport;
 
 /**
  * This is Product controller.
@@ -118,6 +122,20 @@ class ProductController extends Controller
         
         Toastr::success('Product Update Successfully &nbsp;<i class="far fa-check-circle"></i>','SUCCESS');
         return redirect()->route('admin.product.index');
+    }
+
+    public function export(){
+        return Excel::download(new ProductExport,'products.xlsx',ExcelExcel::XLSX);
+    }
+
+    public function import(Request $request){
+
+        $request->validate([
+            'file' => 'required|mimes:xlsx,csv',
+        ]);
+        Excel::import(new ProductImport, $request->file('file'));
+
+        return back();
     }
 }
 

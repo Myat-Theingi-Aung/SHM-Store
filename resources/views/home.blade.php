@@ -1,9 +1,8 @@
 @extends('layouts.frontend.master')
 @section('title')
-SHM Store| Home
+SHM Store| Home Page
 @endsection
 @section('content')
-
   <button onclick="topFunction()" id="myBtn" class="myBtn" title="Go to top">
     <img src="frontend/img/home/img_up_arrow5.jpg" alt="UpArrow" class="up-img">
   </button>
@@ -42,20 +41,16 @@ SHM Store| Home
           </div>
         </li>
         @endforeach
-
-        
       </ul>
     </div>
   </section> <!-- /.laptop-row -->
-
-  
 
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Reviews</h2>
       <div class="home-review clearfix">
 
-      @foreach($reviews as $review)
+      @foreach(App\Models\Review::all() as $review)
         <div class="review-col">
           <h3 class="cmn-h3">{{$review->name}}</h3>
           <p class="cmn-p">
@@ -67,25 +62,5 @@ SHM Store| Home
       </div>
     </div>
   </section> <!-- /.review-row -->
-
-  
-  <script>
-    var mybutton = document.getElementById("myBtn");
-    
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
     
 @endsection

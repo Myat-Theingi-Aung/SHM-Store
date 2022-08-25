@@ -2,22 +2,42 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Checkout\CheckoutController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Feedback\FeedbackController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/',     [HomeController::class, 'index'])->name('home');
-Route::get('/about',     [HomeController::class, 'about'])->name('about');
+
+Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
+Route::get('/about', [HomeController::class, 'showAboutPage'])->name('about');
+Route::get('/cart',     [HomeController::class, 'cart'])->name('cart');
 Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
+
 Route::post('/feedback',     [HomeController::class, 'storeFeedback'])->name('feedback.store');
-Route::get('/product',     [HomeController::class, 'product'])->name('product');
+
+Route::get('/product', [HomeController::class, 'showProductPage'])->name('product');
+Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
+
+// Cart Module
+Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
+Route::get('/add-to-cart',      [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/update-cart',      [CartController::class, 'updateCart'])->name('cart.update');
+Route::get('/remove-cart/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::get('/clear-cart',       [CartController::class, 'clearCart'])->name('cart.clear');
+
+Route::middleware('auth')->group(function(){
+    Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
+    Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
+});
 
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -51,13 +71,12 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     // Feedback
     Route::get('/feedback', [FeedbackController::class, 'showFeedbackList'])->name('feedback.index');
     Route::delete('/feedback/delete/{id}', [FeedbackController::class, 'deleteFeedback'])->name('feedback.delete');
+
+    // Profile 
+    Route::get('/profile', [ProfileController::class, 'showUserProfile'])->name('user.profile');
+    Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
+    Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
+    Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
+
+
 });
-
-
-
-
-
-
-
-
-

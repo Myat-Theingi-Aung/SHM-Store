@@ -11,8 +11,8 @@ use App\Contracts\Services\Category\CategoryServiceInterface;
 class CategoryController extends Controller
 {
     /**
-    * category interface
-    */
+     * category interface
+     */
     private $categoryInterface;
 
     /**
@@ -37,7 +37,7 @@ class CategoryController extends Controller
      
     }
 
-     /**
+    /**
      * To show create category view
      * @return View create category view
      */

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/feedback.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -33,6 +34,13 @@
             <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About
             </a>
           </li>
+          <li>
+              <a href="{{ route('cart.view') }}">
+              Cart
+              (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
+              </a>
+          </li>
+          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
           <li><a href="{{route('feedback')}}" class="{{  Request::is('feedback') ? 'active' : '' }}">Feedback</a></li>
           @auth
           <li><a href="{{url('/logout')}}">Logout</a></li>
@@ -102,7 +110,16 @@
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
- 
-</body>
 
+  <script>
+    @if(session('status'))
+    let alert_msg = "<?php echo session('status'); ?>";
+    toastr.success(alert_msg, 'SUCCESS', {
+        closeButton: true,
+        progressBar: true,
+    });
+    @endif
+  </script>
+  @stack('js')
+</body>
 </html>

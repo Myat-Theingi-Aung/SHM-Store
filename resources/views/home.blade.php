@@ -1,6 +1,6 @@
 @extends('layouts.frontend.master')
 @section('title')
-SHM Store| Home
+SHM Store| Home Page
 @endsection
 @section('content')
 
@@ -42,12 +42,9 @@ SHM Store| Home
           </div>
         </li>
         @endforeach
-
-        
       </ul>
     </div>
   </section> <!-- /.laptop-row -->
-
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Reviews</h2>

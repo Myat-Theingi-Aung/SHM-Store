@@ -12,7 +12,7 @@
         <hr>
         <form action="{{ route('admin.product.import') }}" class="export-form" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="">
+            <div class="export">
                 <div class="file-div">
                     <input type="file" name="file">
                 </div>

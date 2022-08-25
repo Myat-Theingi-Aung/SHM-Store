@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/feedback.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -27,12 +28,15 @@
       <!--logo-->
       <nav class="gnav">
         <ul>
-          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
+          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}" >Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-            <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About
-            </a>
+              <a href="{{ route('cart.view') }}">
+              Cart
+              (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
+              </a>
           </li>
+          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
           <li><a href="{{route('feedback')}}" class="{{  Request::is('feedback') ? 'active' : '' }}">Feedback</a></li>
           @auth
           <li><a href="{{url('/logout')}}">Logout</a></li>
@@ -101,49 +105,15 @@
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
-
- 
-  <!--ProductPage LoadeMore-->
   <script>
-	let loadMoreBtn = document.querySelector('.load-more');
-	let currentItem = 4;
-
-	loadMoreBtn.onclick = () => {
-		let boxes = [...document.querySelectorAll('.box-container .item-box .item-list')];
-		for (var i = currentItem; i < currentItem + 4; i++) {
-			boxes[i].style.display = 'block';
-		}
-		currentItem += 4;
-
-		if(currentItem >= boxes.length) {
-			loadMoreBtn.style.display = 'none';
-		}
-	}
-</script>
-<!--ProductPage LoadeMore-->
-
-<!-- <script>
-  var load-more =document.querySelectorAll('.item-list');
-  var btn = document.querySelector('.load-more');
-  var currentItem = 4;
-
-  btn.addEventListener('click',)
-
-	var loadMoreBtn = document.querySelector('.load-more');
-	let currentItem = 4;
-
-	loadMoreBtn.onclick = () => {
-		let boxes = [...document.querySelectorAll('.box-container .item-box .item-list')];
-		for (var i = currentItem; i < currentItem + 4; i++) {
-			boxes[i].style.display = 'block';
-		}
-		currentItem += 4;
-
-		if(currentItem >= boxes.length) {
-			loadMoreBtn.style.display = 'none';
-		}
-	}
-</script> -->
+    @if(session('status'))
+    let alert_msg = "<?php echo session('status'); ?>";
+    toastr.success(alert_msg, 'SUCCESS', {
+        closeButton: true,
+        progressBar: true,
+    });
+    @endif
+  </script>
+  @stack('js')
 </body>
-
 </html>

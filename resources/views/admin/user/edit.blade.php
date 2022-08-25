@@ -16,7 +16,7 @@
             <div class="l-col">
                 <div class="input-gp">
                     <label for="name">Username</label><br>
-                    <input type="text" name="name" value="{{ @old('name') ?? $user->name }}">
+                    <input type="text" name="name" value="{{ @old('name', $user->name) }}">
                     <p class="msg">{{ $errors->first('name') }}</p>
                 </div>
                 
@@ -25,7 +25,7 @@
                     <select name="role" id="role">
                         <option disabled selected> - Select User Role - </option>
                         @foreach($roles as $role)
-                            <option value="{{$role}}" {{ $role == @old('role') || $role == $user->role ? 'selected' : '' }}>
+                            <option value="{{$role}}" {{ $user->isSelectedEditRole($roles, $user->role, @old('role')) }}>
                                 {{ ucwords(strtolower($role)) }}
                             </option>
                         @endforeach
@@ -42,12 +42,12 @@
             <div class="r-col">
                 <div class="input-gp">
                     <label for="email">Email Address</label><br>
-                    <input type="email" name="email" value="{{ @old('email') ?? $user->email }}">
+                    <input type="email" name="email" value="{{ @old('email', $user->email) }}">
                     <p class="msg">{{ $errors->first('email') }}</p>
                 </div>    
                 <div class="input-gp">
                     <label for="phone">Phone Number</label><br>
-                    <input type="text" name="phone" value="{{ @old('phone') ?? $user->phone }}">
+                    <input type="text" name="phone" value="{{ @old('phone', $user->phone) }}">
                     <p class="msg">{{ $errors->first('phone') }}</p>
                 </div>          
                 <div class="input-gp brand">
@@ -59,7 +59,7 @@
 
             <div class="message">
                 <label for="address">User Address</label><br>
-                <textarea name="address" id="address" cols="" rows="5">{{ @old('address') ?? $user->address }}</textarea>
+                <textarea name="address" id="address" cols="" rows="5">{{ @old('address', $user->address) }}</textarea>
                 <p class="msg">{{ $errors->first('address') }}</p>
             </div>
 

@@ -11,12 +11,12 @@ $(document).ready(function () {
         $(".nav-brand").animate({ marginLeft: "-100%" });
     });
 
-    $('.pagination').addClass('clearfix');
-
     $('.counter-up').counterUp({
         delay: 10,
-        time: 1000
+        time: 1000,
     });
+
+    $('.pagination').addClass('clearfix');
 
     $(document).on('click', '.del-product-btn', function (e) {
         e.preventDefault();
@@ -38,6 +38,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $(document).on('click', '.del-category-btn', function (e) {
         e.preventDefault();
         let id = $(this).data('id');
@@ -58,7 +59,7 @@ $(document).ready(function () {
             }
         })
     });
-})
+});
 
 let screenHeight = $(window).height();
 let currentMenuHeight = $(".nav-menu .active").offset().top;
@@ -68,8 +69,3 @@ if (currentMenuHeight > screenHeight * 0.8) {
         scrollTop: currentMenuHeight - 100
     }, 1000)
 }
-
-
-
-
-

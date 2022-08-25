@@ -36,7 +36,7 @@ class UserController extends Controller
     {
         $users = $this->userInterface->getUserList();
         return view('admin.user.index', compact('users'))
-        ->with('i', (request()->input('page', 1) - 1) * 2);;
+        ->with('i', (request()->input('page', 1) - 1) * 2);
     }
 
     /**

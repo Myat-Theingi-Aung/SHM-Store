@@ -57,4 +57,18 @@ interface ProductServiceInterface
     * @return Object $product Product Object
     */
     public function update(Request $request,$id);
+
+    /**
+    * To import product information
+    * 
+    * @return add excel data db
+    */
+    public function import(Request $request);
+
+    /**
+    * To export product information
+    * 
+    * @return excel file
+    */
+    public function export();
 }

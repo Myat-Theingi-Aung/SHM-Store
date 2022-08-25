@@ -3,7 +3,6 @@
 SHM Store| Home Page
 @endsection
 @section('content')
-
   <button onclick="topFunction()" id="myBtn" class="myBtn" title="Go to top">
     <img src="frontend/img/home/img_up_arrow5.jpg" alt="UpArrow" class="up-img">
   </button>
@@ -45,12 +44,13 @@ SHM Store| Home Page
       </ul>
     </div>
   </section> <!-- /.laptop-row -->
+
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Reviews</h2>
       <div class="home-review clearfix">
 
-      @foreach($reviews as $review)
+      @foreach(App\Models\Review::all() as $review)
         <div class="review-col">
           <h3 class="cmn-h3">{{$review->name}}</h3>
           <p class="cmn-p">
@@ -63,4 +63,3 @@ SHM Store| Home Page
     </div>
   </section> <!-- /.review-row -->
 @endsection
-

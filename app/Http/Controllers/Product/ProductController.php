@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Exports\ProductExport;
+use App\Imports\ProductImport;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
-use Maatwebsite\Excel\Excel as ExcelExcel;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ProductStoreRequest;
+use Maatwebsite\Excel\Excel as ExcelExcel;
+use App\Http\Requests\ProductImportRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Contracts\Services\Product\ProductServiceInterface;
-use App\Imports\ProductImport;
 
 /**
  * This is Product controller.
@@ -124,20 +125,24 @@ class ProductController extends Controller
         return redirect()->route('admin.product.index');
     }
 
+    /**
+    * To export product information
+    * 
+    * @return View index product
+    */
     public function export(){
-        return Excel::download(new ProductExport,'products.xlsx',ExcelExcel::XLSX);
+
+       return $this->productInterface->export();
     }
 
-    public function import(Request $request){
+    /**
+    * To import product information
+    * 
+    * @return View index product
+    */
+    public function import(ProductImportRequest $request){
 
-        $request->validate([
-            'file' => 'required|mimes:xlsx,csv',
-        ]);
-        Excel::import(new ProductImport, $request->file('file'));
-
+        $this->productInterface->import($request);
         return back();
     }
 }
-
-
-

@@ -17,14 +17,12 @@ class ProductImport implements ToModel
     {
         $id = Category::where('id',$row[1])->first()->id;
         return new Product([
-            //'id' => $row[0],
             'category_id' => $id,
             'name' => $row[2],
             'brand' => $row[3],
             'original_price' => $row[4],
             'offer_price' => $row[5],
             'description' => $row[7],
-            
         ]);
     }
 }

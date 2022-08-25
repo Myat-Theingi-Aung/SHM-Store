@@ -6,7 +6,7 @@ SHM Store| Feedback
 
 <div class="l-inner">
     <div class="feedback-form"> 
-      <form name="feedback" method="post" action=" ">
+      <form name="feedback" method="post" action="{{ route('feedback.store') }}">
           @csrf
           <p class="feedback-p"><sup>**</sup>You can freely advise us on our service and products!<sup>**</sup></p> 
           <div class="input-gp"> 
@@ -23,7 +23,7 @@ SHM Store| Feedback
 
             <div class="input-msg"> 
               <label for="message">Message</label><br>
-              <textarea class="messgae" name="messgae" rows="7" placeholder="Text...."></textarea>
+              <textarea class="message" name="message" rows="7" placeholder="Text...."></textarea>
             </div>
 
             <div class="btn-gp">
@@ -32,9 +32,7 @@ SHM Store| Feedback
             </div>
             
           </div>
-
-          
-        </form>
+      </form>
     </div> 
       
   </div>

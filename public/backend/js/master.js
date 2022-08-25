@@ -38,6 +38,27 @@ $(document).ready(function () {
             }
         })
     });
+        
+    $(document).on('click', '.del-feedback-btn', function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+    
+        Swal.fire({
+            title: 'Are You Sure?',
+            text: "Do You Want to Delete this Feedback?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK',
+            cancelButtonText: 'CANCEL',
+            reverseButtons: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('.feedbackDeleteForm' + id).submit();
+            }
+        })
+    });
 
     $(document).on('click', '.del-category-btn', function (e) {
         e.preventDefault();

@@ -60,7 +60,7 @@
             </tbody>
         </table>
 
-        {{ $products->links() }}
+        {{ $products->onEachSide(5)->links() }} 
 
     </div>
 </div>

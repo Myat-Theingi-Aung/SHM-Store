@@ -1,4 +1,3 @@
-console.log('master js file');
 $(document).ready(function () {
     $(".show-sidebar-btn").click(function () {
         console.log('click show sidebar btn');
@@ -10,11 +9,15 @@ $(document).ready(function () {
         console.log('hide button click');
         $(".sidebar").animate({ marginLeft: "-100%" });
         $(".nav-brand").animate({ marginLeft: "-100%" });
-<<<<<<< HEAD
-=======
+
     });
 
     $('.pagination').addClass('clearfix');
+
+    $('.counter-up').counterUp({
+        delay: 10,
+        time : 1000
+    });
 
     $(document).on('click', '.del-product-btn', function(e){
         e.preventDefault();
@@ -55,20 +58,8 @@ $(document).ready(function () {
                 $('.categoryDeleteForm'+id).submit();
             }
         })
->>>>>>> d08dccb2e65abfb645723249c36595c001902ce5
     });
 })
-
-let screenHeight = $(window).height();
-let currentMenuHeight = $(".nav-menu .active").offset().top;
-
-if (currentMenuHeight > screenHeight * 0.8) {
-    $(".sidebar").animate({
-        scrollTop: currentMenuHeight - 100
-    }, 1000)
-}
-
-
 
 let screenHeight = $(window).height();
 let currentMenuHeight = $(".nav-menu .active").offset().top;

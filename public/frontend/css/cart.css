@@ -84,6 +84,9 @@ path{
   float: left;
   margin-left: 56px;
 }
+.del-icon{
+  fill: red;
+}
 .sec-cart .cart-table tr td .plus{
   float: left;
 }

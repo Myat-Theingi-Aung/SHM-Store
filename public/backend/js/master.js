@@ -14,6 +14,13 @@ $(document).ready(function () {
     $('.pagination').addClass('clearfix');
 
     $(document).on('click', '.del-product-btn', function (e) {
+        $('.counter-up').counterUp({
+            delay: 10,
+            time : 1000
+        });
+    });
+
+    $(document).on('click', '.del-product-btn', function(e){
         e.preventDefault();
         let id = $(this).data('id');
 
@@ -54,22 +61,13 @@ $(document).ready(function () {
             }
         })
     });
-
-    let screenHeight = $(window).height();
-    let currentMenuHeight = $(".nav-menu .active").offset().top;
-
-    if (currentMenuHeight > screenHeight * 0.8) {
-        $(".sidebar").animate({
-            scrollTop: currentMenuHeight - 100
-        }, 1000)
-    }
-
-    let screenHeight = $(window).height();
-    let currentMenuHeight = $(".nav-menu .active").offset().top;
-
-    if (currentMenuHeight > screenHeight * 0.8) {
-        $(".sidebar").animate({
-            scrollTop: currentMenuHeight - 100
-        }, 1000)
-    }
 });
+
+let screenHeight = $(window).height();
+let currentMenuHeight = $(".nav-menu .active").offset().top;
+
+if (currentMenuHeight > screenHeight * 0.8) {
+    $(".sidebar").animate({
+        scrollTop: currentMenuHeight - 100
+    }, 1000)
+}

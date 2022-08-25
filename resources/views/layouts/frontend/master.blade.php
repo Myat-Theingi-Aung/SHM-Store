@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{asset('frontend/css/common.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/home.css')}}">
+  <link rel="stylesheet" href="{{asset('frontend/css/cart.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/feedback.css')}}">
   <link rel="stylesheet" href="{{asset('frontend/css/product.css')}}">
   <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -27,15 +28,15 @@
       <!--logo-->
       <nav class="gnav">
         <ul>
-          <li><a href="{{route('home')}}" class="{{  Request::is('home') ? 'active' : '' }}" >Home</a></li>
+          <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}" >Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-            <a href="{{ route('cart.view') }}">
+              <a href="{{ route('cart.view') }}">
               Cart
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
-            </a>
+              </a>
           </li>
-          <li> <a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
+          <li><a href="{{route('about')}}" class="{{  Request::is('about') ? 'active' : '' }}">About</a></li>
           <li><a href="{{route('feedback')}}" class="{{  Request::is('feedback') ? 'active' : '' }}">Feedback</a></li>
           @auth
           <li><a href="{{url('/logout')}}">Logout</a></li>

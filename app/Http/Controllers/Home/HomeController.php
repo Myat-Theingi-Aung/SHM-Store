@@ -48,16 +48,6 @@ class HomeController extends Controller
         return view('about');
     }
 
-    public function feedback()
-    {
-        return view('feedback');
-    }
-
-    public function product()
-    {
-        return view('product');
-    }
-
     /**
      * To show product page
      * @return $categories
@@ -82,5 +72,15 @@ class HomeController extends Controller
         $categories = Category::has('products')->get();
         $products   = $this->homeInterface->getProductsByCategoryId($category_id);
         return view('product-category', compact('categories','products'));
+    }
+
+    public function cart()
+    {
+        return view('cart');
+    }
+
+    public function feedback()
+    {
+        return view('feedback');
     }
 }

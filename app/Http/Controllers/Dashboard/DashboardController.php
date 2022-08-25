@@ -3,12 +3,37 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Contracts\Services\Dashboard\DashboardServiceInterface;
 
 class DashboardController extends Controller
 {
+        /**
+     * dashboard interface
+     */
+    private $dashboardInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(DashboardServiceInterface $dashboardInterface)
+    {
+        $this->dashboardInterface = $dashboardInterface;
+    }
+
+    /**
+     * To show order information
+     * 
+     * @return View dashboard
+     */
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $dataList = $this->dashboardInterface->dashboard();
+
+        return view('admin.dashboard', compact('dataList'));
     }
+
 }
+
+

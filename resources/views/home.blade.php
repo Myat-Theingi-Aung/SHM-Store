@@ -1,6 +1,6 @@
 @extends('layouts.frontend.master')
 @section('title')
-SHM Store| Home
+SHM Store| Home Page
 @endsection
 @section('content')
   <button onclick="topFunction()" id="myBtn" class="myBtn" title="Go to top">
@@ -41,7 +41,6 @@ SHM Store| Home
           </div>
         </li>
         @endforeach
-        
       </ul>
     </div>
   </section> <!-- /.laptop-row -->

@@ -18,22 +18,22 @@
                 Sing In
             </h2>
             <div class="input-gp">
-                <div class="input-box">
-                    <input type="email" name="email"  class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
-                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                </div>
-                <div class="input-box">
-                    <input type="password" name="password" id="password" class="input @error('password') is-invalid @enderror" placeholder="Enter Your Password">
-                    <span class="text-danger">{{ $errors->first('password') }}</span>
-                </div>
-                 <div class="login-btn">
-                    <button type="submit" class="submit">Sign In</button>
-                </div>
-                <a href="{{ route('password.request') }}" class="forgot">Forgot Password ?</a>
-                <p class="or">OR</p>
-                <a href="{{route('register')}}" class="create">Create an New Account</a>
+            <div class="input-box">
+                <input type="email" name="email"  class="input @error('email') is-invalid @enderror" placeholder="Enter Your Email Address" value="{{ @old('email') }}">
+                <span class="text-danger">{{ $errors->first('email') }}</span>
             </div>
-        </form>
+            <div class="input-box">
+                <input type="password" name="password" id="password" class="input @error('password') is-invalid @enderror" placeholder="Enter Your Password">
+                <span class="text-danger">{{ $errors->first('password') }}</span>
+            </div>
+                <div class="login-btn">
+                <button type="submit" class="submit">Sign In</button>
+            </div>
+            <a href="{{ route('password.request') }}" class="forgot">Forgot Password ?</a>
+            <p class="or">OR</p>
+            <a href="{{route('register')}}" class="create">Create an New Account</a>
+        </div>
+    </form>
     </section>
 
     <script src="{{asset('frontend/js/libary/jquery.min.js')}}"></script>

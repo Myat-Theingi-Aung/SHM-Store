@@ -18,6 +18,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'showAboutPage'])->name('about');
+Route::get('/cart',     [HomeController::class, 'cart'])->name('cart');
 Route::get('/feedback',     [HomeController::class, 'feedback'])->name('feedback');
 Route::get('/product', [HomeController::class, 'showProductPage'])->name('product');
 Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
     Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
 });
+
 
 
 

@@ -72,8 +72,7 @@ SHM Store| Checkout Page
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>
-                                    {{ $item['offer_price'] }}
-                                    <small style="font-size: 12px;">MMK</small>
+                                    {{ $item['name'] }}
                                 </td>
                                 <td>{{ $item['qty'] }}</td>
                                 <td>{{ $item['offer_price'] }} <small class="currency-unit">MMK</small></td>

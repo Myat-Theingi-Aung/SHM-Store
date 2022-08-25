@@ -51,6 +51,8 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+    Route::post('/product/import',[ProductController::class,'import'])->name('product.import');
+    Route::get('/product/export',[ProductController::class,'export'])->name('product.export');
 
     //category
     Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');

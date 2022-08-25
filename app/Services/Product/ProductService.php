@@ -96,5 +96,21 @@ class ProductService implements ProductServiceInterface
         return $this->productDao->update($validated,$id);
     }
 
-    
+    /**
+    * To import product information
+    * 
+    * @return add excel data db
+    */
+    public function import($validated){
+        return $this->productDao->import($validated);
+    }
+
+    /**
+    * To export product information
+    * 
+    * @return excel file
+    */
+    public function export(){
+        return $this->productDao->export();
+    }
 }

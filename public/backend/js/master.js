@@ -11,16 +11,14 @@ $(document).ready(function () {
         $(".nav-brand").animate({ marginLeft: "-100%" });
     });
 
+    $('.counter-up').counterUp({
+        delay: 10,
+        time: 1000,
+    });
+
     $('.pagination').addClass('clearfix');
 
     $(document).on('click', '.del-product-btn', function (e) {
-        $('.counter-up').counterUp({
-            delay: 10,
-            time : 1000
-        });
-    });
-
-    $(document).on('click', '.del-product-btn', function(e){
         e.preventDefault();
         let id = $(this).data('id');
 

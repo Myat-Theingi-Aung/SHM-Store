@@ -18,7 +18,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::get('/',          [HomeController::class, 'showHomePage'])->name('home');
 Route::get('/about',     [HomeController::class, 'showAboutPage'])->name('about');
-Route::get('/feedback',  [HomeController::class, 'showFeedbackPage'])->name('feedback');
+Route::get('/feedback',  [HomeController::class, 'feedback'])->name('feedback');
 Route::post('/feedback', [HomeController::class, 'storeFeedback'])->name('feedback.store');
 Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');
 Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');

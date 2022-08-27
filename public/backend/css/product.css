@@ -171,6 +171,14 @@ th,tr,td{
     border: 1px solid black !important;
 }
 
+table tr td{
+    vertical-align : middle;
+}
+
+.product-img{
+    width: 100px;
+}
+
 thead tr{
     background-color: #00000050;
     color: #fff;

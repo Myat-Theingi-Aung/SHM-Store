@@ -18,9 +18,9 @@
                     <p class="msg">@error('name') {{$message}} @enderror</p>
                 </div>
                 <div class="input-gp">
-                    <label for="original_price">Original Price</label><br>
-                    <input type="text" name="original_price" value="{{ @old('original_price') }}">
-                    <p class="msg">@error('original_price') {{$message}} @enderror</p>
+                    <label for="offer_price">Offer Price</label><br>
+                    <input type="text" name="offer_price" value="{{ @old('offer_price') }}">
+                    <p class="msg">@error('offer_price') {{$message}} @enderror</p>
                 </div>
                 <div class="input-gp photo">
                     <label for="photo">Product Image</label><br>
@@ -30,10 +30,10 @@
             </div>
             <div class="r-col">
                 <div class="input-gp">
-                    <label for="offer_price">Offer Price</label><br>
-                    <input type="text" name="offer_price" value="{{ @old('offer_price') }}">
-                    <p class="msg">@error('offer_price') {{$message}} @enderror</p>
-                </div>               
+                    <label for="original_price">Original Price</label><br>
+                    <input type="text" name="original_price" value="{{ @old('original_price') }}">
+                    <p class="msg">@error('original_price') {{$message}} @enderror</p>
+                </div>
                 <div class="input-gp brand">
                     <label for="brand">Product Brand</label><br>
                     <input type="text" name="brand" value="{{ @old('brand') }}">

@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('name');
             $table->string('brand');
-            $table->integer('original_price')->nullable();
-            $table->integer('offer_price');
+            $table->integer('original_price');
+            $table->integer('offer_price')->nullable();
             $table->string('photo')->nullable();
             $table->longText('description');
             $table->timestamps();

@@ -143,6 +143,7 @@ class ProductController extends Controller
     public function import(ProductImportRequest $request){
 
         $this->productInterface->import($request);
+        Toastr::success('Product Data Import Successfully!','SUCCESS');
         return back();
     }
 }

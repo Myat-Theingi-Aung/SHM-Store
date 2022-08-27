@@ -89,12 +89,17 @@ class DatabaseSeeder extends Seeder
         }
 
         // Subscriber
+
         $subscriber = new Subscriber();
-        $subscriber->email = 'johndoe@example.com';
+        $subscriber->email = 'painghtunkhant8@gmail.com';
         $subscriber->save();
 
         $subscriber = new Subscriber();
-        $subscriber->email = 'janedoe@example.com';
+        $subscriber->email = 'hsulaenandar1998@gmail.com';
+        $subscriber->save();
+
+        $subscriber = new Subscriber();
+        $subscriber->email = 'justinaung786@gmail.com';
         $subscriber->save();
 
         // Review

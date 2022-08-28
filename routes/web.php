@@ -10,8 +10,9 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Checkout\CheckoutController;
-use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Feedback\FeedbackController;
+use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Subscriber\SubscriberController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -60,11 +61,11 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::delete('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 
     // User Module
-    Route::get('/user',                [UserController::class, 'showUserList'])->name('user.index');
-    Route::get('/user/create',         [UserController::class, 'showCreateUserView'])->name('user.create');
-    Route::post('/user/create',        [UserController::class, 'submitCreateUserView'])->name('user.store');
-    Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
-    Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
+    Route::get('/user',[UserController::class, 'showUserList'])->name('user.index');
+    Route::get('/user/create',  [UserController::class, 'showCreateUserView'])->name('user.create');
+    Route::post('/user/create', [UserController::class, 'submitCreateUserView'])->name('user.store');
+    Route::get('/user/edit/{id}',  [UserController::class, 'showEditUserView'])->name('user.edit');
+    Route::post('/user/edit/{id}',   [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 
     // Feedback
@@ -76,4 +77,8 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
     Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
+
+    //subscriber
+    Route::get('/subscriber',[SubscriberController::class,'index'])->name('subscriber.index');
+    Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });

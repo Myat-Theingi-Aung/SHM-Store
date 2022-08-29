@@ -160,7 +160,7 @@ button{
 }
 
 table{
-    border: 1px solid black !important;
+    border: 1px solid black;
     border-collapse: collapse;
     margin-top: 30px !important;
     text-align: center;

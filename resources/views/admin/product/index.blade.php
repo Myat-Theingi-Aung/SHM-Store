@@ -24,7 +24,7 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Product Name</th>
                     <th>Category Name</th>
                     <th>Brand</th>

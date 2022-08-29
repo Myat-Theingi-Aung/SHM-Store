@@ -7,26 +7,31 @@
     <div class="card-body">
         <div class="ttl clearfix">
             <h3 class="cmn-h3">SHM Store</h3>
-            <button class="cmn-btn"><a href="">{{ $order->status == 0 ? 'Pending' : 'Completed' }}</a></button>
+            <button class="cmn-btn cpt-order-btn"><a href="{{ route('admin.order.index') }}">Back</a></button>
+            @if($order->status == 0)
+            <button class="cmn-btn pending"><a href="">Pending</a></button>
+            @else
+            <button class="cmn-btn completed"><a href="">Completed</a></button>
+            @endif
         </div>
         <div class="clearfix">
             <div class="from">
                 <table class="shm-table">
                     <tr>
-                        <td colspan="3">SHM Store</td>
+                        <td colspan="3" class="name pl">SHM Store</td>
                     </tr>
                     <tr>
-                        <td>City</td>
+                        <td class="pl">City</td>
                         <td>:</td>
                         <td>Yangon</td>
                     </tr>
                     <tr>
-                        <td>Phone</td>
+                        <td class="pl">Phone</td>
                         <td>:</td>
                         <td>09 223223223</td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td class="pl">Email</td>
                         <td>:</td>
                         <td>shmstore@info.com</td>
                     </tr>
@@ -35,20 +40,20 @@
             <div class="to">
                 <table class="cus-table">
                     <tr>
-                        <td colspan="3">{{ $order->user->name}}</td>
+                        <td colspan="3" class="name pl">{{ $order->user->name}}</td>
                     </tr>
                     <tr>
-                        <td>City</td>
+                        <td class="pl">City</td>
                         <td>:</td>
                         <td>Yangon</td>
                     </tr>
                     <tr>
-                        <td>Phone</td>
+                        <td class="pl">Phone</td>
                         <td>:</td>
                         <td>09 223223223</td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td class="pl">Email</td>
                         <td>:</td>
                         <td>shmstore@info.com</td>
                     </tr>
@@ -82,8 +87,12 @@
                     </tr>
                 @endforeach
                 <tr>
-                    <td colspan="5">Total</td>
-                    <td>{{ $order->total_amt }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="name">Total</td>
+                    <td class="name">{{ $order->total_amt }}</td>
                 </tr>
             </tbody>
         </table>

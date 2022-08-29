@@ -16,6 +16,7 @@ class ProductUpdateRequest extends FormRequest
             'name' => 'required',
             'brand' => 'required',
             'original_price' => 'required|integer',
+            'offer_price' => 'nullable',
             'photo' => 'sometimes|image|mimes:jpeg,png,jpg',
             'description' => 'required',
         ];

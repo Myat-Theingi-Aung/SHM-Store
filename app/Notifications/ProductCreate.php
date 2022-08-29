@@ -45,14 +45,10 @@ class ProductCreate extends Notification
      */
     public function toMail($notifiable)
     {
-        //return (new MailMessage)
-        //            ->greeting($this->product->name)
-        //            ->line($this->product->description)
-        //            ->action('Go to App', url('/'))
-        //            ->line('Thank you!');
         $name = $this->product->name;
         $description = $this->product->description;
-        return (new MailMessage)->view('admin.mail.subscriberMail',compact('name','description'));
+        $photo = $this->product->photo;
+        return (new MailMessage)->view('admin.mail.subscriberMail',compact('name','description','photo'));
     }
 
     /**

@@ -61,11 +61,7 @@ class ProductDao implements ProductDaoInterface
         $this->storeImage($product);
         
         $subscribers = Subscriber::all();
-        //foreach($subscribers as $subscriber){
-        //    Notification::send($subscriber,new ProductCreate($product));
-        //}
         Notification::route('mail',$subscribers)->notify(new ProductCreate($product));
-
         return $product;
     }
 

@@ -6,8 +6,10 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\OrderItem;
+use App\Mail\OrderVoucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use App\Contracts\Dao\Checkout\CheckoutDaoInterface;
 
 class CheckoutDao implements CheckoutDaoInterface
@@ -72,6 +74,7 @@ class CheckoutDao implements CheckoutDaoInterface
                 ]);
             }
             DB::commit();
+            Mail::to($user->email)->send(new OrderVoucher($user,$order,$cart));
             session()->forget('cart');
             return true;
         }catch(\Exception $e){

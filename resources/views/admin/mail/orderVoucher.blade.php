@@ -6,10 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Voucher</title>
     <style>
-        table{
-            border: 1px solid #00;
-        }
-    </style>
+    @font-face {
+        font-family: Poppins;
+        font-weight: 700;
+        font-style: normal;
+        src: url('../../font/RobotoCondensed-Bold.ttf');
+    }
+    
+    .cmn-ttl{
+        color: #006699;
+        font-size: 36px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+    }
+         
+    table {
+        border-collapse: collapse;
+        max-width: 1200px;
+        color:  rgba(0, 0, 0);
+        text-align: center;
+        width: 98%;
+        margin: 0 auto;
+    }
+
+    table thead {
+        border-bottom:1px solid rgba(0, 102, 153,0.8) ;
+        border-top:1px solid rgba(0, 102, 153,0.8) ;
+    }
+
+    table thead tr th{
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        padding: 10px 0;
+        text-align: center;
+    }   
+
+    table tfoot{  
+        border-bottom:1px solid rgba(0, 102, 153,0.8) ;
+        border-top:1px solid rgba(0, 102, 153,0.8) ;
+    }
+
+    table tfoot tr td{
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        padding: 10px 0;
+        text-align: center;
+    }  
+
+    td {
+        text-align: left;
+        padding: 8px 0;
+        text-align: center;
+    }
+    tr:nth-child(even) {
+        background-color:  rgba(0, 102, 153,0.1);
+    }
+      </style>
 </head>
 <body>
     <section>

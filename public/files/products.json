@@ -1,81 +1,217 @@
 [
     {
         "category_id"    : 1,
-        "name"           : "Laptop 1",
+        "name"           : "Laptop 01",
         "original_price" : 2000,
         "offer_price"    : 1000,
-        "brand"          : "Lenovo"
+        "brand"          : "Apple",
+        "photo"          : "img_laptop01.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Phone 01",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Apple",
+        "photo"          : "img_laptop01.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 01",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch_01.jpg"
     },
 
     {
         "category_id"    : 1,
-        "name"           : "Laptop 2",
-        "original_price" : 2500,
-        "offer_price"    : 2000,
-        "brand"          : "ACER"
-    },
-
-    {
-        "category_id"    : 1,
-        "name"           : "Laptop 3",
-        "original_price" : 1000,
-        "offer_price"    : 500,
-        "brand"          : "ASUS"
-    },
-
-    {
-        "category_id"    : 1,
-        "name"           : "Laptop 4",
+        "name"           : "Laptop 02",
         "original_price" : 3000,
         "offer_price"    : 2000,
-        "brand"          : "HP"
+        "brand"          : "Samsung",
+        "photo"          : "img_laptop02.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Phone 02",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Apple",
+        "photo"          : "img_phone2.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 02",
+        "original_price" : 400,
+        "offer_price"    : 250,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch02.jpg"
     },
 
     {
         "category_id"    : 1,
-        "name"           : "Laptop 5",
+        "name"           : "Laptop 03",
         "original_price" : 3000,
         "offer_price"    : 2000,
-        "brand"          : "HP"
+        "brand"          : "HP",
+        "photo"          : "img_laptop03.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 1",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Phone 03",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Apple",
+        "photo"          : "img_phone3.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 03",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch03.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 04",
+        "original_price" : 3000,
+        "offer_price"    : 2000,
+        "brand"          : "Lenovo",
+        "photo"          : "img_laptop04.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 2",
+        "name"           : "Phone 04",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone4.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 04",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch04.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 05",
         "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "offer_price"    : 1500,
+        "brand"          : "HP",
+        "photo"          : "img_laptop05.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 3",
+        "name"           : "Phone 05",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone5.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 05",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch05.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 06",
         "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "offer_price"    : 1500,
+        "brand"          : "HP",
+        "photo"          : "img_laptop01.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 4",
+        "name"           : "Phone 06",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone6.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 06",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch06.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 07",
         "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "offer_price"    : 1500,
+        "brand"          : "HP",
+        "photo"          : "img_laptop07.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 5",
+        "name"           : "Phone 06",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone7.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 06",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch07.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Laptop 08",
         "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "offer_price"    : 1500,
+        "brand"          : "HP",
+        "photo"          : "img_laptop08.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Phone 08",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone8.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Watch 08",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "G SHOCK",
+        "photo"          : "img_watch08.jpg"
     }
 ]

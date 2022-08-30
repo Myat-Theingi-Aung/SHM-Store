@@ -14,7 +14,7 @@ class HomeDao implements HomeDaoInterface
      */
     public function getRandomProductList()
     {
-        $productList = Product::with('category')->inRandomOrder()->take(6)->orderBy('created_at', 'DESC')->get();
+        $productList = Product::with('category')->inRandomOrder()->take(6)->get();
         return $productList;
     }
 

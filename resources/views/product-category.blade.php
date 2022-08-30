@@ -34,7 +34,7 @@ SHM Store| Product
             @endif
             </div>
             <div class="item-txt">
-              <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
+              <p class="cmn-p"><sup><del>{{ $product->original_price }} MMK</del></sup>{{ $product->offer_price }} MMK</p>
               <h5 class="cmn-h5">{{ $product->name }}</h5>
               <button class="add-to-cart-btn">Add to cart</button>
               <button class="viewmore">View More</button>

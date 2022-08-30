@@ -28,7 +28,7 @@ SHM Store| Home Page
           @if( $product->image )
             <img src="{{ asset('uploads/product/'.$product->photo) }}" alt="{{$product->name}}">
           @else
-          <img src="frontend/img/home/img_laptop3.jpg" alt="Dummy Product">
+            <img src="frontend/img/home/img_laptop3.jpg" alt="Dummy Product">
           @endif
           </div>
           

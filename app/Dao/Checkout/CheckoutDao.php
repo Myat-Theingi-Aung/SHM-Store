@@ -63,11 +63,11 @@ class CheckoutDao implements CheckoutDaoInterface
             // Store Order Items
             $cart = session()->get('cart');
             foreach($cart as $item){
-                $product = Product::where('id', $item['id'])->select('id', 'offer_price')->first();
+                $product = Product::where('id', $item['id'])->select('id', 'original_price', 'offer_price')->first();
                 OrderItem::create([
                     'order_id'   => $order->id,
                     'product_id' => $product->id,
-                    'price'      => $product->offer_price,
+                    'price'      => $product->offer_price ?? $product->original_price,
                     'qty'        => $item['qty']
                 ]);
             }

@@ -80,6 +80,26 @@ $(document).ready(function () {
             }
         })
     });
+    $(document).on('click', '.del-subscriber-btn', function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+
+        Swal.fire({
+            title: 'Are You Sure?',
+            text: "Do You Want to Delete this Subscriber?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK',
+            cancelButtonText: 'CANCEL',
+            reverseButtons: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('.subscriberDeleteForm' + id).submit();
+            }
+        })
+    });
 });
 
 let screenHeight = $(window).height();

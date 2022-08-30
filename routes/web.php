@@ -12,6 +12,7 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Checkout\CheckoutController;
 use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Subscriber\SubscriberController;
 use App\Http\Controllers\Frontend\HomePage\HomePageController;
 use App\Http\Controllers\Frontend\AboutPage\AboutPageController;
 use App\Http\Controllers\Frontend\ProductPage\ProductPageController;

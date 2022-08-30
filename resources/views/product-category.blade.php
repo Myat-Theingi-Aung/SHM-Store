@@ -34,10 +34,19 @@ SHM Store| Product
             @endif
             </div>
             <div class="item-txt">
-              <p class="cmn-p"><sup><del>1,000,000 MMK</del></sup>1,735,750 MMK</p>
+              <p class="cmn-p">
+                @if($product->offer_price)
+                <sup><del>$ {{ number_format($product->original_price) }}</del></sup>
+                $ {{ number_format($product->offer_price) }} 
+                @else
+                $ {{ number_format($product->original_price) }}
+                @endif
+              </p>
               <h5 class="cmn-h5">{{ $product->name }}</h5>
-              <button class="add-to-cart-btn">Add to cart</button>
-              <button class="viewmore">View More</button>
+              <button class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">
+                Add to Cart
+              </button>
+    
             </div>
           </li>
 
@@ -45,8 +54,9 @@ SHM Store| Product
 							
 		</ul>
 		<!-- End all tab -->
-
-    
+    <div class="pagination-blk">
+      {{ $products->links() }}
+    </div>
 		
 	</div>
 </section>

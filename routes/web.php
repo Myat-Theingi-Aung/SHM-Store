@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cart\CartController;
-use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Product\ProductController;
@@ -12,18 +11,20 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Checkout\CheckoutController;
 use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Subscriber\SubscriberController;
+use App\Http\Controllers\Frontend\HomePage\HomePageController;
+use App\Http\Controllers\Frontend\AboutPage\AboutPageController;
+use App\Http\Controllers\Frontend\ProductPage\ProductPageController;
+use App\Http\Controllers\Frontend\FeedbackPage\FeedbackPageController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/',          [HomeController::class, 'showHomePage'])->name('home');
-Route::get('/about',     [HomeController::class, 'showAboutPage'])->name('about');
-Route::get('/feedback',  [HomeController::class, 'showFeedbackPage'])->name('feedback');
-Route::post('/feedback', [HomeController::class, 'storeFeedback'])->name('feedback.store');
-Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');
-Route::get('/product',   [HomeController::class, 'showProductPage'])->name('product');
-Route::get('/product/{category_id}', [HomeController::class, 'showProductPageByCategory'])->name('product.category');
+Route::get('/',                      [HomePageController::class, 'showHomePage'])->name('home');
+Route::get('/about',                 [AboutPageController::class, 'showAboutPage'])->name('about');
+Route::get('/product',               [ProductPageController::class, 'showProductPage'])->name('product');
+Route::get('/product/{category_id}', [ProductPageController::class, 'showProductPageByCategory'])->name('product.category');
+Route::get('/feedback',              [FeedbackPageController::class, 'showFeedbackPage'])->name('feedback');
+Route::post('/feedback',             [FeedbackPageController::class, 'storeFeedback'])->name('feedback.store');
 
 // Cart Module
 Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
@@ -40,7 +41,7 @@ Route::middleware('auth')->group(function(){
 Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-    //product
+    // Product             
     Route::get('/product',[ProductController::class,'index'])->name('product.index');
     Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
     Route::post('/product/create',[ProductController::class,'store'])->name('product.store');
@@ -52,7 +53,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/product/import',[ProductController::class,'import'])->name('product.import');
     Route::get('/product/export',[ProductController::class,'export'])->name('product.export');
 
-    //category
+    // Category
     Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');
     Route::get('/category/create',  [CategoryController::class, 'showCreateCategoryView'])->name('category.create');
     Route::post('/category/create',  [CategoryController::class, 'submitCreateCategoryView'])->name('category.store');
@@ -60,12 +61,12 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/category/edit/{id}',  [CategoryController::class, 'submitEditCategoryView'])->name('category.update');
     Route::delete('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 
-    // User Module
-    Route::get('/user',[UserController::class, 'showUserList'])->name('user.index');
-    Route::get('/user/create',  [UserController::class, 'showCreateUserView'])->name('user.create');
-    Route::post('/user/create', [UserController::class, 'submitCreateUserView'])->name('user.store');
-    Route::get('/user/edit/{id}',  [UserController::class, 'showEditUserView'])->name('user.edit');
-    Route::post('/user/edit/{id}',   [UserController::class, 'submitEditUserView'])->name('user.update');
+    // User
+    Route::get('/user',                [UserController::class, 'showUserList'])->name('user.index');
+    Route::get('/user/create',         [UserController::class, 'showCreateUserView'])->name('user.create');
+    Route::post('/user/create',        [UserController::class, 'submitCreateUserView'])->name('user.store');
+    Route::get('/user/edit/{id}',      [UserController::class, 'showEditUserView'])->name('user.edit');
+    Route::post('/user/edit/{id}',     [UserController::class, 'submitEditUserView'])->name('user.update');
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 
     // Feedback
@@ -77,8 +78,4 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
     Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
-
-    //subscriber
-    Route::get('/subscriber',[SubscriberController::class,'index'])->name('subscriber.index');
-    Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });

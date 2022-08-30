@@ -17,17 +17,18 @@ class FeedbackDao implements FeedbackDaoInterface
      */ 
     public function showFeedbackList(Request $request)
     {
-      $feedbacks = Review::orderBy('created_at','desc')->paginate(5);
-      return $feedbacks;
+        $feedbacks = Review::orderBy('created_at','desc')->paginate(5);
+        return $feedbacks;
     }
+
     /**
     * To delete feedback by id
     * @param string $id feedback id
     */
     public function deleteFeedback($id)
     {
-      $feedback = Review::find($id);
-      $feedback->delete();
+        $feedback = Review::find($id);
+        $feedback->delete();
     }
     
 }

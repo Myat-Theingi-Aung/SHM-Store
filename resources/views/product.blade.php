@@ -35,14 +35,18 @@ SHM Store| Product
         </div>
         <div class="item-txt">
           <p class="cmn-p">
-            <sup><del>{{ number_format($product->original_price) }} MMK</del></sup>
-            {{ number_format($product->offer_price) }} MMK
+            @if($product->offer_price)
+            <sup><del>$ {{ number_format($product->original_price) }}</del></sup>
+            $ {{ number_format($product->offer_price) }} 
+            @else
+            $ {{ number_format($product->original_price) }}
+            @endif
           </p>
           <h5 class="cmn-h5">{{ $product->name }}</h5>
           <button class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">
             Add to Cart
           </button>
-          <button class="viewmore">View More</button>
+
         </div>
       </li>
       

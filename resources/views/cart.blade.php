@@ -29,7 +29,7 @@ SHM Store| Cart Page
                     <tbody>
                         @php $total_price = 0 @endphp
                         @foreach($cart as $key => $item)
-                        @php $total_price += $item['offer_price'] * $item['qty'] @endphp
+                        @php $total_price += $item['price'] * $item['qty'] @endphp
                         <tr class="cart-item-list">
                             <input type="hidden" class="product_id" value="{{ $item['id'] }}">
                             <td><img src="{{asset('frontend/img/img_watch5.jpg')}}" alt=""></td>
@@ -42,11 +42,11 @@ SHM Store| Cart Page
                                 </div>
                             </td>
                             <td>
-                                {{ $item['offer_price'] }}
+                                {{ $item['price'] }}
                                 <small style="font-size: 12px;">MMK</small>
                             </td>
                             <td>
-                                <span class="sub-total">{{ number_format($item['qty'] * $item['offer_price']) }}</span>
+                                <span class="sub-total">{{ number_format($item['qty'] * $item['price']) }}</span>
                                 <small style="font-size: 12px;">MMK</small>
                             </td>
                             <td>

@@ -1,81 +1,275 @@
 [
     {
         "category_id"    : 1,
-        "name"           : "Laptop 1",
+        "name"           : "HP",
         "original_price" : 2000,
         "offer_price"    : 1000,
-        "brand"          : "Lenovo"
+        "brand"          : "HP",
+        "photo"          : "img_laptop01.jpg"
     },
+
 
     {
         "category_id"    : 1,
-        "name"           : "Laptop 2",
-        "original_price" : 2500,
-        "offer_price"    : 2000,
-        "brand"          : "ACER"
-    },
-
-    {
-        "category_id"    : 1,
-        "name"           : "Laptop 3",
-        "original_price" : 1000,
-        "offer_price"    : 500,
-        "brand"          : "ASUS"
-    },
-
-    {
-        "category_id"    : 1,
-        "name"           : "Laptop 4",
+        "name"           : "Apple",
         "original_price" : 3000,
         "offer_price"    : 2000,
-        "brand"          : "HP"
+        "brand"          : "Apple",
+        "photo"          : "img_laptop02.jpg"
     },
 
     {
         "category_id"    : 1,
-        "name"           : "Laptop 5",
+        "name"           : "Samsung",
         "original_price" : 3000,
         "offer_price"    : 2000,
-        "brand"          : "HP"
+        "brand"          : "Samsung",
+        "photo"          : "img_laptop03.jpg"
+    },
+
+
+    {
+        "category_id"    : 1,
+        "name"           : "HP",
+        "original_price" : 3000,
+        "offer_price"    : 2000,
+        "brand"          : "HP",
+        "photo"          : "img_laptop04.jpg"
+    },
+    
+
+    {
+        "category_id"    : 1,
+        "name"           : "Apple",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "Apple",
+        "photo"          : "img_laptop05.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Lenovo",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "Lenovo",
+        "photo"          : "img_laptop06.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Acer",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "Acer",
+        "photo"          : "img_laptop07.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "HP",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "HP",
+        "photo"          : "img_laptop08.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Asus",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "Asus",
+        "photo"          : "img_laptop09.jpg"
+    },
+
+    {
+        "category_id"    : 1,
+        "name"           : "Asus",
+        "original_price" : 2000,
+        "offer_price"    : 1500,
+        "brand"          : "Asus",
+        "photo"          : "img_laptop10.jpg"
+    },
+
+
+    {
+        "category_id"    : 2,
+        "name"           : "Samsung",
+        "original_price" : 2000,
+        "offer_price"    : 1000,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone1.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 1",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Samsung",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone2.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 2",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Samsung",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Samsung",
+        "photo"          : "img_phone3.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 3",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Apple",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Apple",
+        "photo"          : "img_phone4.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 4",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Apple",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Apple",
+        "photo"          : "img_phone5.jpg"
     },
 
     {
         "category_id"    : 2,
-        "name"           : "SP 5",
-        "original_price" : 2000,
-        "offer_price"    : 1000,
-        "brand"          : "Samsung"
+        "name"           : "Apple",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Apple",
+        "photo"          : "img_phone6.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Oppo",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Oppo",
+        "photo"          : "img_phone7.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Huawei",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Huawei",
+        "photo"          : "img_phone8.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Huawei",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Huawei",
+        "photo"          : "img_phone9.jpg"
+    },
+
+    {
+        "category_id"    : 2,
+        "name"           : "Vivo",
+        "original_price" : 500,
+        "offer_price"    : 400,
+        "brand"          : "Vivo",
+        "photo"          : "img_phone10.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Baby-G",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "Baby-G",
+        "photo"          : "img_watch01.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Baby-G",
+        "original_price" : 400,
+        "offer_price"    : 250,
+        "brand"          : "Baby-G",
+        "photo"          : "img_watch02.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Casio",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "Casio",
+        "photo"          : "img_watch03.jpg"
+    },
+
+
+    {
+        "category_id"    : 3,
+        "name"           : "Baby-G",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "Baby-G",
+        "photo"          : "img_watch04.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Baby-G",
+        "original_price" : 300,
+        "offer_price"    : 200,
+        "brand"          : "Baby-G",
+        "photo"          : "img_watch05.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Alexander",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "Alexander",
+        "photo"          : "img_watch06.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Alexander",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "Alexander",
+        "photo"          : "img_watch07.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Alexander",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "Alexander",
+        "photo"          : "img_watch08.jpg"
+    },
+
+    {
+        "category_id"    : 3,
+        "name"           : "Alexander",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "Alexander",
+        "photo"          : "img_watch09.jpg"
+    },
+    {
+        "category_id"    : 3,
+        "name"           : "Alexander",
+        "original_price" : 150,
+        "offer_price"    : 100,
+        "brand"          : "Alexander",
+        "photo"          : "img_watch10.jpg"
     }
 ]

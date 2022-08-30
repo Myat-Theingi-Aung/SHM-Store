@@ -18,7 +18,7 @@
                     SHM Store
                 </div>
                 <div class="card-body">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" width="400" height="380"></canvas>
                 </div>
             </div>
         </div>

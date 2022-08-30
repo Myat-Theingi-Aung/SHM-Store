@@ -23,7 +23,7 @@ class ProductDao implements ProductDaoInterface
      */ 
     public function index()
     {
-        $data = Product::with('category')->orderBy('created_at','desc')->paginate(5);
+        $data = Product::with('category')->orderBy('created_at','desc')->paginate(10);
 
         return $data;
     }

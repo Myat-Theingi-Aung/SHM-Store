@@ -17,7 +17,7 @@ use App\Http\Controllers\Frontend\ProductPage\ProductPageController;
 use App\Http\Controllers\Frontend\FeedbackPage\FeedbackPageController;
 
 Auth::routes();
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout'])
 
 Route::get('/',                      [HomePageController::class, 'showHomePage'])->name('home');
 Route::get('/about',                 [AboutPageController::class, 'showAboutPage'])->name('about');

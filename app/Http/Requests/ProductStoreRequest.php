@@ -15,7 +15,7 @@ class ProductStoreRequest extends FormRequest
         return [
             'name' => 'required',
             'brand' => 'required',
-            'original_price' => 'required',
+            'original_price' => 'required|integer',
             'offer_price' => 'nullable',
             'photo' => 'required|sometimes|image|mimes:jpeg,png,jpg',
             'description' => 'required',

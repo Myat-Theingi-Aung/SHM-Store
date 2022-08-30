@@ -84,6 +84,8 @@ class DatabaseSeeder extends Seeder
            $product->original_price = $obj->original_price;
            $product->offer_price    = $obj->offer_price;
            $product->brand          = $obj->brand;
+           $product->photo          = $obj->photo;
+
            $product->description    = $faker->sentence();
            $product->save();
         }

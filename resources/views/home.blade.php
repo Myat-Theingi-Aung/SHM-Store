@@ -1,9 +1,8 @@
 @extends('layouts.frontend.master')
 @section('title')
-SHM Store| Home
+SHM Store| Home Page
 @endsection
 @section('content')
-
   <button onclick="topFunction()" id="myBtn" class="myBtn" title="Go to top">
     <img src="frontend/img/home/img_up_arrow5.jpg" alt="UpArrow" class="up-img">
   </button>
@@ -92,6 +91,7 @@ SHM Store| Home
 						@else
 							<img src="frontend/img/home/img_laptop3.jpg" alt="Dummy Product">
 						@endif
+
           </div>
           
           <div class="home-pcol1-txt">
@@ -101,8 +101,6 @@ SHM Store| Home
           </div>
         </li>
         @endforeach
-
-        
       </ul>
 			<div class="viewmore">
 				<a href="{{route('product')}}" class="btn-viewmore">View More</a> 
@@ -110,21 +108,16 @@ SHM Store| Home
     </div>
   </section> <!-- /.laptop-row -->
 
-<<<<<<< Updated upstream
-  
-=======
->>>>>>> Stashed changes
-
   <section class="review-row">
     <div class="l-inner">
       <h2 class="cmn-h2">Customer's Reviews</h2>
       <div class="home-review clearfix">
 
-      @foreach($reviews as $review)
+      @foreach($feedbacks as $feedback)
         <div class="review-col">
-          <h3 class="cmn-h3">{{$review->name}}</h3>
+          <h3 class="cmn-h3">{{$feedback->name}}</h3>
           <p class="cmn-p">
-            {{$review->message}}
+            {{$feedback->message}}
           </p>
         </div>
       @endforeach
@@ -132,10 +125,7 @@ SHM Store| Home
       </div>
 
     </div>
-<<<<<<< Updated upstream
   </section> <!-- /.review-row -->
-
-=======
 		<div class="pagination-blk">
 			{{ $feedbacks->links() }}
 		</div>
@@ -160,6 +150,5 @@ SHM Store| Home
       document.documentElement.scrollTop = 0;
     }
   </script>
->>>>>>> Stashed changes
     
 @endsection

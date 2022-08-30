@@ -8,6 +8,7 @@
         "photo"          : "img_laptop01.jpg"
     },
 
+
     {
         "category_id"    : 1,
         "name"           : "Apple",
@@ -26,6 +27,7 @@
         "photo"          : "img_laptop03.jpg"
     },
 
+
     {
         "category_id"    : 1,
         "name"           : "HP",
@@ -34,6 +36,7 @@
         "brand"          : "HP",
         "photo"          : "img_laptop04.jpg"
     },
+    
 
     {
         "category_id"    : 1,
@@ -88,6 +91,7 @@
         "brand"          : "Asus",
         "photo"          : "img_laptop10.jpg"
     },
+
 
     {
         "category_id"    : 2,

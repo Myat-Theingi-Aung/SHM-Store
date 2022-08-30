@@ -46,6 +46,7 @@ SHM Store| Product
           <button class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">
             Add to Cart
           </button>
+
         </div>
       </li>
       

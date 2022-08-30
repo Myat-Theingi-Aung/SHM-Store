@@ -37,13 +37,16 @@ SHM Store| Product
               <p class="cmn-p">
                 @if($product->offer_price)
                 <sup><del>$ {{ number_format($product->original_price) }}</del></sup>
-                $ {{ number_format($product->offer_price) }}
+                $ {{ number_format($product->offer_price) }} 
                 @else
                 $ {{ number_format($product->original_price) }}
                 @endif
               </p>
               <h5 class="cmn-h5">{{ $product->name }}</h5>
-              <button class="add-to-cart-btn">Add to cart</button>
+              <button class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">
+                Add to Cart
+              </button>
+    
             </div>
           </li>
 
@@ -54,7 +57,6 @@ SHM Store| Product
     <div class="pagination-blk">
       {{ $products->links() }}
     </div>
-    
 		
 	</div>
 </section>

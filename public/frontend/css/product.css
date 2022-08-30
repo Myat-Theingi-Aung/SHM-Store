@@ -65,7 +65,6 @@
     padding: 40px 0;
     font-size: 22px;
 }
-  
 .box-container .add-to-cart-btn {
     padding: 8px 45px;
     border: 1px solid #006699;
@@ -189,7 +188,6 @@
 		padding: 3.125vw 0;
 		font-size: 1.719vw;
 	}
-	  
 	.box-container .add-to-cart-btn {
 		padding: 0.625vw 3.516vw;
 		border: 0.078vw solid #006699;
@@ -307,7 +305,6 @@
 		font-size: 2.086vw;
 		border-radius: 1.956vw;
 	}
-	  
 	.box-container .add-to-cart-btn:hover {
 		border: 0.13vw solid #006699;
 	}

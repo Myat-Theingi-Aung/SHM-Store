@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Exports\ProductExport;
+use App\Imports\ProductImport;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
-use App\Http\Requests\ProductRequest;
+use Brian2694\Toastr\Facades\Toastr;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ProductStoreRequest;
+use Maatwebsite\Excel\Excel as ExcelExcel;
+use App\Http\Requests\ProductImportRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Contracts\Services\Product\ProductServiceInterface;
 
@@ -35,11 +41,12 @@ class ProductController extends Controller
      * 
      * @return View index product
      */
-    public function index()
+    public function index(Request $request)
     {
         $products = $this->productInterface->index();
+        $i = ($request->input('page', 1) - 1) * 5;
 
-        return view('admin.product.index',compact('products'));
+        return view('admin.product.index', compact('products','i'));
     }
     
      /**
@@ -63,7 +70,8 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->store($request);
 
-        return redirect()->route('admin.product.index')->with('status',"Product create successfully!");
+        Toastr::success('Product Create Successfully!','SUCCESS');
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -75,7 +83,20 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->destroy($id);
 
-        return redirect()->route('admin.product.index')->with('status','product delete successfully!');
+        Toastr::success('Product Delete Successfully!','SUCCESS');
+        return redirect()->route('admin.product.index');
+    }
+
+    /**
+     * To show product detail information
+     * 
+     * @return View detail page
+     */
+    public function show($id)
+    {
+        $product = $this->productInterface->show($id);
+
+        return view('admin.product.show',compact('product'));
     }
 
     /**
@@ -85,9 +106,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = $this->productInterface->edit($id);
+        $data = $this->productInterface->edit($id);
+        $categories = Category::all();
 
-        return view('admin.product.edit',compact('product'));
+        return view('admin.product.edit',compact(['data','categories']));
     }
 
     /**
@@ -99,9 +121,29 @@ class ProductController extends Controller
     {
         $product = $this->productInterface->update($request,$id);
         
-        return redirect()->route('product.index')->with('status','product update successfully!');
+        Toastr::success('Product Update Successfully!','SUCCESS');
+        return redirect()->route('admin.product.index');
+    }
+
+    /**
+    * To export product information
+    * 
+    * @return View index product
+    */
+    public function export(){
+
+       return $this->productInterface->export();
+    }
+
+    /**
+    * To import product information
+    * 
+    * @return View index product
+    */
+    public function import(ProductImportRequest $request){
+
+        $this->productInterface->import($request);
+        Toastr::success('Product Data Import Successfully!','SUCCESS');
+        return back();
     }
 }
-
-
-

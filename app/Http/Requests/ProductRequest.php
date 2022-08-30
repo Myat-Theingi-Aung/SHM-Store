@@ -15,14 +15,10 @@ class ProductRequest extends FormRequest
         return [
             'name' => 'required',
             'brand' => 'required',
-            'original_price' => 'required',
-<<<<<<< Updated upstream
-            'offer_price' => 'required',
             'photo' => 'required|sometimes|image|mimes:jpeg,png,jpg',
-=======
             'offer_price' => 'nullable',
+            'original_price' => 'required|integer',
             'photo' => 'sometimes|image|mimes:jpeg,png,jpg',
->>>>>>> Stashed changes
             'description' => 'required',
         ];
     }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Category\CategoryController;
@@ -53,6 +54,15 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
     Route::post('/product/import',[ProductController::class,'import'])->name('product.import');
     Route::get('/product/export',[ProductController::class,'export'])->name('product.export');
+
+    //order
+    Route::get('/order',[OrderController::class,'index'])->name('order.index');
+    Route::post('/order/status-update',[OrderController::class,'statusUpdate'])->name('order.statusUpdate');
+    Route::get('/order/today-order',[OrderController::class,'todayOrder'])->name('order.todayOrder');
+    Route::get('/order/pending-order',[OrderController::class,'pendingOrder'])->name('order.pendingOrder');
+    Route::get('/order/completed-order',[OrderController::class,'completedOrder'])->name('order.completedOrder');
+    Route::get('/order/show/{id}',[OrderController::class,'orderDeatils'])->name('order.show');
+    Route::delete('/order/destroy/{id}',[OrderController::class,'destroy'])->name('order.destroy');
 
     // Category
     Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');

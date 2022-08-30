@@ -1,5 +1,5 @@
 .feedback-form {
-  margin: 50px auto ;
+  margin: 135px auto 50px;
   width: 70%;
 }
 .feedback-form .feedback-p {
@@ -92,7 +92,7 @@
 /*Feedback Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .feedback-form {
-    margin: 3.906vw auto ;
+    margin: 10.547vw auto 3.906vw;
     width: 70%;
   }
   .feedback-form .feedback-p {
@@ -162,7 +162,7 @@
 /*Feedback sp*/
 @media screen and (max-width: 767.9px) {
   .feedback-form {
-    margin: 5.519vw auto ;
+    margin: 17.601vw auto 6.519vw;
     width: 70%;
   }
   .feedback-form .feedback-p {
@@ -187,14 +187,6 @@
     padding-top: 2.608vw;
   }
   .feedback-form input[type=text], .feedback-form input[type=email] {
-    /* width: 100%;
-    padding: 1.565vw 2.608vw;
-    margin-top: 2.608vw;
-    border: 0.13vw solid #006699;
-    border-radius: 1.304vw;
-    font-size: 2.608vw;
-    box-shadow: rgba(0, 102, 153, 0.35) 0vw 2.608vw 3.911vw; */
-
     width: 100%;
     padding: 1.265vw 2.608vw;
     margin-top: 1.908vw;
@@ -210,14 +202,6 @@
     margin: 0% 1.7%;
   }
   .feedback-form textarea {
-    /* width: 100%;
-    margin-top: 2.608vw;
-    padding: 1.565vw 2.608vw;
-    border: 0.13vw solid #006699;
-    border-radius: 1.304vw;
-    font-size: 2.608vw;
-    box-shadow: rgba(0, 102, 153, 0.35) 0vw 2.608vw 3.911vw; */
-
     width: 100%;
     margin-top: 2.608vw;
     padding: 2.265vw 2.608vw;
@@ -231,13 +215,6 @@
     font-size: 2.086vw;
   }
   .feedback-form .btn-submit {
-    /* width: 20%;
-    margin-left: 1.7%;
-    padding: 1.825vw 2.608vw;
-    font-size: 2.608vw;
-    border-radius: 1.304vw;
-    box-shadow: rgba(0, 102, 153, 0.35) 0vw 2.608vw 3.911vw; */
-
     width: 20%;
     margin-left: 1.7%;
     padding: 1.425vw 2.608vw;

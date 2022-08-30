@@ -39,7 +39,7 @@
 }
 
 .row-up{
-    margin-top: 125px;
+    margin-top: 20px;
     margin-left: 10px;
     text-align: center;
 }
@@ -155,7 +155,7 @@ svg path{
     }
     
     .row-up{
-        margin-top: 9.766vw;
+        margin-top: 1.563vw;
         margin-left: 0.781vw;
     }
     
@@ -267,7 +267,7 @@ svg path{
     
     .row-up{
         width: 100%;
-        margin-top: 16.297vw;
+        margin-top: 2.608vw;
         margin-left: 1.304vw;
     }
     

@@ -15,9 +15,10 @@ class ProductUpdateRequest extends FormRequest
         return [
             'name' => 'required',
             'brand' => 'required',
-            'original_price' => 'required',
-            'offer_price' => 'required',
             'photo' => 'required|sometimes|image|mimes:jpeg,png,jpg',
+            'offer_price' => 'nullable',
+            'original_price' => 'required|integer',
+            'photo' => 'sometimes|image|mimes:jpeg,png,jpg',
             'description' => 'required',
         ];
     }

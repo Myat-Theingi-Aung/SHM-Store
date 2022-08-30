@@ -24,10 +24,11 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Product Name</th>
                     <th>Category Name</th>
                     <th>Brand</th>
+                    <th>Image</th>
                     <th>Original Price</th>
                     <th>Offer Price</th>
                     <th>Action</th>
@@ -40,6 +41,11 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->category ? $product->category->name : 'No Category' }}</td>
                     <td>{{ strtoupper($product->brand) }}</td>
+                    <td>
+                        @if($product->photo)
+                            <img class="product-img" src="{{ asset('uploads/product/'.$product->photo) }}" alt="Product Photo">
+                        @endif
+                    </td>
                     <td>{{ number_format($product->original_price) }} MMK</td>
                     <td>{{ number_format($product->offer_price) }} MMK</td>
                     <td>

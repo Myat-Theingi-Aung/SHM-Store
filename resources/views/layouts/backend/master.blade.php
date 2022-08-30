@@ -37,13 +37,13 @@
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="{{ url('admin/product') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.product.index') }}" class="menu-item-link {{ Request::is('admin/product*') ? 'active' : '' }}">
                             Product
                         </a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Order</a>
+                        <a href="{{ route('admin.order.index') }}" class="menu-item-link {{ Request::is('admin/order*') ? 'active' : '' }}">Order</a>
                     </li>
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
@@ -55,7 +55,7 @@
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="" class="menu-item-link">Subscriber</a>
+                        <a href="{{ route('admin.subscriber.index') }}" class="menu-item-link">Subscriber</a>
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">

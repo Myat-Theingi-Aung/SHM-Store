@@ -65,10 +65,8 @@
     padding: 40px 0;
     font-size: 22px;
 }
-  
-.box-container .add-to-cart-btn,
-.box-container .viewmore {
-    padding: 8px 20px;
+.box-container .add-to-cart-btn {
+    padding: 8px 45px;
     border: 1px solid #006699;
     background-color: #006699;
     color: #ffffff;
@@ -77,8 +75,7 @@
     border-radius: 15px;
 }
   
-.box-container .add-to-cart-btn:hover,
-.box-container .viewmore:hover {
+.box-container .add-to-cart-btn:hover {
     border: 1px solid #006699;
     background-color: #ffffff;
     color: #006699;
@@ -191,17 +188,14 @@
 		padding: 3.125vw 0;
 		font-size: 1.719vw;
 	}
-	  
-	.box-container .add-to-cart-btn,
-	.box-container .viewmore {
-		padding: 0.625vw 1.563vw;
+	.box-container .add-to-cart-btn {
+		padding: 0.625vw 3.516vw;
 		border: 0.078vw solid #006699;
 		font-size: 1.25vw;
 		border-radius: 1.172vw;
 	}
 	  
-	.box-container .add-to-cart-btn:hover,
-	.box-container .viewmore:hover {
+	.box-container .add-to-cart-btn:hover {
 		border: 0.078vw solid #006699;
 	}
 	  
@@ -305,16 +299,13 @@
 		font-size: 2.868vw;
 	}
 	  
-	.box-container .add-to-cart-btn,
-	.box-container .viewmore {
-		padding: 1.043vw 2.608vw;
+	.box-container .add-to-cart-btn {
+		padding: 1.043vw 5.867vw;
 		border: 0.13vw solid #006699;
 		font-size: 2.086vw;
 		border-radius: 1.956vw;
 	}
-	  
-	.box-container .add-to-cart-btn:hover,
-	.box-container .viewmore:hover {
+	.box-container .add-to-cart-btn:hover {
 		border: 0.13vw solid #006699;
 	}
 	  

@@ -40,7 +40,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = $this->productInterface->index();
-        $i = ($request->input('page', 1) - 1) * 5;
+        $i = ($request->input('page', 1) - 1) * 10;
 
         return view('admin.product.index', compact('products','i'));
     }
@@ -139,6 +139,7 @@ class ProductController extends Controller
     public function import(ProductImportRequest $request){
 
         $this->productInterface->import($request);
+        Toastr::success('Product Data Import Successfully!','SUCCESS');
         return back();
     }
 }

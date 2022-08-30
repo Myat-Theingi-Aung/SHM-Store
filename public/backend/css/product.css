@@ -49,7 +49,7 @@ nav{
 
 
 .card{
-    margin-top: 110px;
+    margin-top: 20px;
     margin-bottom: 40px;
     margin-right: 5px;
     background-color: #fff;
@@ -160,26 +160,35 @@ button{
 }
 
 table{
-    border: 1px solid black !important;
-    border-collapse: collapse;
     margin-top: 30px !important;
     text-align: center;
     width: 100%;
 }
 
-th,tr,td{
-    border: 1px solid black !important;
+table tr td{
+    vertical-align : middle;
+}
+
+.product-img{
+    width: 100px;
 }
 
 thead tr{
-    background-color: #00000050;
+    background-color: #006699 !important;
     color: #fff;
 }
 
-tbody tr:hover{
-    background-color: #f3f3f3;
+thead tr th{
+    vertical-align: middle;
 }
 
+tr:nth-child(even){
+    background-color: #f2f2ff;
+  }
+
+tbody tr:hover{
+    background-color: #f2f2ff;
+}
 
 td{
     padding: 10px 0px !important;
@@ -333,7 +342,7 @@ th{
     }
     
     .card{
-        margin-top: 8.594vw;
+        margin-top: 1.563vw;
         margin-bottom: 3.125vw;
         margin-right: 0.391vw;
         background-color: #fff;
@@ -447,26 +456,15 @@ th{
     }
     
     table{
-        border: 0.078vw solid black !important;
-        border-collapse: collapse;
         margin-top: 2.344vw !important;
         text-align: center;
         width: 100%;
-    }
-    
-    th,tr,td{
-        border: 0.078vw solid black !important;
     }
     
     thead tr{
         background-color: #00000050;
         color: #fff;
     }
-    
-    tbody tr:hover{
-        background-color: #f3f3f3;
-    }
-    
     
     td{
         padding: 0.781vw 0vw !important;
@@ -611,7 +609,7 @@ th{
     }
     
     .card{
-        margin-top: 14.342vw;
+        margin-top: 2.608vw;
         margin-bottom: 5.215vw;
         margin-right: 0.652vw;
         background-color: #fff;
@@ -725,30 +723,16 @@ th{
     }
     
     table{
-        border: 0.13vw solid black !important;
-        border-collapse: collapse;
         margin-top: 3.911vw !important;
-        text-align: center;
         width: 100%;
     }
-    
-    th,tr,td{
-        border: 0.13vw solid black !important;
-    }
-    
-    thead tr{
-        background-color: #00000050;
-        color: #fff;
-    }
-    
-    tbody tr:hover{
-        background-color: #f3f3f3;
-    }
-    
-    
+ 
     td{
         padding: 1.304vw 0vw !important;
-        vertical-align: middle;
+    }
+
+    table tr th,td{
+        font-size: 1.686vw;
     }
     
     td:last-child{
@@ -756,12 +740,13 @@ th{
     }
     
     th{
-        padding: 1.304vw 3.39vw !important;
+        padding: 1.304vw 0.609vw !important;
     }
     
     .btn-div {
         display: inline-block;
         vertical-align: middle;
+        margin-top: 1.304vw;
     }
     
     .btn-div form{

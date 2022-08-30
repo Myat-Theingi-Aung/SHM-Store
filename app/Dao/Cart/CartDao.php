@@ -35,7 +35,7 @@ class CartDao implements CartDaoInterface
     {
         $id = $request->id;
         $product = Product::find($id);
-        $cart = session()->get('cart');
+        $cart    = session()->get('cart');
 
         if( isset($cart[$id]) ){
             return $result = [
@@ -45,7 +45,8 @@ class CartDao implements CartDaoInterface
         }
 
         $cart[$id] = $product->toArray();
-        $cart[$id]['qty'] = 1;
+        $cart[$id]['price'] = $product->offer_price ?? $product->original_price;
+        $cart[$id]['qty']   = 1;
         session()->put('cart', $cart);
         return $result = [
             'msg'  => 'success',

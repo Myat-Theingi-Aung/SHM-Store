@@ -80,6 +80,28 @@ $(document).ready(function () {
             }
         })
     });
+
+    $(document).on('click', '.del-order-btn', function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+
+        Swal.fire({
+            title: 'Are You Sure?',
+            text: "Do You Want to Delete this Order?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'OK',
+            cancelButtonText: 'CANCEL',
+            reverseButtons: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('.orderDeleteForm' + id).submit();
+            }
+        })
+    });
+
     $(document).on('click', '.del-subscriber-btn', function (e) {
         e.preventDefault();
         let id = $(this).data('id');
@@ -100,6 +122,56 @@ $(document).ready(function () {
             }
         })
     });
+
+
+    $('.order-status').on('change',function(){
+        var id = $(this).data("id");
+
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        if($(this).prop('checked') == true){
+            $.ajax({
+                type:'POST',
+                url: `/admin/order/status-update`,
+                data: {
+                    id:id,
+                    status : 1,
+                },
+                success: function(response){
+                    if(response){
+                        window.location.reload();
+                        toastr.success('Order Status Updated Successfully', 'SUCCESS', {
+                        closeButton: true,
+                        progressBar: true,
+                    });
+                    }
+                }
+            });
+        }
+        else{
+            $.ajax({
+                type:'POST',
+                url: `/admin/order/status-update`,
+                data: {
+                    id:id,
+                    status : 0,
+                },
+                success: function(response){
+                    if(response){
+                        window.location.reload();
+                        toastr.success('Order Status Updated Successfully!', 'SUCCESS', {
+                        closeButton: true,
+                        progressBar: true,
+                    });
+                    }
+                }
+            });
+        }
+    });
+    
 });
 
 let screenHeight = $(window).height();

@@ -20,14 +20,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Contracts\Dao\FeedbackPage\FeedbackPageDaoInterface', 'App\Dao\FeedbackPage\FeedbackPageDao');
         $this->app->bind('App\Contracts\Dao\Cart\CartDaoInterface', 'App\Dao\Cart\CartDao');
         $this->app->bind('App\Contracts\Dao\Checkout\CheckoutDaoInterface', 'App\Dao\Checkout\CheckoutDao');
-
+        
         $this->app->bind('App\Contracts\Dao\Category\CategoryDaoInterface', 'App\Dao\Category\CategoryDao');
         $this->app->bind('App\Contracts\Dao\Product\ProductDaoInterface', 'App\Dao\Product\ProductDao');
         $this->app->bind('App\Contracts\Dao\Dashboard\DashboardDaoInterface', 'App\Dao\Dashboard\DashboardDao');
         $this->app->bind('App\Contracts\Dao\User\UserDaoInterface', 'App\Dao\User\UserDao');
         $this->app->bind('App\Contracts\Dao\Feedback\FeedbackDaoInterface', 'App\Dao\Feedback\FeedbackDao');
         $this->app->bind('App\Contracts\Dao\Profile\ProfileDaoInterface', 'App\Dao\Profile\ProfileDao');
-        $this->app->bind('App\Contracts\Dao\Subscriber\SubscriberDaoInterface', 'App\Dao\Subscriber\SubscriberDao');
 
         // Business Logic Registration
         $this->app->bind('App\Contracts\Services\HomePage\HomePageServiceInterface', 'App\Services\HomePage\HomePageService');
@@ -42,7 +41,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Contracts\Services\Feedback\FeedbackServiceInterface', 'App\Services\Feedback\FeedbackService');
         $this->app->bind('App\Contracts\Services\Dashboard\DashboardServiceInterface', 'App\Services\Dashboard\DashboardService');        
         $this->app->bind('App\Contracts\Services\Profile\ProfileServiceInterface', 'App\Services\Profile\ProfileService');
-        $this->app->bind('App\Contracts\Services\Subscriber\SubscriberServiceInterface', 'App\Services\Subscriber\SubscriberService');
     }
 
     /**

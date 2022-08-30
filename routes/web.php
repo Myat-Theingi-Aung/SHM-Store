@@ -11,6 +11,7 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Checkout\CheckoutController;
 use App\Http\Controllers\Feedback\FeedbackController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Subscriber\SubscriberController;
 use App\Http\Controllers\Frontend\HomePage\HomePageController;
 use App\Http\Controllers\Frontend\AboutPage\AboutPageController;
 use App\Http\Controllers\Frontend\ProductPage\ProductPageController;
@@ -78,4 +79,9 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
     Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
+
+    //subscriber
+    Route::get('/subscriber',[SubscriberController::class,'index'])->name('subscriber.index');
+    Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });
+

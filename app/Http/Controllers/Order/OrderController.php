@@ -2,75 +2,99 @@
 
 namespace App\Http\Controllers\Order;
 
-use Carbon\Carbon;
-use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\Builder;
+use Brian2694\Toastr\Facades\Toastr;
+use App\Contracts\Services\Order\OrderServiceInterface;
 
+/**
+ * This is Order controller.
+ * This handles Order List,Details and Destroy processing. 
+ */
 class OrderController extends Controller
 {
+    /**
+     * order interface
+     */
+    private $orderInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(OrderServiceInterface $orderInterface)
+    {
+        $this->orderInterface = $orderInterface;
+    }
+
+    /**
+    * To get order list
+    * @param Request $request request with inputs
+    * @return $orders , $i - number
+    */
     public function index(Request $request){
-        $orders = $this->search($request);
+        $orders = $this->orderInterface->index($request);
         $i = ($request->input('page', 1) - 1) * 10;
         return view('admin.order.index',compact('orders','request','i'));
     }
 
+    /**
+    * To show today order list
+    * @return $orders
+    */
     public function todayOrder(){
-        $orders = Order::whereDate('created_at', Carbon::today())->paginate(10);
+        $orders = $this->orderInterface->todayOrder();
         $i = (request()->input('page', 1) - 1) * 10;
         return view('admin.order.todayOrder',compact('orders','i'));
-
     }
 
+    /**
+    * To update order status 
+    */
     public function statusUpdate(){
-        $data = request()->all();
-        $order = Order::where('id',$data['id'])->first();
-        $order->status = $data['status'];
-        $order->save();
+        $this->orderInterface->statusUpdate();
         return response()->json(['success' => true]);
     }
 
+    /**
+    * To show pending order list
+    * @return $orders
+    */
     public function pendingOrder(){
-        $orders = Order::with('user')->where('status','0')->paginate(10);
+        $orders = $this->orderInterface->pendingOrder();
         $i = (request()->input('page', 1) - 1) * 10;
         return view('admin.order.pendingOrder',compact('orders','i'));
     }
 
+    /**
+    * To show completed order list
+    * @return $orders
+    */
     public function completedOrder(){
-        $orders = Order::with('user')->where('status','1')->paginate(10);
+        $orders = $this->orderInterface->completedOrder();
         $i = (request()->input('page', 1) - 1) * 10;
         return view('admin.order.completeOrder',compact('orders','i'));
     }
 
+    /**
+    * To delete order
+    * @param string $id order id
+    * @return string message success or not
+    */
     public function destroy($id){
-        $order = Order::findOrFail($id);
-        if($order){
-            $order->delete();
-        }
+        $order = $this->orderInterface->destroy($id);
+        Toastr::success('Order Delete Successfully!','SUCCESS');
+        return redirect()->route('admin.order.index');
     }
 
+    /**
+    * To show order details information
+    * @return Object $orders
+    */
     public function orderDeatils($id){
-        $order = Order::with('orderItems')->where('id',$id)->first();
+        $order = $this->orderInterface->orderDeatils($id);
         return view('admin.order.show',compact('order'));
     }
 
-    public function search(Request $request)
-    {
-        $orders = Order::with('user');
-        if($request->has('name') || $request->has('start_date') || $request->has('end_date')){
-            if ($request['name'] != null) {
-                $orders = $orders->whereHas('user',function(Builder $query){
-                    $query->where('name','LIKE','%'.request()->name.'%');
-                });
-            }
-            if ($request['start_date'] != null) {
-                $orders = $orders->where('created_at', '>=', $request->start_date);
-            }
-            if ($request['end_date'] != null) {
-                $orders = $orders->where('created_at', '<=',  $request->end_date);
-            }             
-        }
-        return $orders->paginate(10);      
-    }
 }

@@ -45,17 +45,17 @@
                     <tr>
                         <td class="pl">City</td>
                         <td>:</td>
-                        <td>Yangon</td>
+                        <td>{{ $order->user->address}}</td>
                     </tr>
                     <tr>
                         <td class="pl">Phone</td>
                         <td>:</td>
-                        <td>09 223223223</td>
+                        <td>{{ $order->user->phone}}</td>
                     </tr>
                     <tr>
                         <td class="pl">Email</td>
                         <td>:</td>
-                        <td>shmstore@info.com</td>
+                        <td>{{ $order->user->email}}</td>
                     </tr>
                 </table>
             </div>

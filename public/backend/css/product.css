@@ -49,7 +49,7 @@ nav{
 
 
 .card{
-    margin-top: 110px;
+    margin-top: 20px;
     margin-bottom: 40px;
     margin-right: 5px;
     background-color: #fff;
@@ -174,7 +174,7 @@ table tr td{
 }
 
 thead tr{
-    background-color: #006699;
+    background-color: #006699 !important;
     color: #fff;
 }
 
@@ -342,7 +342,7 @@ th{
     }
     
     .card{
-        margin-top: 8.594vw;
+        margin-top: 1.563vw;
         margin-bottom: 3.125vw;
         margin-right: 0.391vw;
         background-color: #fff;
@@ -609,7 +609,7 @@ th{
     }
     
     .card{
-        margin-top: 14.342vw;
+        margin-top: 2.608vw;
         margin-bottom: 5.215vw;
         margin-right: 0.652vw;
         background-color: #fff;
@@ -724,13 +724,15 @@ th{
     
     table{
         margin-top: 3.911vw !important;
-        text-align: center;
         width: 100%;
     }
  
     td{
         padding: 1.304vw 0vw !important;
-        vertical-align: middle;
+    }
+
+    table tr th,td{
+        font-size: 1.686vw;
     }
     
     td:last-child{
@@ -738,12 +740,13 @@ th{
     }
     
     th{
-        padding: 1.304vw 3.39vw !important;
+        padding: 1.304vw 0.609vw !important;
     }
     
     .btn-div {
         display: inline-block;
         vertical-align: middle;
+        margin-top: 1.304vw;
     }
     
     .btn-div form{

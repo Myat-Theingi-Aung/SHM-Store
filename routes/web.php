@@ -59,7 +59,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::get('/order/pending-order',[OrderController::class,'pendingOrder'])->name('order.pendingOrder');
     Route::get('/order/completed-order',[OrderController::class,'completedOrder'])->name('order.completedOrder');
     Route::get('/order/show/{id}',[OrderController::class,'orderDeatils'])->name('order.show');
-    Route::delete('/order/destroy/{id}',[ProductController::class,'destroy'])->name('order.destroy');
+    Route::delete('/order/destroy/{id}',[OrderController::class,'destroy'])->name('order.destroy');
 
     //category
     Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');

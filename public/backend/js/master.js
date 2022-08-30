@@ -87,7 +87,7 @@ $(document).ready(function () {
 
         Swal.fire({
             title: 'Are You Sure?',
-            text: "Do You Want to Delete?",
+            text: "Do You Want to Delete this order?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

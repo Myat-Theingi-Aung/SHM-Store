@@ -1,5 +1,5 @@
 .sec-cart{
-  margin: 40px 0 0;
+  margin-top: 140px;
 }
 .sec-cart .img-cart{
   width: 20px;
@@ -141,7 +141,7 @@ border: 1px solid #006699;
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .sec-cart{
-    margin: 3.125vw 0 0;
+    margin-top: 10.938vw;
   }
   .sec-cart .img-cart{
     width: 1.563vw;
@@ -282,7 +282,7 @@ border: 1px solid #006699;
 /*sp*/
 @media screen and (max-width: 767.9px) {
   .sec-cart{
-    margin: 5.215vw 0 0;
+    margin-top: 18.253vw;
   }
   .sec-cart .img-cart{
     width: 2.608vw;

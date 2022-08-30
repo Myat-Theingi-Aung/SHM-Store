@@ -4,12 +4,12 @@ namespace App\Dao\Product;
 
 use App\Models\Product;
 use App\Models\Category;
-use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\Request;
 use App\Exports\ProductExport;
 use App\Imports\ProductImport;
-use App\Http\Requests\ProductImportRequest;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Request;
 use Maatwebsite\Excel\Excel as ExcelExcel;
+use App\Http\Requests\ProductImportRequest;
 use App\Contracts\Dao\Product\ProductDaoInterface;
 
 /**

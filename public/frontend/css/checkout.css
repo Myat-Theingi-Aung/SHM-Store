@@ -1,4 +1,5 @@
 .sec-checkout {
+    margin-top: 70px;
     padding: 68px 0;
     color: #2d3038;
 }
@@ -107,6 +108,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1280px) {
     .sec-checkout {
+        margin-top: 5.469vw;
         padding: 5.313vw 0;
     }
 
@@ -173,6 +175,7 @@
 
 @media screen and (max-width: 767.9px) {
     .sec-checkout {
+        margin-top: 9.126vw;
         padding: 8.866vw 0;
     }
 
@@ -192,11 +195,15 @@
     }
 
     .sec-checkout .left-col {
-        float: left;
+        float: none;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .sec-checkout .right-col {
-        float: right;
+        float: none;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .sec-checkout .user-info-blk .input-bx{
@@ -205,6 +212,8 @@
     
     .sec-checkout .user-info-blk input {
         padding: 1.108vw;
+        font-size: 1.825vw;
+        width: 100%;
         border: 0.196vw solid #2d3038;
     }
     
@@ -216,6 +225,7 @@
         padding: 1.304vw 2.608vw;
         border: 0.130vw solid #006699;
         font-size: 1.825vw;
+        margin-bottom: 7.823vw;
         letter-spacing: 0.130vw;
     }
 

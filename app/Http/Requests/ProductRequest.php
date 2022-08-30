@@ -16,8 +16,13 @@ class ProductRequest extends FormRequest
             'name' => 'required',
             'brand' => 'required',
             'original_price' => 'required',
+<<<<<<< Updated upstream
             'offer_price' => 'required',
             'photo' => 'required|sometimes|image|mimes:jpeg,png,jpg',
+=======
+            'offer_price' => 'nullable',
+            'photo' => 'sometimes|image|mimes:jpeg,png,jpg',
+>>>>>>> Stashed changes
             'description' => 'required',
         ];
     }

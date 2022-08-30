@@ -51,7 +51,12 @@ img {
 body{
   font-family:'RobotoCondensed-Regular' ,sans-serif;
   font-size: 16px;
+<<<<<<< Updated upstream
   font-weight:400;
+=======
+  font-weight: 400;
+  overflow-x: hidden;
+>>>>>>> Stashed changes
 }
 a {
   display: inline-block;
@@ -73,6 +78,10 @@ a {
   width: 98%;
   margin: 0 auto;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 .cmn-ttl{
   font-family: 'RobotoCondensed-Bold', sans-serif;
   font-weight: 600;
@@ -81,6 +90,21 @@ a {
 .sec-header {
   padding: 10px 0;
   background-color: #006699;
+<<<<<<< Updated upstream
+=======
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;  
+}
+
+section.slider-row {
+  margin-top: 92px;
+}
+
+section.sec-mv {
+  margin-top: 140px;
+>>>>>>> Stashed changes
 }
 
 .sec-header .logo {

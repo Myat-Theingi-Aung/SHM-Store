@@ -10,6 +10,34 @@
   padding: 10px 0 !important;
 }
 
+.search-form{
+  margin-top: 10px;
+  float: right;
+  margin-bottom: 25px;
+}
+
+.search-form div{
+  display: inline;
+}
+
+.search-form label{
+  font-size: 16px;
+}
+
+.search-form input{
+  width: 150px;
+  padding: 7px;
+  border: 1px solid #006699;
+  outline: none;
+}
+
+.search-form button{
+  background-color: #006699;
+  color: #fff;
+  font-size: 14px;
+  padding: 9px 20px;
+}
+
 .switch {
     position: relative;
     display: inline-block;

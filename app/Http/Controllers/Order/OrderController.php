@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Order;
 use Carbon\Carbon;
 use App\Models\Order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 
 class OrderController extends Controller
 {
     public function index(Request $request){
-        $orders = Order::with('user')->paginate(10);
+        $orders = $this->search($request);
         $i = ($request->input('page', 1) - 1) * 10;
-        return view('admin.order.index',compact('orders','i'));
+        return view('admin.order.index',compact('orders','request','i'));
     }
 
     public function todayOrder(){
@@ -53,5 +53,24 @@ class OrderController extends Controller
     public function orderDeatils($id){
         $order = Order::with('orderItems')->where('id',$id)->first();
         return view('admin.order.show',compact('order'));
+    }
+
+    public function search(Request $request)
+    {
+        $orders = Order::with('user');
+        if($request->has('name') || $request->has('start_date') || $request->has('end_date')){
+            if ($request['name'] != null) {
+                $orders = $orders->whereHas('user',function(Builder $query){
+                    $query->where('name','LIKE','%'.request()->name.'%');
+                });
+            }
+            if ($request['start_date'] != null) {
+                $orders = $orders->where('created_at', '>=', $request->start_date);
+            }
+            if ($request['end_date'] != null) {
+                $orders = $orders->where('created_at', '<=',  $request->end_date);
+            }             
+        }
+        return $orders->paginate(10);      
     }
 }

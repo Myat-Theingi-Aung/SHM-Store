@@ -12,6 +12,24 @@
             <button class="cmn-btn tdy-order-btn"><a href="{{ route('admin.order.todayOrder') }}">Today Order</a></button>
         </div>
         <hr>
+        <form action="" class="search-form">
+            <div class="">
+                <label for="name">User Name :</label>
+                <input type="text" name="name" value="{{ $request->name }}">
+                <span class="msg">@error('name') {{$message}} @enderror</span>
+            </div>
+            <div class="">
+                <label for="start_date">Start Date:</label>
+                <input type="date" name="start_date" value="{{ old('start_date') }}">
+            </div>
+            <div class="">
+            <label for="end_date">End Date:</label>
+                <input type="date" name="end_date" value="{{ old('end_date') }}">
+            </div>
+            <div class="">
+                <button>Search</button>
+            </div>
+        </form>
         <table>
             <thead>
                 <tr class="row">
@@ -62,7 +80,7 @@
             @endforeach  
             </tbody>
         </table>
-        {{ $orders->onEachSide(1)->links() }}
+        {{ $orders->appends(request()->input())->links() }}
 
     </div>
 </div>

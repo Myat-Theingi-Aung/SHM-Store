@@ -60,3 +60,4 @@ SHM Store| Product
 		
 	</div>
 </section>
+@endsection

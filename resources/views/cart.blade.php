@@ -72,8 +72,7 @@ SHM Store| Cart Page
                             <td></td>
                             <td class="grand-ttl">Grand Total</td>
                             <td class="grand-ttl">
-                                <span class="sub-total">{{ number_format($total_price) }}</span>
-                                <small style="font-size: 12px;">MMK</small>
+                                $ <span class="sub-total">{{ number_format($total_price) }}</span>
                             </td>
                         </tr>
                     </tfoot>

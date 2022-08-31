@@ -46,8 +46,8 @@
                             <img class="product-img" src="{{ asset('uploads/product/'.$product->photo) }}" alt="Product Photo">
                         @endif
                     </td>
-                    <td>{{ number_format($product->original_price) }} MMK</td>
-                    <td>{{ number_format($product->offer_price) }} MMK</td>
+                    <td>$ {{ number_format($product->original_price) }}</td>
+                    <td>$ {{ number_format($product->offer_price) }}</td>
                     <td>
                         <div class="btn-div">
                             <button><a href="{{ route('admin.product.show',$product->id) }}">

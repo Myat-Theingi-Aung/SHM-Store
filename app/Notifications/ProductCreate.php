@@ -48,7 +48,9 @@ class ProductCreate extends Notification
         $name = $this->product->name;
         $description = $this->product->description;
         $photo = $this->product->photo;
-        return (new MailMessage)->view('admin.mail.subscriberMail',compact('name','description','photo'));
+        return (new MailMessage)
+        ->attach(public_path().'/uploads/product/'.$photo)
+        ->view('admin.mail.subscriberMail',compact('name','description'));
     }
 
     /**

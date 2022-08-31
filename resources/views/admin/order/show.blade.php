@@ -82,8 +82,8 @@
                         </td>
                         <td>{{ $item->product->name }}</td>
                         <td>{{ $item->qty }}</td>
-                        <td>{{ $item->price }}</td>
-                        <td>{{ $item->price * $item->qty }}</td>
+                        <td> $ {{ number_format($item->price) }}</td>
+                        <td> $ {{ number_format($item->price * $item->qty) }}</td>
                     </tr>
                 @endforeach
                 <tr>
@@ -92,7 +92,7 @@
                     <td></td>
                     <td></td>
                     <td class="name">Total</td>
-                    <td class="name">{{ $order->total_amt }}</td>
+                    <td class="name">$ {{ number_format($order->total_amt) }}</td>
                 </tr>
             </tbody>
         </table>

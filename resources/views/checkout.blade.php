@@ -67,7 +67,7 @@ SHM Store| Checkout Page
                         <tbody>
                             @php $total_price = 0 @endphp
                             @foreach($cart as $item)
-                            @php $total_price += $item['offer_price'] * $item['qty'] @endphp
+                            @php $total_price += $item['price'] * $item['qty'] @endphp
                             <input type="hidden" class="product_id" value="{{ $item['id'] }}">
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
@@ -75,10 +75,9 @@ SHM Store| Checkout Page
                                     {{ $item['name'] }}
                                 </td>
                                 <td>{{ $item['qty'] }}</td>
-                                <td>{{ $item['offer_price'] }} <small class="currency-unit">MMK</small></td>
+                                <td>$ {{ number_format($item['price']) }}</td>
                                 <td>
-                                    <span class="sub-total">{{ number_format($item['qty'] * $item['offer_price']) }}</span>
-                                    <small style="font-size: 12px;">MMK</small>
+                                    <span class="sub-total">$ {{ number_format($item['qty'] * $item['price']) }}</span>
                                 </td>
                             </tr>
                             @endforeach
@@ -92,8 +91,7 @@ SHM Store| Checkout Page
                                 <td></td>
                                 <td>Grand Total</td>
                                 <td>
-                                    {{ number_format($total_price) }}
-                                    <small class="currency-unit">MMK</small>
+                                    $ {{ number_format($total_price) }}             
                                 </td>
                             </tr>
                         </tfoot>

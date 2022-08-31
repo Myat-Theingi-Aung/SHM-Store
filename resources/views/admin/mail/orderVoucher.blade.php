@@ -108,8 +108,8 @@
                         <td></td>
                         <td>Grand Total</td>
                         <td>
-                            {{ number_format($total_price) }}
-                            <small class="currency-unit">MMK</small>
+                            $ {{ number_format($total_price) }}
+                            
                         </td>
                     </tr>
                 </tfoot>

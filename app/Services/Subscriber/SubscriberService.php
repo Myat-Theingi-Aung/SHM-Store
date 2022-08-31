@@ -34,6 +34,10 @@ class SubscriberService implements SubscriberServiceInterface
     {
         return $this->subscriberDao->index();
     }
+    public function store($request)
+    {
+        return $this->subscriberDao->store($request);
+    }
 
     public function delete($id)
     {

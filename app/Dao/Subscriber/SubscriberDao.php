@@ -29,4 +29,12 @@ class SubscriberDao implements SubscriberDaoInterface
           $subscriber->delete();
       }
     }
+    public function store($request)
+    {
+        $subscriber = new Subscriber();
+
+        $subscriber->email=$request['email'];
+        $subscriber->save();
+        return $subscriber;
+    }
   }

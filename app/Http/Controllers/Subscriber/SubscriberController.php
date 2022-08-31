@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Subscriber;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Requests\SubscriberStoreRequest;
 use App\Contracts\Services\Subscriber\SubscriberServiceInterface;
 
 class SubscriberController extends Controller
@@ -35,7 +36,12 @@ class SubscriberController extends Controller
 
         return view('admin.subscriber.index', compact('subscribers','i'));
     }
-
+    public function store(SubscriberStoreRequest $request)
+    {
+        $subscribe = $this->subscriberInterface->store($request);
+        Toastr::success('subscriber Successfully!','SUCCESS');
+        return redirect()->route('home');
+    }
     public function delete($id)
     {
         $subscribers = $this->subscriberInterface->delete($id);

@@ -35,6 +35,9 @@ Route::get('/update-cart',      [CartController::class, 'updateCart'])->name('ca
 Route::get('/remove-cart/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::get('/clear-cart',       [CartController::class, 'clearCart'])->name('cart.clear');
 
+//subscriber
+Route::post('/subscriber',[SubscriberController::class, 'store'])->name('subscriber.store');
+
 Route::middleware('auth')->group(function(){
     Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
     Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');

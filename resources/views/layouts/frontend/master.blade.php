@@ -96,8 +96,9 @@
               <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7">Junction City, Yangon</a> </h3>
             </li>
           </ul>
-          <form action="" class="sub-form">
-            <input type="email" placeholder="Enter your email">
+          <form action="{{route('subscriber.store')}}" class="sub-form" method="POST">
+            @csrf
+            <input type="email" placeholder="Enter your email" name="email">
             <input type="submit" value="Subscribe">
           </form>
         </div>

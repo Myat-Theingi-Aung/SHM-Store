@@ -48,12 +48,10 @@ SHM Store| Cart Page
                                 </div>
                             </td>
                             <td>
-                                {{ $item['price'] }}
-                                <small style="font-size: 12px;">MMK</small>
+                                $ {{ $item['price'] }}
                             </td>
                             <td>
-                                <span class="sub-total">{{ number_format($item['qty'] * $item['price']) }}</span>
-                                <small style="font-size: 12px;">MMK</small>
+                                $ <span class="sub-total">{{ number_format($item['qty'] * $item['price']) }}</span>
                             </td>
                             <td>
                                 <a href="{{ route('cart.remove', $item['id']) }}">

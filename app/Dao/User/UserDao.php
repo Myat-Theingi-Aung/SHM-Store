@@ -16,6 +16,7 @@ class UserDao implements UserDaoInterface
     public function getUserList()
     {
         $userList = User::orderBy('id', 'DESC')->paginate(5);
+
         return $userList;
     }
 
@@ -27,6 +28,7 @@ class UserDao implements UserDaoInterface
     public function getUserById($id)
     {   
         $user = User::find($id);
+
         return $user;
     }
 
@@ -47,6 +49,7 @@ class UserDao implements UserDaoInterface
         $user->save();
 
         $this->storeImage($user);
+
         return $user;
     }
 
@@ -68,6 +71,7 @@ class UserDao implements UserDaoInterface
         $user->save();
 
         $this->storeImage($user);
+
         return $user;
     }
 
@@ -81,6 +85,7 @@ class UserDao implements UserDaoInterface
         $user = User::find($id);
         $user->deleted_at = Carbon::now();
         $user->save();
+        
         return $user;
     }
     

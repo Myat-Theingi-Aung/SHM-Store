@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Product;
+namespace App\Http\Controllers\Backend\Product;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -118,6 +118,7 @@ class ProductController extends Controller
         $product = $this->productInterface->update($request,$id);
         
         Toastr::success('Product Update Successfully!','SUCCESS');
+        
         return redirect()->route('admin.product.index');
     }
 
@@ -140,6 +141,7 @@ class ProductController extends Controller
 
         $this->productInterface->import($request);
         Toastr::success('Product Data Import Successfully!','SUCCESS');
+
         return back();
     }
 }

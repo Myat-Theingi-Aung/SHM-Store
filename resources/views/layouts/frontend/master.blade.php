@@ -31,7 +31,7 @@
           <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-              <a href="{{ route('cart.view') }}">
+              <a href="{{ route('cart.index') }}">
               Cart
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
               </a>
@@ -120,7 +120,7 @@
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
   <script src="{{asset('frontend/js/cart.js')}}"></script>
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
     @if(session('status'))

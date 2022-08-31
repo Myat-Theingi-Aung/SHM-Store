@@ -23,10 +23,7 @@ class CheckoutDao implements CheckoutDaoInterface
         $user = auth()->user();
         $cart = session()->get('cart');
 
-        return $checkoutData = [
-            'user' => $user,
-            'cart' => $cart
-        ];
+        return $checkoutData = [ 'user' => $user, 'cart' => $cart ];
     }
 
     /**
@@ -76,9 +73,11 @@ class CheckoutDao implements CheckoutDaoInterface
             DB::commit();
             Mail::to($user->email)->send(new OrderVoucher($user,$order,$cart));
             session()->forget('cart');
+
             return true;
         }catch(\Exception $e){
             DB::rollback();
+
             return false;
         }
     }

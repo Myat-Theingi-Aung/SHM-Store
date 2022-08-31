@@ -62,6 +62,7 @@ class ProductDao implements ProductDaoInterface
         
         $subscribers = Subscriber::all();
         Notification::route('mail',$subscribers)->notify(new ProductCreate($product));
+        
         return $product;
     }
 

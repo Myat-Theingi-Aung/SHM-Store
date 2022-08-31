@@ -2,25 +2,24 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Cart\CartController;
-use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Order\OrderController;
-use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\Profile\ProfileController;
-use App\Http\Controllers\Category\CategoryController;
-use App\Http\Controllers\Checkout\CheckoutController;
-use App\Http\Controllers\Feedback\FeedbackController;
-use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Subscriber\SubscriberController;
+use App\Http\Controllers\Backend\User\UserController;
+use App\Http\Controllers\Frontend\Cart\CartController;
+use App\Http\Controllers\Backend\Order\OrderController;
+use App\Http\Controllers\Backend\Product\ProductController;
+use App\Http\Controllers\Backend\Profile\ProfileController;
+use App\Http\Controllers\Backend\Feedback\FeedbackController;
+use App\Http\Controllers\Backend\Category\CategoryController;
+use App\Http\Controllers\Frontend\Checkout\CheckoutController;
 use App\Http\Controllers\Frontend\HomePage\HomePageController;
+use App\Http\Controllers\Backend\Dashboard\DashboardController;
 use App\Http\Controllers\Frontend\AboutPage\AboutPageController;
+use App\Http\Controllers\Backend\Subscriber\SubscriberController;
 use App\Http\Controllers\Frontend\ProductPage\ProductPageController;
 use App\Http\Controllers\Frontend\FeedbackPage\FeedbackPageController;
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
-
 
 Route::get('/',                   [HomePageController::class, 'showHomePage'])->name('home');
 Route::get('/about',              [AboutPageController::class, 'showAboutPage'])->name('about');
@@ -30,43 +29,43 @@ Route::get('/feedback',           [FeedbackPageController::class, 'showFeedbackP
 Route::post('/feedback',          [FeedbackPageController::class, 'storeFeedback'])->name('feedback.store');
 
 // Cart Module
-Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');
-Route::get('/add-to-cart',      [CartController::class, 'addToCart'])->name('cart.add');
-Route::get('/update-cart',      [CartController::class, 'updateCart'])->name('cart.update');
-Route::get('/remove-cart/{id}', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::get('/clear-cart',       [CartController::class, 'clearCart'])->name('cart.clear');
+Route::get('/cart',               [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/store',         [CartController::class, 'store'])->name('cart.store');
+Route::get('/cart/update',        [CartController::class, 'update'])->name('cart.update');
+Route::get('/cart/delete/{cart}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::get('/cart/clear',         [CartController::class, 'clear'])->name('cart.clear');
 
-//subscriber
-Route::post('/subscriber',[SubscriberController::class, 'store'])->name('subscriber.store');
+// Subscriber
+Route::post('/subscriber', [SubscriberController::class, 'store'])->name('subscriber.store');
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     Route::get('/checkout',  [CheckoutController::class, 'showCheckoutView'])->name('checkout');
     Route::post('/checkout', [CheckoutController::class, 'submitCheckoutView'])->name('checkout.submit');
 });
 
-Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], function(){
+Route::group(['middleware' => 'IsAdmin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     // Product             
-    Route::get('/product',[ProductController::class,'index'])->name('product.index');
-    Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
-    Route::post('/product/create',[ProductController::class,'store'])->name('product.store');
-    Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
-    Route::get('/product/archive',[ProductController::class,'archive'])->name('product.archive');
-    Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
-    Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
-    Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
-    Route::post('/product/import',[ProductController::class,'import'])->name('product.import');
-    Route::get('/product/export',[ProductController::class,'export'])->name('product.export');
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
+    Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('/product/archive', [ProductController::class, 'archive'])->name('product.archive');
+    Route::get('/product/show/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::post('/product/import', [ProductController::class, 'import'])->name('product.import');
+    Route::get('/product/export', [ProductController::class, 'export'])->name('product.export');
 
     //order
-    Route::get('/order',[OrderController::class,'index'])->name('order.index');
-    Route::post('/order/status-update',[OrderController::class,'statusUpdate'])->name('order.statusUpdate');
-    Route::get('/order/today-order',[OrderController::class,'todayOrder'])->name('order.todayOrder');
-    Route::get('/order/pending-order',[OrderController::class,'pendingOrder'])->name('order.pendingOrder');
-    Route::get('/order/completed-order',[OrderController::class,'completedOrder'])->name('order.completedOrder');
-    Route::get('/order/show/{id}',[OrderController::class,'orderDeatils'])->name('order.show');
-    Route::delete('/order/destroy/{id}',[OrderController::class,'destroy'])->name('order.destroy');
+    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+    Route::post('/order/status-update', [OrderController::class, 'statusUpdate'])->name('order.statusUpdate');
+    Route::get('/order/today-order', [OrderController::class, 'todayOrder'])->name('order.todayOrder');
+    Route::get('/order/pending-order', [OrderController::class, 'pendingOrder'])->name('order.pendingOrder');
+    Route::get('/order/completed-order', [OrderController::class, 'completedOrder'])->name('order.completedOrder');
+    Route::get('/order/show/{id}', [OrderController::class, 'orderDeatils'])->name('order.show');
+    Route::delete('/order/destroy/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
 
     // Category
     Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');
@@ -94,8 +93,7 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' =>'admin', 'as' => 'admin.'], 
     Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
 
-    //subscriber
-    Route::get('/subscriber',[SubscriberController::class,'index'])->name('subscriber.index');
+    // Subscriber
+    Route::get('/subscriber', [SubscriberController::class, 'index'])->name('subscriber.index');
     Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });
-

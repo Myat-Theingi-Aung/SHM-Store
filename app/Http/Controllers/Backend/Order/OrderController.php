@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Order;
+namespace App\Http\Controllers\Backend\Order;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,6 +36,7 @@ class OrderController extends Controller
     public function index(Request $request){
         $orders = $this->orderInterface->index($request);
         $i = ($request->input('page', 1) - 1) * 10;
+
         return view('admin.order.index',compact('orders','request','i'));
     }
 
@@ -46,6 +47,7 @@ class OrderController extends Controller
     public function todayOrder(){
         $orders = $this->orderInterface->todayOrder();
         $i = (request()->input('page', 1) - 1) * 10;
+
         return view('admin.order.todayOrder',compact('orders','i'));
     }
 
@@ -54,6 +56,7 @@ class OrderController extends Controller
     */
     public function statusUpdate(){
         $this->orderInterface->statusUpdate();
+
         return response()->json(['success' => true]);
     }
 
@@ -64,6 +67,7 @@ class OrderController extends Controller
     public function pendingOrder(){
         $orders = $this->orderInterface->pendingOrder();
         $i = (request()->input('page', 1) - 1) * 10;
+
         return view('admin.order.pendingOrder',compact('orders','i'));
     }
 
@@ -74,6 +78,7 @@ class OrderController extends Controller
     public function completedOrder(){
         $orders = $this->orderInterface->completedOrder();
         $i = (request()->input('page', 1) - 1) * 10;
+
         return view('admin.order.completeOrder',compact('orders','i'));
     }
 
@@ -85,6 +90,7 @@ class OrderController extends Controller
     public function destroy($id){
         $order = $this->orderInterface->destroy($id);
         Toastr::success('Order Delete Successfully!','SUCCESS');
+
         return redirect()->route('admin.order.index');
     }
 
@@ -94,6 +100,7 @@ class OrderController extends Controller
     */
     public function orderDeatils($id){
         $order = $this->orderInterface->orderDeatils($id);
+        
         return view('admin.order.show',compact('order'));
     }
 

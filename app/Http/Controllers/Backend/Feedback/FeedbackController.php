@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Feedback;
+namespace App\Http\Controllers\Backend\Feedback;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -32,8 +32,8 @@ class FeedbackController extends Controller
     public function showFeedbackList(Request $request) 
     {
         $feedbacks = $this->feedbackInterface->showFeedbackList($request);
-        return view('admin.feedback.index', compact('feedbacks'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        
+        return view('admin.feedback.index', compact('feedbacks'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -45,6 +45,7 @@ class FeedbackController extends Controller
     {
         $this->feedbackInterface->deleteFeedback($id); 
         Toastr::success('Feedback Deleted Successfully', 'SUCCESS');
+        
         return back();
         
     }

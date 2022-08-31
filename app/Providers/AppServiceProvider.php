@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Contracts\Dao\User\UserDaoInterface', 'App\Dao\User\UserDao');
         $this->app->bind('App\Contracts\Dao\Feedback\FeedbackDaoInterface', 'App\Dao\Feedback\FeedbackDao');
         $this->app->bind('App\Contracts\Dao\Profile\ProfileDaoInterface', 'App\Dao\Profile\ProfileDao');
-                $this->app->bind('App\Contracts\Dao\Subscriber\SubscriberDaoInterface', 'App\Dao\Subscriber\SubscriberDao');
+        $this->app->bind('App\Contracts\Dao\Subscriber\SubscriberDaoInterface', 'App\Dao\Subscriber\SubscriberDao');
         $this->app->bind('App\Contracts\Dao\Order\OrderDaoInterface', 'App\Dao\Order\OrderDao');
 
         // Business Logic Registration

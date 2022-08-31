@@ -225,7 +225,7 @@
   width: 100%;
   margin-top: 20px;
   padding-bottom: 50px;
-  font-family: 'RobotoCondensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
 }
 .home-product .cmn-p {
@@ -279,7 +279,7 @@
   color: #ffffff;
   background-color: #006699;
   font-size: 20px;
-  font-family: 'RobotoCondensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   border: 1px solid transparent;
   cursor: pointer;
@@ -325,12 +325,12 @@
 }
 .review-row .cmn-h3 {
   font-size: 36px;
-  font-family: 'RobotoCondensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
 .review-row .cmn-p {
   font-size: 20px;
-  font-family: 'RobotoCondensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   padding-top: 20px;
   padding-bottom: 20px;

@@ -59,17 +59,20 @@ class ProfileDao implements ProfileDaoInterface
                 $user = User::find(auth()->id());
                 $user->password = Hash::make( $data['password'] );
                 $user->save();
+
                 return $msg_bag = [
                     "status" => "success",
                     "msg"    => "Password Changed Successfully &nbsp;<i class='far fa-check-cirlce'></i>"
                 ];
             }else{
+
                 return $msg_bag = [
                     "status" => "error",
                     "msg"    => "New Password Cannot be Same as Old Password &nbsp;<i class='far fa-check-cirlce'></i>"
                 ];
             }
         }else{
+            
             return $msg_bag = [
                 "status" => "error",
                 "msg"    => "Current Password Does Not Match &nbsp;<i class='far fa-check-cirlce'></i>"

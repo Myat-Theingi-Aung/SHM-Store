@@ -93,14 +93,12 @@
                             {{ $item['name'] }}
                         </td>
                         <td>{{ $item['qty'] }}</td>
-                        <td>{{ $item['original_price'] }} <small class="currency-unit">MMK</small></td>
+                        <td>$ {{ number_format($item['original_price']) }}</td>
                         <td>
-                            <span class="sub-total">{{ number_format($item['qty'] * $item['original_price']) }}</span>
-                            <small style="font-size: 12px;">MMK</small>
+                            <span class="sub-total">$ {{ number_format($item['qty'] * $item['original_price']) }}</span>
                         </td>
                     </tr>
                     @endforeach
-                    <input type="hidden" value="{{ $total_price }}" name="total_amt">
                 </tbody>
 
                 <tfoot>

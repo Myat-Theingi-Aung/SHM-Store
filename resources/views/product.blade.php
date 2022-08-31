@@ -14,7 +14,7 @@ SHM Store| Product
       </li>
       @foreach($categories as $category)
       <li class="ttl-list">
-        <a href="{{ route('product.category', $category->id) }}"
+        <a href="{{ route('product.category', Str::slug($category->name)) }}"
         class="category-tab-link">
           {{$category->name}}
         </a>

@@ -20,12 +20,13 @@ class ProductPageDao implements ProductPageDaoInterface
     }
     
     /**
-     * To get product list by category_id and category list
+     * To get product list by category and category list
      * @return $data
      */
-    public function getProductListByCategoryId($category_id)
+    public function getProductListByCategory($category)
     { 
-        $products    = Product::where('category_id', $category_id)->orderBy('created_at','desc')->paginate(4);
+        $category = Category::where('name', ucwords(str_replace('-', ' ', $category)))->first();
+        $products    = Product::where('category_id', $category->id)->orderBy('created_at','desc')->paginate(4);
         $categories  = Category::has('products')->get();
         return $data = [ $products, $categories];
     }

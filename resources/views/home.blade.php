@@ -18,9 +18,9 @@ SHM Store| Home Page
 		<a href="{{route('product')}}" >Show More</a>
 		</div>
 		<div class="home-blk clearfix"> 
-			<a href="{{route('product.category',1)}}"><img src="frontend/img/home/img_laptop.gif" alt="" ></a> 
-			<a href="{{route('product.category',3)}}"><img src="frontend/img/home/img_watch02.gif" alt="" ></a>
-			<a href="{{route('product.category',2)}}"><img src="frontend/img/home/img_phone02.gif" alt="" ></a>		
+			<a href="{{route('product.category','laptop')}}"><img src="frontend/img/home/img_laptop.gif" alt="" ></a> 
+			<a href="{{route('product.category','watch')}}"><img src="frontend/img/home/img_watch02.gif" alt="" ></a>
+			<a href="{{route('product.category','smart-phone')}}"><img src="frontend/img/home/img_phone02.gif" alt="" ></a>		
 		</div>
   </section>
    <!-- /.home-mv -->
@@ -45,7 +45,6 @@ SHM Store| Home Page
 
 			<div class="service-col">
 				<div class="service-icon">
-			
 					<svg class="fastDeli-svg" enable-background="new 0 0 32 32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="Layer_2"><g><polyline fill="#d9d8d8" points="    21,24 18,24 18,6 25,6 30,16 30,24 27,24   " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><polyline fill="#d9d8d8" points="    5,24 2,24 2,18 18,18 18,24 11,24   " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="24" cy="24" fill="#d9d8d8" r="3" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="8" cy="24" fill="#d9d8d8" r="3" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
 						<path class="fastDeli-icon" d="    M5,14L5,14c-1.1,0-2-0.9-2-2V8c0-1.1,0.9-2,2-2h0c1.1,0,2,0.9,2,2v4C7,13.1,6.1,14,5,14z" fill="#d9d8d8" stroke="#d9d8d8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><g><circle fill="#d9d8d8" cx="10.5" cy="6.5" r="1.5"/></g><g><circle fill="#d9d8d8" cx="14.5" cy="13.5" r="1.5"/></g><line fill="#d9d8d8" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="15" x2="10" y1="6" y2="14"/><polyline fill="#d9d8d8" points="    21,6 21,14 29,14   " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g>
 					</svg>
@@ -97,7 +96,7 @@ SHM Store| Home Page
           <div class="home-pcol1-txt">
             <p class="cmn-p"><sup><del>$ {{number_format($product->original_price)}}</del></sup>$ {{number_format($product->offer_price)}}</p>
             <h5 class="cmn-h5">{{$product->name}}</h5>
-            <button class="add-to-cart-btn">Add to cart</button>
+            <button class="add-to-cart-btn"  data-id="{{ $product->id }}">Add to cart</button>
           </div>
         </li>
         @endforeach
@@ -150,5 +149,37 @@ SHM Store| Home Page
       document.documentElement.scrollTop = 0;
     }
   </script>
-    
 @endsection
+
+@push('js')
+<script>
+  $('.add-to-cart-btn').click(function(e){
+      e.preventDefault();
+      let id = $(this).data('id');
+
+      $.ajax({
+          type: 'GET',
+          url : '{{ url("/add-to-cart") }}',
+          data: { id: id },
+
+          success: function(response){
+              let cart_count = Object.keys(response.cart).length;
+
+              if(response.msg == 'success'){
+                  toastr.success('Item Added to Your Cart Successfully &nbsp;<i class="fa fa-check-circle"></i>', 'SUCCESS', {
+                      closeButton: true,
+                      progressBar: true,
+                  });
+              }else{
+                  toastr.error('Item Already Exist in Your Cart &nbsp;<i class="fa fa-exclamation-circle"></i>', 'WARNING', {
+                      closeButton: true,
+                      progressBar: true,
+                  });
+              }
+
+              $('.cart-count').html(cart_count);
+          }
+      })
+  })
+</script>
+@endpush

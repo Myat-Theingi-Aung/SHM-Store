@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Subscriber;
+namespace App\Http\Controllers\Backend\Subscriber;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,17 +36,31 @@ class SubscriberController extends Controller
 
         return view('admin.subscriber.index', compact('subscribers','i'));
     }
+
+    /**
+     * To save subscriber
+     * @param Request $validated validated values from subscriber request
+     * @return Object $subscriber saved subscriber
+     */
     public function store(SubscriberStoreRequest $request)
     {
-        $subscribe = $this->subscriberInterface->store($request);
-        Toastr::success('subscriber Successfully!','SUCCESS');
+        $validated = $request->validated();
+        $subscribe = $this->subscriberInterface->store($validated);
+        Toastr::success('Subscribe Successfully!','SUCCESS');
+        
         return redirect()->route('home');
     }
+    
+    /**
+     * To delete subscriber by id
+     * @param string $id subscriber id
+     * @param string $deletedSubscriberId deleted subscriber id
+     */
     public function delete($id)
     {
         $subscribers = $this->subscriberInterface->delete($id);
-
         Toastr::success('Subscriber Delete Successfully!','SUCCESS');
+        
         return redirect()->route('admin.subscriber.index');
     }
 }

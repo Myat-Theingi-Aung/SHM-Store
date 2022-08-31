@@ -32,9 +32,7 @@ class HomePageController extends Controller
     public function showHomePage()
     {
         $data = $this->homePageInterface->getHomePageData();
-        return view('home')->with([
-            'products'  => $data[0],
-            'feedbacks' => $data[1]
-        ]);
+        
+        return view('home')->with([ 'products'  => $data[0], 'feedbacks' => $data[1] ]);
     }
 }

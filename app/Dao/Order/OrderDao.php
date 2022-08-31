@@ -20,6 +20,7 @@ class OrderDao implements OrderDaoInterface
     */
     public function index(Request $request){
         $orders = $this->search($request);
+
         return $orders;
     }
 
@@ -29,6 +30,7 @@ class OrderDao implements OrderDaoInterface
     */
     public function todayOrder(){
         $orders = Order::whereDate('created_at', Carbon::today())->paginate(10);
+        
         return $orders;
     }
 
@@ -40,6 +42,7 @@ class OrderDao implements OrderDaoInterface
         $order = Order::where('id',$data['id'])->first();
         $order->status = $data['status'];
         $order->save();
+
         return $order;
     }
 
@@ -49,6 +52,7 @@ class OrderDao implements OrderDaoInterface
     */
     public function pendingOrder(){
         $orders = Order::with('user')->where('status','0')->paginate(10);
+
         return $orders;
     }
 
@@ -58,6 +62,7 @@ class OrderDao implements OrderDaoInterface
     */
     public function completedOrder(){
         $orders = Order::with('user')->where('status','1')->paginate(10);
+
         return $orders;
     }
 
@@ -70,6 +75,7 @@ class OrderDao implements OrderDaoInterface
         $order = Order::findOrFail($id);
         $order->deleted_at = Carbon::now();
         $order->save();
+
         return $order;
     }
 
@@ -79,6 +85,7 @@ class OrderDao implements OrderDaoInterface
     */
     public function orderDeatils($id){
         $orders = Order::with('orderItems')->where('id',$id)->first();
+
         return $orders;
     }
 
@@ -103,6 +110,7 @@ class OrderDao implements OrderDaoInterface
                 $orders = $orders->where('created_at', '<=',  $request->end_date);
             }             
         }
+        
         return $orders->paginate(10);      
     }
 }

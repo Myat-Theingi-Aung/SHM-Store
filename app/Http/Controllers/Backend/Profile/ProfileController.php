@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Profile;
+namespace App\Http\Controllers\Backend\Profile;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,6 +34,7 @@ class ProfileController extends Controller
     public function showUserProfile()
     {
         $authUser = auth()->user();
+
         return view('admin.profile.index', compact('authUser'));
     }
 
@@ -45,6 +46,7 @@ class ProfileController extends Controller
     public function showEditProfileView()
     {
         $authUser = auth()->user();
+
         return view('admin.profile.edit', compact('authUser'));
     }
 
@@ -56,7 +58,8 @@ class ProfileController extends Controller
     public function submitEditProfileView(Request $request)
     {
         $this->profileInterface->changeUserProfile($request);
-        Toastr::success('Your Profile Updated Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('Your Profile Updated Successfully!', 'SUCCESS');
+
         return redirect()->route('admin.user.profile');
     }
 

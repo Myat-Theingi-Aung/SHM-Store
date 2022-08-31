@@ -16,14 +16,11 @@ class CartDao implements CartDaoInterface
     {
         if( session()->has('cart') && count(session()->get('cart')) > 0 ){
             $cart = session()->get('cart');
-            return $result = [
-                'status' => true,
-                'cart'   => $cart
-            ];
+
+            return $result = [ 'status' => true, 'cart' => $cart ];
         }
-        return $result = [
-            'status' => false
-        ];
+
+        return $result = [ 'status' => false ];
     }
 
     /**
@@ -36,22 +33,16 @@ class CartDao implements CartDaoInterface
         $id = $request->id;
         $product = Product::find($id);
         $cart    = session()->get('cart');
-
         if( isset($cart[$id]) ){
-            return $result = [
-                'msg'  => 'error',
-                'cart' => $cart,
-            ];
-        }
 
+            return $result = [ 'msg' => 'error', 'cart' => $cart, ];
+        }
         $cart[$id] = $product->toArray();
         $cart[$id]['price'] = $product->offer_price ?? $product->original_price;
         $cart[$id]['qty']   = 1;
         session()->put('cart', $cart);
-        return $result = [
-            'msg'  => 'success',
-            'cart' => $cart,
-        ];
+
+        return $result = [ 'msg'  => 'success', 'cart' => $cart ];
     }
 
     /**
@@ -62,17 +53,13 @@ class CartDao implements CartDaoInterface
     public function updateCart(Request $request)
     {
         $data = $request->all();
-
         $cart = session()->get('cart');
         $cart[$data['id']]['qty'] = $data['qty'];
-
         $tt_price  = $cart[$data['id']]['offer_price'] * $data['qty'];
         $sub_total = number_format($tt_price);
-
         session()->put('cart', $cart);
-        return $result = [
-            'sub_total' => $sub_total
-        ];
+
+        return $result = [ 'sub_total' => $sub_total ];
     }
 
     /**
@@ -85,6 +72,7 @@ class CartDao implements CartDaoInterface
         $cart = session()->get('cart');
         unset( $cart[$id] );
         session()->put('cart', $cart);
+        
         return count(session()->get('cart')) > 0 ? $status = true : $status = false;
     }
 

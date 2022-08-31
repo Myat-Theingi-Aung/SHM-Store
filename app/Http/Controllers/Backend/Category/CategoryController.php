@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Backend\Category;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -33,6 +33,7 @@ class CategoryController extends Controller
     {
         $categories = $this->categoryInterface->getCategoryList();
         $i = ($request->input('page', 1) - 1) * 5;
+
         return view('admin.category.index', compact('categories','i'));
      
     }
@@ -55,7 +56,8 @@ class CategoryController extends Controller
     {
         $validated = $request->validated();
         $category  = $this->categoryInterface->saveCategory($validated);
-        Toastr::success('New Category Created Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('New Category Created Successfully!', 'SUCCESS');
+
         return redirect()->route('admin.category.index');
     }
 
@@ -67,6 +69,7 @@ class CategoryController extends Controller
     public function showEditCategoryView($id)
     {
         $category = $this->categoryInterface->getCategoryById($id);
+
         return view('admin.category.edit', compact('category'));
     }
 
@@ -79,7 +82,8 @@ class CategoryController extends Controller
     public function submitEditCategoryView(CategoryRequest $request, $id)
     {
         $category = $this->categoryInterface->updateCategoryById($request, $id);
-        Toastr::success('Category Updated Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('Category Updated Successfully!', 'SUCCESS');
+
         return redirect()->route('admin.category.index');
     }   
 
@@ -91,7 +95,8 @@ class CategoryController extends Controller
     public function deleteCategory($id)
     {
         $category = $this->categoryInterface->deleteCategoryById($id);
-        Toastr::success('Category Deleted Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('Category Deleted Successfully!', 'SUCCESS');
+        
         return back();
     }
 }

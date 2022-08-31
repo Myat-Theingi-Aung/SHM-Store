@@ -35,11 +35,8 @@ class ProductPageController extends Controller
     {
         $data = $this->productPageInterface->getProductList();
         $i    = (request()->input('page', 1) - 1) * 8;
-        return view('product')->with([
-            'i'          => $i,
-            'products'   => $data[0],
-            'categories' => $data[1]
-        ]);
+        
+        return view('product')->with([ 'i' => $i, 'products' => $data[0], 'categories' => $data[1] ]);
     }
 
     /**
@@ -53,10 +50,7 @@ class ProductPageController extends Controller
     {
         $data = $this->productPageInterface->getProductListByCategory($category);
         $i    = (request()->input('page', 1) - 1) * 8;
-        return view('product-category')->with([
-            'i'          => $i,
-            'products'   => $data[0],
-            'categories' => $data[1],
-        ]);
+
+        return view('product-category')->with([ 'i' => $i, 'products' => $data[0], 'categories' => $data[1], ]);
     }
 }

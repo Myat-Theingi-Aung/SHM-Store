@@ -64,7 +64,6 @@ img {
   width: 100%;
 }
 
-
 body{
   font-family:'Roboto Condensed' ,sans-serif;
   font-size: 16px;
@@ -84,6 +83,25 @@ a {
 #toast-container>div { 
   width: 320px !important; 
   opacity: 1 !important;
+}
+
+.swal2-popup {
+  font-size: 12.5px !important;
+}
+
+.swal2-styled.swal2-confirm {
+  
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.btn,
+.swal2-styled.swal2-cancel,
+.swal2-styled.swal2-confirm {
+  box-shadow: none !important; 
+  outline: none !important;
+  border-radius: 0 !important;
+  padding: 10px 24px !important;
 }
 
 .clearfix::after {

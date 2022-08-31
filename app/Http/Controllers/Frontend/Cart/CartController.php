@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Cart;
+namespace App\Http\Controllers\Frontend\Cart;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -29,35 +29,33 @@ class CartController extends Controller
      * To save user cart item
      * @return Response json msg and cartList
      */    
-    public function addToCart(Request $request)
+    public function store(Request $request)
     {
         $result = $this->cartInterface->addToCart($request);
-        return response()->json([
-            'msg'  => $result['msg'],
-            'cart' => $result['cart']
-        ]);
+        
+        return response()->json([ 'msg'  => $result['msg'], 'cart' => $result['cart'] ]);
     }
 
     /**
      * To show cart list page
      * @return View cart list page
      */ 
-    public function viewCart()
+    public function index()
     {
         $result = $this->cartInterface->getCart();
         if( $result['status'] ){
             return view('cart')->with([ 'cart' => $result['cart'] ]);
         }
         Toastr::info('Your Cart is Empty', 'INFO');
+
         return back();
     }
 
-    public function updateCart(Request $request)
+    public function update(Request $request)
     {
         $result = $this->cartInterface->updateCart($request);
-        return response()->json([
-            'sub_total' => $result['sub_total']
-        ]);
+
+        return response()->json([ 'sub_total' => $result['sub_total'] ]);
     }
 
     /**
@@ -65,13 +63,14 @@ class CartController extends Controller
      * @param $id cart id
      * @return View cart list page
      */
-    public function removeCart($id)
+    public function destroy($id)
     {
         $result = $this->cartInterface->removeCart($id);
         if($result){
             Toastr::success('Cart Item Removed Successfully', 'SUCCESS');
             return back();
         }
+
         return redirect()->route('home');
     }
 
@@ -79,9 +78,10 @@ class CartController extends Controller
      * To delete cart
      * @return View home page
      */
-    function clearCart()
+    function clear()
     {
         $this->cartInterface->clearCart();
-        return redirect(url('/'));
+        
+        return redirect()->route('home');
     }
 }

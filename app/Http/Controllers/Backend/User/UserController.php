@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Backend\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -75,6 +75,7 @@ class UserController extends Controller
     {
         $roles = ['user', 'admin'];
         $user  = $this->userInterface->getUserById($id);
+
         return view('admin.user.edit', compact('roles', 'user'));
     }
 
@@ -87,7 +88,8 @@ class UserController extends Controller
     {
         $validated = $request->validated();
         $this->userInterface->updateUserById($validated, $id);
-        Toastr::success('User Updated Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('User Updated Successfully!', 'SUCCESS');
+
         return redirect()->route('admin.user.index');
     }
 
@@ -99,7 +101,8 @@ class UserController extends Controller
     public function deleteUser($id)
     {
         $this->userInterface->deleteUserById($id);
-        Toastr::success('User Deleted Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+        Toastr::success('User Deleted Successfully!', 'SUCCESS');
+        
         return back();
     }
 }

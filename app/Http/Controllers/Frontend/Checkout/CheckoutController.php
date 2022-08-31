@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Checkout;
+namespace App\Http\Controllers\Frontend\Checkout;
 
 use App\Models\User;
 use App\Models\Order;
@@ -36,10 +36,8 @@ class CheckoutController extends Controller
     public function showCheckoutView()
     {
         $data = $this->checkoutInterface->getCheckoutData();
-        return view('checkout')->with([
-            'user' => $data['user'],
-            'cart' => $data['cart']
-        ]);
+        
+        return view('checkout')->with([ 'user' => $data['user'], 'cart' => $data['cart'] ]);
     }
     
     /**
@@ -51,10 +49,12 @@ class CheckoutController extends Controller
     {   
         $result = $this->checkoutInterface->saveCheckoutData($request);
         if( $result ){
-            Toastr::success('Your Order Submitted Successfully &nbsp;<i class="far fa-check-circle"></i>', 'SUCCESS');
+            Toastr::success('Your Order Submitted Successfully!', 'SUCCESS');
+
             return redirect()->route('home');
         }else{
-            Toastr::error('Order Submitted Failed &nbsp;<i class="far fa-times-circle"></i>', 'ERROR');
+            Toastr::error('Order Submitted Failed!', 'ERROR');
+
             return back();
         }
     }

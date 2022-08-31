@@ -9,10 +9,22 @@ use Illuminate\Http\Request;
 interface SubscriberDaoInterface
 {
     /**
-    * To get subscriber list
-    * @return $subscribers
-    */
+     * To get subscriber list
+     * @return $subscribers
+     */
     public function index();
-    public function store($request);
+
+    /**
+     * To save subscriber
+     * @param Request $validated validated values from subscriber request
+     * @return Object $subscriber saved subscriber
+     */
+    public function store($validated);
+
+    /**
+     * To delete subscriber by id
+     * @param string $id subscriber id
+     * @param string $deletedSubscriberId deleted subscriber id
+     */
     public function delete($id);
 }

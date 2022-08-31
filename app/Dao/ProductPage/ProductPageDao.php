@@ -16,6 +16,7 @@ class ProductPageDao implements ProductPageDaoInterface
     {
         $categories  = Category::has('products')->get();
         $products    = Product::with('category')->orderBy('created_at','desc')->paginate(8);
+        
         return $data = [ $products, $categories];
     }
     
@@ -28,6 +29,7 @@ class ProductPageDao implements ProductPageDaoInterface
         $category    = Category::where('name', ucwords(str_replace('-', ' ', $category)))->first();
         $products    = Product::where('category_id', $category->id)->orderBy('created_at','desc')->paginate(4);
         $categories  = Category::has('products')->get();
+
         return $data = [ $products, $categories];
     }
 }

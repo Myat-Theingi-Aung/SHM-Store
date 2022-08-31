@@ -34,11 +34,11 @@ class ProductPageService implements ProductPageServiceInterface
     }
     
     /**
-     * To get product list by category_id and category list
+     * To get product list by category and category list
      * @return $data
      */
-    public function getProductListByCategoryId($category_id)
+    public function getProductListByCategory($category)
     { 
-        return $this->productPageDao->getProductListByCategoryId($category_id);
+        return $this->productPageDao->getProductListByCategory($category);
     }
 }

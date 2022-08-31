@@ -11,8 +11,8 @@ interface ProductPageServiceInterface
     public function getProductList();
     
     /**
-     * To get product list by category_id and category list
+     * To get product list by category and category list
      * @return $data
      */
-    public function getProductListByCategoryId($category_id);
+    public function getProductListByCategory($category);
 }

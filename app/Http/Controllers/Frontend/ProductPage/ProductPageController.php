@@ -49,9 +49,9 @@ class ProductPageController extends Controller
      * @return $products
      * @return View product-category
      */
-    public function showProductPageByCategory($category_id)
+    public function showProductPageByCategory($category)
     {
-        $data = $this->productPageInterface->getProductListByCategoryId($category_id);
+        $data = $this->productPageInterface->getProductListByCategory($category);
         $i    = (request()->input('page', 1) - 1) * 8;
         return view('product-category')->with([
             'i'          => $i,

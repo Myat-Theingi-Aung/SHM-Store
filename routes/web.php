@@ -19,12 +19,12 @@ use App\Http\Controllers\Frontend\FeedbackPage\FeedbackPageController;
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/',                      [HomePageController::class, 'showHomePage'])->name('home');
-Route::get('/about',                 [AboutPageController::class, 'showAboutPage'])->name('about');
-Route::get('/product',               [ProductPageController::class, 'showProductPage'])->name('product');
-Route::get('/product/{category_id}', [ProductPageController::class, 'showProductPageByCategory'])->name('product.category');
-Route::get('/feedback',              [FeedbackPageController::class, 'showFeedbackPage'])->name('feedback');
-Route::post('/feedback',             [FeedbackPageController::class, 'storeFeedback'])->name('feedback.store');
+Route::get('/',[HomePageController::class, 'showHomePage'])->name('home');
+Route::get('/about',[AboutPageController::class, 'showAboutPage'])->name('about');
+Route::get('/product',[ProductPageController::class, 'showProductPage'])->name('product');
+Route::get('/product/{category}',[ProductPageController::class, 'showProductPageByCategory'])->name('product.category');
+Route::get('/feedback',[FeedbackPageController::class, 'showFeedbackPage'])->name('feedback');
+Route::post('/feedback',[FeedbackPageController::class, 'storeFeedback'])->name('feedback.store');
 
 // Cart Module
 Route::get('/view-cart',        [CartController::class, 'viewCart'])->name('cart.view');

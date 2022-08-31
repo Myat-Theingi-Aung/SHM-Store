@@ -18,9 +18,9 @@ SHM Store| Home Page
 		<a href="{{route('product')}}" >Show More</a>
 		</div>
 		<div class="home-blk clearfix"> 
-			<a href="{{route('product.category','laptop')}}"><img src="frontend/img/home/img_laptop.gif" alt="" ></a> 
-			<a href="{{route('product.category','watch')}}"><img src="frontend/img/home/img_watch02.gif" alt="" ></a>
-			<a href="{{route('product.category','smart-phone')}}"><img src="frontend/img/home/img_phone02.gif" alt="" ></a>		
+			<a href="{{route('product.category', 'laptop')}}"><img src="frontend/img/home/img_laptop.gif" alt="" ></a> 
+			<a href="{{route('product.category', 'watch')}}"><img src="frontend/img/home/img_watch02.gif" alt="" ></a>
+			<a href="{{route('product.category', 'smart-phone')}}"><img src="frontend/img/home/img_phone02.gif" alt="" ></a>		
 		</div>
   </section>
    <!-- /.home-mv -->
@@ -96,7 +96,7 @@ SHM Store| Home Page
           <div class="home-pcol1-txt">
             <p class="cmn-p"><sup><del>$ {{number_format($product->original_price)}}</del></sup>$ {{number_format($product->offer_price)}}</p>
             <h5 class="cmn-h5">{{$product->name}}</h5>
-            <button class="add-to-cart-btn"  data-id="{{ $product->id }}">Add to cart</button>
+            <button class="add-to-cart-btn" data-id="{{ $product->id }}">Add to cart</button>
           </div>
         </li>
         @endforeach
@@ -150,36 +150,3 @@ SHM Store| Home Page
     }
   </script>
 @endsection
-
-@push('js')
-<script>
-  $('.add-to-cart-btn').click(function(e){
-      e.preventDefault();
-      let id = $(this).data('id');
-
-      $.ajax({
-          type: 'GET',
-          url : '{{ url("/add-to-cart") }}',
-          data: { id: id },
-
-          success: function(response){
-              let cart_count = Object.keys(response.cart).length;
-
-              if(response.msg == 'success'){
-                  toastr.success('Item Added to Your Cart Successfully &nbsp;<i class="fa fa-check-circle"></i>', 'SUCCESS', {
-                      closeButton: true,
-                      progressBar: true,
-                  });
-              }else{
-                  toastr.error('Item Already Exist in Your Cart &nbsp;<i class="fa fa-exclamation-circle"></i>', 'WARNING', {
-                      closeButton: true,
-                      progressBar: true,
-                  });
-              }
-
-              $('.cart-count').html(cart_count);
-          }
-      })
-  })
-</script>
-@endpush

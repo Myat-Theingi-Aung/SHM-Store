@@ -32,7 +32,13 @@ SHM Store| Cart Page
                         @php $total_price += $item['price'] * $item['qty'] @endphp
                         <tr class="cart-item-list">
                             <input type="hidden" class="product_id" value="{{ $item['id'] }}">
-                            <td><img src="{{asset('frontend/img/img_watch5.jpg')}}" alt=""></td>
+                            <td>
+                                @if($item['photo'])
+                                    <img src="{{asset('uploads/product/'.$item['photo'])}}" alt="">
+                                @else
+                                    <img src="{{asset('frontend/img/img_watch5.jpg')}}" alt="">
+                                @endif
+                            </td>
                             <td>{{ $item['name'] }}</td>
                             <td>
                                 <div class="qty-box clearfix">

@@ -25,7 +25,7 @@ class ProductPageDao implements ProductPageDaoInterface
      */
     public function getProductListByCategory($category)
     { 
-        $category = Category::where('name', ucwords(str_replace('-', ' ', $category)))->first();
+        $category    = Category::where('name', ucwords(str_replace('-', ' ', $category)))->first();
         $products    = Product::where('category_id', $category->id)->orderBy('created_at','desc')->paginate(4);
         $categories  = Category::has('products')->get();
         return $data = [ $products, $categories];

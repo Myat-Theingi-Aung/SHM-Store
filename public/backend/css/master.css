@@ -93,15 +93,16 @@
 }
 
 .hdr{
-    position: fixed;
-    top: 20px;
+    position: sticky;
+    top: 0px;
     z-index: 10000;
     margin-right: 10px;
     right: 5px;
     margin-bottom: 20px;
-    width: 78%;
+    width: 100%;
     background-color: #006699;
     padding: 8px 20px;
+    margin-top: 20px;
 }
 
 .blank{
@@ -139,10 +140,6 @@
     width: 75%;
 }
 
-.content-area{
-    margin-top: 110px;
-}
-
 @media screen and (min-width:768px) and (max-width:1280px)
 {
     #toast-container>div { 
@@ -171,7 +168,7 @@
     .main .nav-brand{
         margin-left: 0px !important;
         margin-top: 1.563vw;
-        padding: 1.172vw 1.797vw;
+        padding: 1.172vw 1vw;
         background-color: #f8f9fa;
         position: fixed;
         left: 1.563vw;
@@ -221,12 +218,12 @@
     }
     
    .hdr{
-        position: fixed;
-        top: 1.563vw;
+        top: 0vw;
         margin-right: 0.781vw;
         right: 0.391vw;
         margin-bottom: 1.563vw;
         padding: 0.625vw 1.563vw;
+        margin-top: 1.563vw;
     }
     
     .blank{
@@ -257,10 +254,6 @@
     .img-user{
         width: 4.531vw;
         border: 0.156vw solid #006699;
-    }
-    
-    .content-area{
-        margin-top: 7.813vw;
     }
 }
 
@@ -302,7 +295,7 @@
         width: 34% !important;
         margin-left: -100%;
         margin-top: 2.608vw;
-        padding: 0.261vw 1.304vw;
+        padding: 0.261vw 0vw;
         background-color: #f8f9fa;
         position: fixed;
         left: 2.608vw;
@@ -426,13 +419,16 @@
     
     /* bar */
     .hdr{
-        position: fixed;
-        right: 0;
-        top: 2.608vw;
-        margin-bottom: 2.608vw;
-        width: 97.726vw !important;
+        top: 0vw;
         margin-right: 1.304vw;
+        right: 0.652vw;
+        margin-bottom: 2.608vw;
         padding: 1.043vw 2.608vw;
+        margin-top: 2.608vw;
+    }
+
+    table tr{
+        width: 100vh;
     }
     
     .blank{
@@ -469,7 +465,4 @@
         border: 0.261vw solid #006699;
     }
 
-    .content-area{
-        margin-top: 13.038vw;
-    }
 }

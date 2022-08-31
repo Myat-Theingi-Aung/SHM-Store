@@ -12,7 +12,7 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Category Name</th>
                     <th>Created at</th>
                     <th>Action</th>

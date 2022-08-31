@@ -4,13 +4,9 @@ namespace App\Http\Controllers\Product;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Exports\ProductExport;
-use App\Imports\ProductImport;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\ProductStoreRequest;
-use Maatwebsite\Excel\Excel as ExcelExcel;
 use App\Http\Requests\ProductImportRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Contracts\Services\Product\ProductServiceInterface;
@@ -44,7 +40,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = $this->productInterface->index();
-        $i = ($request->input('page', 1) - 1) * 5;
+        $i = ($request->input('page', 1) - 1) * 10;
 
         return view('admin.product.index', compact('products','i'));
     }

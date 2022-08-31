@@ -24,7 +24,7 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Product Name</th>
                     <th>Category Name</th>
                     <th>Brand</th>
@@ -78,7 +78,7 @@
             </tbody>
         </table>
 
-        {{ $products->onEachSide(5)->links() }} 
+        {{ $products->onEachSide(1)->links() }} 
 
     </div>
 </div>

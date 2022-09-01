@@ -39,6 +39,9 @@
 .box-container .item-list:hover {
     transform: scale(1.035);
 }
+.item-box .item-list img {
+	height: 300px;
+}
   
 .box-container .item-txt {
     width: 100%;
@@ -167,6 +170,10 @@
 	.box-container .item-list:nth-of-type(4n) {
 		margin-right: 0;
 	}
+
+	.item-box .item-list img {
+		height: 23.438vw;
+	}
 	  
 	.box-container .item-txt {
 		width: 100%;
@@ -277,7 +284,11 @@
 	.box-container .item-list:nth-of-type(2n) {
 		margin-right: 0;
 	}
-	  
+	
+	.item-box .item-list img {
+		height: 39.113vw;
+	}
+
 	.box-container .item-txt {
 		width: 100%;
 		margin-top: 2.608vw;

@@ -12,10 +12,9 @@ SHM Store| Home Page
 		<div class="txt-box">
 		<small>Welcome To</small>
 		<h2 class="slide-ani" >SHM STORE</h2><br>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus autem maxime sit, 
-			magni adipisci.
+		<p>Good quality for laptops, smart phones and watches can buy with confidently. If you want to know more about our store, ....
 		</p>
-		<a href="{{route('product')}}" >Show More</a>
+		<a href="{{route('about')}}" >Learn More...</a>
 		</div>
 		<div class="home-blk clearfix"> 
 			<a href="{{route('product.category','laptop')}}"><img src="frontend/img/home/img_laptop.gif" alt="" ></a> 
@@ -85,7 +84,7 @@ SHM Store| Home Page
       <ul class="home-product clearfix">
         @foreach($products as $product) 
         <li class="home-pcol1">
-          <div class="img-test">  
+          <div class="img-test">   
 						@if( $product->photo )
 							<img src="{{ asset('uploads/product/'.$product->photo) }}" alt="{{$product->name}}" class="product-img">
 						@else

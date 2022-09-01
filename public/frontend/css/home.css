@@ -1,3 +1,6 @@
+.laptop-row .img-test img{
+  height: 300px;
+}
 .home-mv{
   position: relative;
   margin-top: 92px;
@@ -20,9 +23,9 @@
   text-align: justify;
 }
 .txt-box a {
-  margin-left: 300px;
-  padding: 8px 10px;
-  border-radius: 10px;
+  margin-left: 250px;
+  padding: 7px 15px;
+  border-radius: 8px;
   font-size: 16px;
   background-color: transparent;
   color: #006699;
@@ -340,6 +343,9 @@
 
 /*Home Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+  .laptop-row .img-test img{
+    height: 23.438vw;
+  }
   .home-mv{
     margin-top: 7.188vw;
   }
@@ -356,9 +362,9 @@
     font-size: 1.563vw;
   }
   .txt-box a {
-    margin-left: 23.438vw;
-    padding: 0.625vw 0.781vw;
-    border-radius: 0.781vw;
+    margin-left: 19.531vw;
+    padding: 0.547vw 1.172vw;
+    border-radius: 0.625vw;
     font-size: 1.25vw;
     border: 0.078vw solid #006699;
   }
@@ -593,6 +599,9 @@
 
 /*home sp*/
 @media screen and (max-width: 767.9px) {
+  .laptop-row .img-test img{
+    height: 39.113vw;
+  }
   .home-mv{
     margin-top: 11.995vw;
   }
@@ -609,9 +618,9 @@
     font-size: 2.608vw;
   }
   .txt-box a {
-    margin-left: 39.113vw;
-    padding: 1.043vw 1.304vw;
-    border-radius: 1.304vw;
+    margin-left: 32.595vw;
+    padding: 0.913vw 1.956vw;
+    border-radius: 1.043vw;
     font-size: 2.086vw;
     border: 0.13vw solid #006699;
   }

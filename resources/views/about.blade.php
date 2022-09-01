@@ -30,12 +30,15 @@ SHM Store| About
         <div class="about-box clearfix">
         <p class="day">Saturday</p> <p class="time">9AM to 5PM</p>
         </div><!--about-box-->
-        <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7">Junction City, Yangon</a> </h3>
-        <h3 class="list-ttl">Call Anytime  : <a href="tel:+09-123-456-789">09- 123 456 789</a> </h3>
-        <h3 class="list-ttl ">Email : <a href="mailto:shm@gmail.com" >shm22@gmail.com</a></h3>
-        <h3 class="list-ttl">Facebook: <a href="#">SHM Store</a> </h3>
+        
       </div><!--about-txt-->
       </div>
+      <div class="txt-blk">
+        <h2 class="cmn-ttl">About us</h2>
+      <p>
+        The store was opened in 2022. The name of the store is SHM, which was opened by a group of friends.The most complete one-stop shop for cutting-edge mobile phones,laptops and watches for your digital lifestyle.Adding applications and HD games to smartphones and tablets; Loading windows on desktops and notebooks; You can access services related to software, such as uploading office software such as Microsoft Office, at the store with lifetime free maintenance rights.Free home delivery for online buyers.We intend to open many branches of store.
+        </p>
+        </div>
       </div>
     </section>
 

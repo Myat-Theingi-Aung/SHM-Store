@@ -3,15 +3,26 @@
     width:600px;
     margin: 0 auto;
     margin-top: 20px;
-    border: 1px solid #006699;
     padding: 20px 0;
     margin-bottom: 20px;
   }
-  .mv-blk  .cmn-ttl{
+   .cmn-ttl{
     font-size: 38px;
     margin-bottom: 50px;
     text-align: center;
     color: #006699;
+    position: relative;
+  }
+  .cmn-ttl::after {
+    position: absolute;
+    right: 0;
+    bottom: -42%;
+    left: 0;
+    width: 66px;
+    height: 4px;
+    margin: 0 auto;
+    background-color: #FF8364;
+    content: '';
   }
   .mv-blk  .about-txt{
     width: 500px;
@@ -41,14 +52,23 @@
   .mv-blk  .about-txt a{
     display: inline-block;
   }
-  
+  .txt-blk{
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+  .txt-blk p{
+    text-indent: 50px;
+   text-align: justify;
+   word-spacing: 1.2px;
+   line-height: 1.5;
+  }
   /*about Tablet*/
   @media screen and (min-width: 768px) and (max-width: 1280px) {
    .mv-blk{
     width:46.875vw;
     margin: 0 auto;
     margin-top: 1.563vw;
-    border: 0.078vw solid #006699;
     padding: 1.563vw 0;
     margin-bottom: 1.563vw;
   }
@@ -86,7 +106,6 @@
       width:78.227vw;
       margin: 0 auto;
       margin-top: 2.608vw;
-      border: 0.13vw solid #006699;
       padding: 2.608vw 0;
       margin-bottom: 2.608vw;
     }

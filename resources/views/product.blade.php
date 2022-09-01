@@ -3,7 +3,7 @@
 SHM Store| Product
 @endsection
 @section('content')
-<section class="box-container">
+<section class="box-container"> 
   <div class="l-inner">
     <ul class="ttl-box clearfix">
       <li class="ttl-list">
@@ -24,7 +24,7 @@ SHM Store| Product
 
     <!-- all tab -->
     <ul class="item-box clearfix">
-      @foreach($products as $product)
+      @foreach($products as $product) 
       <li class="item-list">
         <div class="image"> 
           @if( $product->photo )

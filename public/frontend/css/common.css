@@ -80,6 +80,13 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.msg{
+  font-weight: 700;
+  font-size: 14px;
+  color: red;
+  margin-top: 5px;
+}
+
 #toast-container>div { 
   width: 320px !important; 
   opacity: 1 !important;

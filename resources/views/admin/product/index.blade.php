@@ -47,7 +47,8 @@
                         @endif
                     </td>
                     <td>$ {{ number_format($product->original_price) }}</td>
-                    <td>$ {{ number_format($product->offer_price) }}</td>
+                    {{--<td>$ {{ number_format($product->offer_price) }}</td>--}}
+                    <td>{{ $product->offer_price ? '$ ' . number_format($product->offer_price) : '' }}</td>
                     <td>
                         <div class="btn-div">
                             <button><a href="{{ route('admin.product.show',$product->id) }}">

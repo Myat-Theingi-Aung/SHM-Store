@@ -47,32 +47,32 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' => 'admin', 'as' => 'admin.'],
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     // Product             
-    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product',                 [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create',          [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/create',         [ProductController::class, 'store'])->name('product.store');
     Route::delete('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
-    Route::get('/product/archive', [ProductController::class, 'archive'])->name('product.archive');
-    Route::get('/product/show/{id}', [ProductController::class, 'show'])->name('product.show');
-    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
-    Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
-    Route::post('/product/import', [ProductController::class, 'import'])->name('product.import');
-    Route::get('/product/export', [ProductController::class, 'export'])->name('product.export');
+    Route::get('/product/archive',         [ProductController::class, 'archive'])->name('product.archive');
+    Route::get('/product/show/{id}',       [ProductController::class, 'show'])->name('product.show');
+    Route::get('/product/edit/{id}',       [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product/update/{id}',     [ProductController::class, 'update'])->name('product.update');
+    Route::post('/product/import',         [ProductController::class, 'import'])->name('product.import');
+    Route::get('/product/export',          [ProductController::class, 'export'])->name('product.export');
 
     //order
-    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
-    Route::post('/order/status-update', [OrderController::class, 'statusUpdate'])->name('order.statusUpdate');
-    Route::get('/order/today-order', [OrderController::class, 'todayOrder'])->name('order.todayOrder');
-    Route::get('/order/pending-order', [OrderController::class, 'pendingOrder'])->name('order.pendingOrder');
+    Route::get('/order',                 [OrderController::class, 'index'])->name('order.index');
+    Route::post('/order/status-update',  [OrderController::class, 'statusUpdate'])->name('order.statusUpdate');
+    Route::get('/order/today-order',     [OrderController::class, 'todayOrder'])->name('order.todayOrder');
+    Route::get('/order/pending-order',   [OrderController::class, 'pendingOrder'])->name('order.pendingOrder');
     Route::get('/order/completed-order', [OrderController::class, 'completedOrder'])->name('order.completedOrder');
-    Route::get('/order/show/{id}', [OrderController::class, 'orderDeatils'])->name('order.show');
+    Route::get('/order/show/{id}',       [OrderController::class, 'orderDeatils'])->name('order.show');
     Route::delete('/order/destroy/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
 
     // Category
-    Route::get('/category', [CategoryController::class, 'showCategoryList'])->name('category.index');
-    Route::get('/category/create',  [CategoryController::class, 'showCreateCategoryView'])->name('category.create');
-    Route::post('/category/create',  [CategoryController::class, 'submitCreateCategoryView'])->name('category.store');
-    Route::get('/category/edit/{id}', [CategoryController::class, 'showEditCategoryView'])->name('category.edit');
-    Route::post('/category/edit/{id}',  [CategoryController::class, 'submitEditCategoryView'])->name('category.update');
+    Route::get('/category',                [CategoryController::class, 'showCategoryList'])->name('category.index');
+    Route::get('/category/create',         [CategoryController::class, 'showCreateCategoryView'])->name('category.create');
+    Route::post('/category/create',        [CategoryController::class, 'submitCreateCategoryView'])->name('category.store');
+    Route::get('/category/edit/{id}',      [CategoryController::class, 'showEditCategoryView'])->name('category.edit');
+    Route::post('/category/edit/{id}',     [CategoryController::class, 'submitEditCategoryView'])->name('category.update');
     Route::delete('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 
     // User
@@ -84,16 +84,16 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' => 'admin', 'as' => 'admin.'],
     Route::delete('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('user.delete');
 
     // Feedback
-    Route::get('/feedback', [FeedbackController::class, 'showFeedbackList'])->name('feedback.index');
+    Route::get('/feedback',                [FeedbackController::class, 'showFeedbackList'])->name('feedback.index');
     Route::delete('/feedback/delete/{id}', [FeedbackController::class, 'deleteFeedback'])->name('feedback.delete');
 
     // Profile 
-    Route::get('/profile', [ProfileController::class, 'showUserProfile'])->name('user.profile');
-    Route::get('/profile/edit', [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
-    Route::post('/profile/update', [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
+    Route::get('/profile',          [ProfileController::class, 'showUserProfile'])->name('user.profile');
+    Route::get('/profile/edit',     [ProfileController::class, 'showEditProfileView'])->name('user.profile-edit');
+    Route::post('/profile/update',  [ProfileController::class, 'submitEditProfileView'])->name('user.profile-update');
     Route::post('/password-update', [ProfileController::class, 'updateUserPassword'])->name('user.password-update');
 
     // Subscriber
-    Route::get('/subscriber', [SubscriberController::class, 'index'])->name('subscriber.index');
+    Route::get('/subscriber',                [SubscriberController::class, 'index'])->name('subscriber.index');
     Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });

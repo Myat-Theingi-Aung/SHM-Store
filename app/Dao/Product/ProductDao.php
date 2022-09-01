@@ -9,8 +9,10 @@ use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Request;
 use Maatwebsite\Excel\Excel as ExcelExcel;
-use App\Http\Requests\ProductImportRequest;
 use App\Contracts\Dao\Product\ProductDaoInterface;
+use App\Models\Subscriber;
+use App\Notifications\ProductCreate;
+use Illuminate\Support\Facades\Notification;
 
 /**
  * Data accessing object for post
@@ -35,7 +37,7 @@ class ProductDao implements ProductDaoInterface
     public function create()
     {
         $category = Category::all();
-        
+
         return $category;
     }
 
@@ -57,7 +59,10 @@ class ProductDao implements ProductDaoInterface
         $product->description = $request['description'];
         $product->save();
         $this->storeImage($product);
-
+        
+        $subscribers = Subscriber::all();
+        Notification::route('mail',$subscribers)->notify(new ProductCreate($product));
+        
         return $product;
     }
 

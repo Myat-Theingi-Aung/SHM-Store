@@ -62,8 +62,10 @@ class RegisterController extends Controller
     protected function authenticated()
     {   
         if( auth()->user()->role == 'admin' ){
+
             return redirect()->route('admin.dashboard');
         }else{
+            
             return redirect()->route('home');
         }
     }

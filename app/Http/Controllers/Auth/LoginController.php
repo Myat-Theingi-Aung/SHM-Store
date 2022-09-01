@@ -46,12 +46,14 @@ class LoginController extends Controller
         {
             session(['url.intended' => url()->previous()]);
         }
+
         return view('auth.login');
     }
 
     protected function authenticated()
     {   
         if( auth()->user()->role == 'admin' ){
+            
             return redirect()->route('admin.dashboard');
         }
     }

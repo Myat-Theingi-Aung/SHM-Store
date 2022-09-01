@@ -14,8 +14,9 @@ class HomePageDao implements HomePageDaoInterface
      */
     public function getHomePageData()
     {
-        $productList  = Product::with('category')->orderBy('created_at', 'DESC')->take(8)->get();
-        $feedbackList = Review::inRandomOrder()->paginate(4);
+        $productList  = Product::with('category')->inRandomOrder()->take(8)->get();
+        $feedbackList = Review::orderBy('created_at', 'DESC')->paginate(4);
+        
         return $data = [ $productList, $feedbackList ];
     }
 }

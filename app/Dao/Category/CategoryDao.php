@@ -15,6 +15,7 @@ class CategoryDao implements CategoryDaoInterface
     public function getCategoryList()
     {
         $categoryList = Category::orderBy('created_at','desc')->paginate(5);
+        
         return $categoryList;
     }
 
@@ -26,6 +27,7 @@ class CategoryDao implements CategoryDaoInterface
     public function getCategoryById($id)
     {   
         $category = Category::find($id);
+
         return $category;
     }
 
@@ -39,6 +41,7 @@ class CategoryDao implements CategoryDaoInterface
         $category = new Category();
         $category->name = $validated['name'];
         $category->save();
+
         return $category;
     }
 
@@ -53,6 +56,7 @@ class CategoryDao implements CategoryDaoInterface
         $category = Category::find($id);
         $category->name = $validated['name'];
         $category->save();
+
         return $category;
     }
 
@@ -66,6 +70,7 @@ class CategoryDao implements CategoryDaoInterface
         $category = Category::find($id);
         $category->deleted_at = Carbon::now();
         $category->save();
+
         return $category;
     }
 }

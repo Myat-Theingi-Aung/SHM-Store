@@ -20,11 +20,13 @@ class FeedbackPageDao implements FeedbackPageDaoInterface
             'email'   => 'required|email',
             'message' => 'required'
         ]);
+        
         $feedback = new Review();
         $feedback->name    = $data['name'];
         $feedback->email   = $data['email'];
         $feedback->message = $data['message'];
         $feedback->save();
+
         return $feedback;
     }
 }

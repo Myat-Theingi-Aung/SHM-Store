@@ -11,7 +11,7 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Message</th>

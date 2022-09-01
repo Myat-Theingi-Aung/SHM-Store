@@ -14,16 +14,19 @@ SHM Store| Feedback
           <div class="input-col">
             <label for="name">Name</label><br>
             <input type="text" class="name" name="name" placeholder="Your Name.....">
+            <p class="msg">{{ $errors->first('name') }}</p>
           </div>
           <div class="input-col">
             <label for="email">Email</label><br>
             <input type="email" id="email" class="email" name="email" placeholder="Your Email.....">
+            <p class="msg">{{ $errors->first('email') }}</p>
           </div>
         </div>
 
         <div class="input-msg">
           <label for="message">Message</label><br>
           <textarea class="message" name="message" rows="7" placeholder="Text...."></textarea>
+          <p class="msg">{{ $errors->first('message') }}</p>
         </div>
 
         <div class="btn-gp">

@@ -24,7 +24,7 @@
         <table>
             <thead>
                 <tr class="row">
-                    <th>#</th>
+                    <th>No</th>
                     <th>Product Name</th>
                     <th>Category Name</th>
                     <th>Brand</th>
@@ -46,8 +46,9 @@
                             <img class="product-img" src="{{ asset('uploads/product/'.$product->photo) }}" alt="Product Photo">
                         @endif
                     </td>
-                    <td>{{ number_format($product->original_price) }} MMK</td>
-                    <td>{{ number_format($product->offer_price) }} MMK</td>
+                    <td>$ {{ number_format($product->original_price) }}</td>
+                    {{--<td>$ {{ number_format($product->offer_price) }}</td>--}}
+                    <td>{{ $product->offer_price ? '$ ' . number_format($product->offer_price) : '' }}</td>
                     <td>
                         <div class="btn-div">
                             <button><a href="{{ route('admin.product.show',$product->id) }}">
@@ -78,7 +79,7 @@
             </tbody>
         </table>
 
-        {{ $products->onEachSide(5)->links() }} 
+        {{ $products->onEachSide(1)->links() }} 
 
     </div>
 </div>

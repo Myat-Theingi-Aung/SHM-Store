@@ -42,6 +42,7 @@ class FeedbackPageController extends Controller
     {
         $this->feedbackPageInterface->saveFeedback($request);
         Toastr::success('Thanks You For Your Feedback', 'SUCCESS');
+        
         return redirect()->route('home');
     }
 }

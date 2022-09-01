@@ -1,0 +1,87 @@
+<?php
+
+namespace App\Http\Controllers\Frontend\Cart;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use App\Contracts\Services\Cart\CartServiceInterface;
+
+class CartController extends Controller
+{
+    /**
+     * cart interface
+     */
+    private $cartInterface;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(CartServiceInterface $cartServiceInterface)
+    {
+        $this->cartInterface = $cartServiceInterface;
+    }
+    
+    /**
+     * To save user cart item
+     * @return Response json msg and cartList
+     */    
+    public function store(Request $request)
+    {
+        $result = $this->cartInterface->addToCart($request);
+        
+        return response()->json([ 'msg'  => $result['msg'], 'cart' => $result['cart'] ]);
+    }
+
+    /**
+     * To show cart list page
+     * @return View cart list page
+     */ 
+    public function index()
+    {
+        $result = $this->cartInterface->getCart();
+        if( $result['status'] ){
+            return view('cart')->with([ 'cart' => $result['cart'] ]);
+        }
+        Toastr::info('Your Cart is Empty', 'INFO');
+
+        return back();
+    }
+
+    public function update(Request $request)
+    {
+        $result = $this->cartInterface->updateCart($request);
+
+        return response()->json([ 'sub_total' => $result['sub_total'] ]);
+    }
+
+    /**
+     * To remove cart item
+     * @param $id cart id
+     * @return View cart list page
+     */
+    public function destroy($id)
+    {
+        $result = $this->cartInterface->removeCart($id);
+        if($result){
+            Toastr::success('Cart Item Removed Successfully', 'SUCCESS');
+            return back();
+        }
+
+        return redirect()->route('home');
+    }
+
+    /**
+     * To delete cart
+     * @return View home page
+     */
+    function clear()
+    {
+        $this->cartInterface->clearCart();
+        
+        return redirect()->route('home');
+    }
+}

@@ -18,6 +18,7 @@ class FeedbackDao implements FeedbackDaoInterface
     public function showFeedbackList(Request $request)
     {
         $feedbacks = Review::orderBy('created_at','desc')->paginate(5);
+        
         return $feedbacks;
     }
 

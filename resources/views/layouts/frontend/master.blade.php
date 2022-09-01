@@ -31,7 +31,7 @@
           <li><a href="{{route('home')}}" class="{{  Request::is('/') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{route('product')}}" class="{{  Request::is('product') ? 'active' : '' }}">Product</a></li>
           <li>
-              <a href="{{ route('cart.view') }}">
+              <a href="{{ route('cart.index') }}">
               Cart
               (<span class="cart-count">{{ session()->has('cart') && count(session()->get('cart')) > 0 ? count(session()->get('cart')) : 0 }}</span>)
               </a>
@@ -96,8 +96,9 @@
               <h3 class="list-ttl">Location: <a href="https://goo.gl/maps/c3WJn1SUzJ4cyjPc7">Junction City, Yangon</a> </h3>
             </li>
           </ul>
-          <form action="" class="sub-form">
-            <input type="email" placeholder="Enter your email">
+          <form action="{{route('subscriber.store')}}" class="sub-form" method="POST">
+            @csrf
+            <input type="email" placeholder="Enter your email" name="email">
             <input type="submit" value="Subscribe">
           </form>
         </div>
@@ -118,7 +119,8 @@
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   {!! Toastr::message() !!}
   <script src="{{asset('frontend/js/common.js')}}"></script>
-
+  <script src="{{asset('frontend/js/cart.js')}}"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
     @if(session('status'))

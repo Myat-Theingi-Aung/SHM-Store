@@ -109,7 +109,6 @@
                         <td>Grand Total</td>
                         <td>
                             $ {{ number_format($total_price) }}
-                            
                         </td>
                     </tr>
                 </tfoot>

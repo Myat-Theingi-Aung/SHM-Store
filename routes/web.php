@@ -97,3 +97,4 @@ Route::group(['middleware' => 'IsAdmin', 'prefix' => 'admin', 'as' => 'admin.'],
     Route::get('/subscriber',                [SubscriberController::class, 'index'])->name('subscriber.index');
     Route::delete('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });
+

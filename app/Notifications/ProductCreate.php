@@ -12,7 +12,6 @@ class ProductCreate extends Notification
 {
     use Queueable;
 
-    private Product $product;
     public $name = '';
     public $description = '';
 

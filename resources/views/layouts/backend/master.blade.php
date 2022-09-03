@@ -55,7 +55,7 @@
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
-                        <a href="{{ route('admin.subscriber.index') }}" class="menu-item-link">Subscriber</a>
+                        <a href="{{ route('admin.subscriber.index') }}" class="menu-item-link {{ Request::is('admin/subscriber*') ? 'active' : '' }}">Subscriber</a>
                     </li> 
                     <li class="menu-spacer"></li>
                     <li class="menu-item">
